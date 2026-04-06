@@ -1,0 +1,151 @@
+Category,Difficulty,Question,Expected Answer,LLM Answer
+Calendar,Easy,When does Spring 2026 semester start?,"January 12, 2026.","The Spring 2026 semester start date is not explicitly stated, but according to the calendar, registration for Spring courses opens on 2026-11-09 for the main semester and 2026-11-03 for Coursera Spring 2026 (Term B), and the semester ends on 2026-05-02."
+Calendar,Easy,When are Spring 2026 final exams?,"Spring 2026 final exams take place from May 4 to May 9, 2026.",The Spring 2026 final exams occur during the week of 2026-05-04 to 2026-05-09.
+Calendar,Easy,When is Spring 2026 commencement?,"Spring 2026 commencement is on May 16, 2026.",Spring 2026 commencement occurs on 2026-05-16.
+Calendar,Easy,When does Summer 1 2026 start?,"Summer 1 courses begin May 18, 2026.",Courses Begin—Summer 1 occurs during the Summer 2026 term on 2026-05-18.
+Calendar,Normal,When is the last day to withdraw from a Spring 2026 course?,"Last day to withdraw (full semester) is March 30, 2026.","To determine the last day to withdraw from a Spring 2026 course, we need to consider the different terms and dates provided.
+
+For Coursera Spring 2026 (Term A), the last day to withdraw is 2026-02-20.
+
+For Coursera Spring 2026 (Term B), the last day to withdraw is 2026-04-17.
+
+For full semester courses, the last day to withdraw is 2026-03-30.
+
+For ID full semester courses, the last day to withdraw is 2026-04-17.
+
+For ID and online B session courses, the last day to withdraw is 2026-04-17.
+
+Since the question is about the Spring 2026 term in general, we need to consider the most restrictive date. The dates for Term A (2026-02-20) and full semester courses (2026-03-30) are earlier than the dates for Term B (2026-04-17) and the ID courses (2026-04-17).
+
+However, the dates for Term B and the ID courses are the same, which is 2026-04-17. This date is later than the date for full semester"
+Calendar,Normal,When are Spring 2026 midterm grades due?,"Midterm grades are due March 13, 2026.",2026-03-13.
+Calendar,Normal,How long is the Spring 2026 final exam period?,The final exam period lasts 6 days (May 4-May 9).,The Spring 2026 final exam period is from 2026-05-04 to 2026-05-09.
+Calendar,Normal,How long is the Spring 2026 semester?,The semester runs Jan 12 - May 9 (~16 weeks).,I am not sure. The Spring 2026 semester end dates are different for different types of courses.
+Calendar,Hard,"If I apply for graduation in Summer 2026 but want to walk in the Spring 2026 ceremony, when do I apply and which ceremony?","You must apply by the spring graduation application deadline (Feb 2, 2026) and would walk in the Spring 2026 ceremony.",You are not sure.
+Calendar,Hard,"If I withdraw from a Spring course on April 10, is that before or after the withdrawal deadline?","April 10 is after the March 30 deadline, so it is not allowed.",I don't have information matching your question. Could you try rephrasing or adding more detail?
+Calendar,Hard,"If the add/drop deadline is January 20 and I register January 21, what happens?","You miss the add/drop deadline, so you would need late registration approval or may not be able to enroll without penalty.",You will not be able to add the course with no tuition charges.
+Calendar,Hard,I have a friend visiting from out of town next week. Are there any days in April when IIT has no classes?,Should list holidays in April or when there are no classes. (No holidays in April),"Based on the given context, I found two instances where classes end on a specific date. 
+
+For the Spring 2026 term, classes end on 2026-04-17. 
+
+For the Coursera Spring 2026 (Term B), classes end on 2026-04-06. 
+
+Since 2026-04-06 is before 2026-04-17, there are days in April when IIT has no classes, specifically from 2026-04-06 to 2026-04-17."
+Calendar,Hard,My lease ends in May. When exactly do spring semester classes finish?,"Spring semester classes end on May 2, 2026.","According to the context, Spring 2026 semester classes finish on 2026-05-02."
+Calendar,Hard,I have a wedding to attend in late November. Will I miss any class days?,The Thanksgiving Break occurs from November 25 to 28. You will not miss any class days since the break covers those dates.,"No, you will not miss any class days. The Thanksgiving Break occurs from 2026-11-25 to 2026-11-28, which is after your wedding."
+Contact,Easy,Where is the Registrar's office located?,The Registrar's Office is located on the Mies Campus in Chicago.,"The Office of the Registrar is located in Michael Paul Galvin Tower, 10 West 35th Street, Suite 2C4-2, Chicago, IL 60616."
+Contact,Easy,What is the fax number for the Department of Physics?,I'm not sure based on my available information.,I am not sure.
+Contact,Easy,How do I contact the Pritzker Institute of Biomedical Science?,"Call 312.567.7984, email pritzker.institute@illinoistech.edu, or visit 10 W. 35th Street, 18th Floor, Room 18C3-2.",You can contact the Pritzker Institute of Biomedical Science and Engineering by phone at 312-567-7984 or by email at pritzker.institute@illinoistech.edu.
+Contact,Normal,Who should I contact if my transcript request has an issue?,Contact the Office of the Registrar.,"You should contact Maureen Tully, the Enrollment Records Manager, as she is in charge of Enrollment Records."
+Contact,Normal,Who should I contact about registration problems?,Contact the Registrar's Office.,You should contact the Office of The Registrar.
+Contact,Normal,Who should I contact if I have a hold on my account?,Contact the Registrar or appropriate department placing the hold.,I am not sure.
+Contact,Normal,I want to contact someone at the Wanger Institute. What is their number?,Contact someone at the Wanger Institute.,You can reach them by phone at 312-567-6881.
+Contact,Normal,I want to take a semester off. What is the process?,Submit a Leave of Absence Form through the Illinois Tech portal.,"You should apply for a Leave of Absence. For undergraduate degree-seeking students, this is done through the Undergraduate Academic Affairs channel in the Illinois Tech portal (portal.iit.edu). Requests must be submitted by the end of the 12th week of the semester to take effect that semester."
+Contact,Hard,"If my advisor approval is missing during registration, who should I contact?",Contact your academic advisor or department.,You should contact the Office of The Registrar.
+Policy,Easy,How many credits do graduate students need to be full-time?,Graduate students are full-time at 9 credits.,At least 9 credit hours.
+Policy,Easy,How many credits do undergraduate students need to be full-time?,Undergraduate full-time status is 12 credits.,12 credit hours.
+Policy,Easy,What is the pass/fail policy at IIT?,"Pass/fail allows students to take certain courses without GPA impact, but restrictions apply.","Undergraduate students may take a maximum of 3 courses as Pass/Fail. The Pass/Fail policy varies according to the major department, and students must contact their major department for restrictions. Students must submit a Pass/Fail Request Form by the last day to add/drop classes as indicated on the Academic Calendar."
+Policy,Normal,I am a graduate student taking 8 credits this semester — am I full-time?,"No, 8 credits is part-time (full-time = 9).","No, you are not full-time. The minimum registration required for full-time status for graduate students is 9 credit hours."
+Policy,Normal,What is the difference between withdrawing and dropping a course?,Dropping happens early with no record; withdrawing happens later and results in a W grade.,"Withdrawing from a course and dropping a course have the following differences:
+
+- Tuition and fees: Dropping a course means the student will not be charged any tuition and/or fees associated with the course, whereas withdrawing from a course means the student is responsible for any tuition and/or fees associated with the course.
+- Grade: Dropping a course results in the course being entirely removed from the student's transcript, whereas withdrawing from a course assigns a letter grade of 'W' to the withdrawn course and makes it visible on the transcript.
+- Credits: Dropping a course means the removed credits do not count toward the student's maximum credit hours, whereas withdrawing from a course means the withdrawn credits count toward the student's total maximum credit hours.
+- Deadline: Dropping a course refers to having the course removed from the student's schedule before the add/drop deadline, whereas withdrawing from a course is taken after the add/drop deadline."
+Policy,Normal,I failed a class and want to retake it. Will both grades show on my transcript?,Yes/No question.,"Yes, both grades will be recorded on all transcripts issued."
+Policy,Normal,I'm graduating but haven't registered for any courses this semester. Is that a problem?,"Yes, graduating students must be actively enrolled in the semester they intend to graduate.","Yes, that is a problem. According to policy [E.  Application for Degree Conferral], students are required to be actively enrolled in the semester they intend to graduate."
+Policy,Normal,How many courses can I take pass/fail as an undergraduate?,3.,You may take a maximum of 3 courses as Pass/Fail.
+Policy,Hard,"What is the max pass/fail courses I can take as an undergrad, and if I take a required major course pass/fail, will it count toward my degree?",3; usually does NOT count toward major requirements.,"You may take a maximum of 3 courses as Pass/Fail as an undergraduate student. 
+
+However, the policy does not explicitly state what happens if you take a required major course Pass/Fail."
+Policy,Hard,"As a coterminal student, am I considered undergraduate or graduate for full-time status purposes, and how does tuition work?",Undergraduate; tuition is billed at undergrad rate.,"As a coterminal student, you are considered both undergraduate and graduate. However, for full-time status purposes, you are considered graduate. 
+
+For full-time status, the tuition rate is $22,000 per semester at Chicago-Kent for the 2024-2025 academic year."
+Policy,Hard,"I'm a grad student who got a C in a required course — can I repeat it, will the old grade be replaced, and how does it affect my GPA?","Yes, courses may be repeated; GPA impact depends on replacement policy.","As a graduate student, you may repeat up to three distinct courses with each course being repeated once. Both grades will be recorded and the grade used in the calculation of the GPA will be the latest recorded."
+Policy,Hard,Can I work on a research project with a professor and keep the intellectual property?,"Yes, work done for course credit belongs exclusively to students per handbook Section 1.","According to the context, if the work is done for course credit or to satisfy a degree requirement, it belongs exclusively to the student, and the fact that a faculty member provides guidance does not change this fact. However, if the work is considered 'university research', as defined in Appendix K, it belongs to Illinois Tech, and the rights of the student or students with respect to such work are as set forth in Appendix K. 
+
+To determine the ownership of the intellectual property, it is necessary to know whether the work is considered 'personal research' or 'university research'. If it is 'personal research', the student may be able to keep the intellectual property. If it is 'university research', Illinois Tech may own the intellectual property."
+Registration,Easy,How do I request a late registration?,"Submit a late registration request through the Registrar, often requiring advisor and/or department approval.","You must complete the Late Registration Request, including all pertinent information, found on the Registrar - Student Resources page of the Illinois Tech Portal during the late registration period of the current term."
+Registration,Easy,How do I add a course during the add/drop period?,Add courses through the student registration system (myIIT portal) without special approval during the add/drop period.,"You can add a course during the add/drop period by using the same procedure as initial registration, which is described on the How to Register page."
+Registration,Normal,When does registration open for Fall 2026?,Registration typically opens around March-April 2026; exact dates depend on priority registration schedule.,I am not sure. The information provided does not mention the specific date for Fall 2026 registration.
+Registration,Normal,Who do I contact if I have a registration issue?,Contact the Office of the Registrar.,"You can contact the Office of The Registrar, specifically Khalilah Guyton-Hamlin, the Registrar, at kguytonhamlin@illinoistech.edu."
+Registration,Normal,What happens if I try to register after the add/drop deadline?,You cannot register normally; you may need late registration approval or may be denied enrollment.,"You will not be able to add a course after the add/drop deadline. If you try to add a course after this date, it will not be allowed. However, you can still drop a course after the add/drop deadline, but it will be considered a withdrawal and will appear on your transcript with a grade of 'W'."
+Registration,Hard,I have a hold on my account and registration opens tomorrow — what types of holds exist and how do I find out what mine is?,"Common holds include financial, advising, immunization, and administrative. View your hold in the student portal (myIIT).","There are four types of holds mentioned: 
+
+1. Student Accounting Hold
+2. Document Hold
+3. Academic Affairs Hold
+4. Third Party Sponsor Hold
+
+To find out what type of hold you have, you should contact the responsible office listed for further information. 
+
+You can check the hold description for a specific hold to see if it matches yours. If not, you can contact the offices listed for the respective holds: 
+
+- Student Accounting: 312.567.3794
+- Graduate Admission: 312.567.3020
+- Undergraduate Academic Affairs: 312.567.3300
+- Graduate Academic Affairs: 312.567.3024"
+Registration,Hard,"If registration opens tomorrow but I have a financial hold, can I still register?","No, a financial hold blocks registration until resolved.","No, you cannot register if you have a financial hold. The text states that students with ""unpaid balances"" are prevented from enrolling in classes until the condition is resolved and the hold is removed."
+Registration,Hard,"If I miss the add/drop deadline, can I still add a class?","Only with special approval (late add), and it is not guaranteed.","No, you cannot add a class after the add/drop deadline."
+Transcripts,Easy,How do I get an official transcript from IIT?,"Log in to the IIT Portal, search 'Order Official Transcript', and click the tool; alumni use Illinois Tech's Parchment page directly.","To get an official transcript from IIT, click on the ""Order Official Transcript"" Tool. After placing your order, you will be contacted when your transcript request has been processed. Alternatively, you can contact Parchment at 847.716.3005 for assistance with placing an order."
+Transcripts,Easy,Can I order an official transcript online?,"Yes — current students via the IIT Portal, alumni via Illinois Tech's Parchment page.","Yes, you can order an official transcript online. Click on the ""Order Official Transcript"" Tool."
+Transcripts,Easy,Is there a fee for ordering an official transcript?,"Yes, a fee is charged and paid by credit card through Parchment.","Yes, there is a fee for ordering an official transcript. The fee is $10 for each electronic/PDF transcript and $12 for each printed transcript sent via the United States Postal Service first-class mail (regular mail)."
+Transcripts,Normal,How long does it take to process a transcript request?,Electronic/PDF transcripts are delivered worldwide in about an hour; mailed transcripts are processed then mailed.,You will be contacted when your transcript request has been processed.
+Transcripts,Normal,Can alumni request transcripts through the same system?,Yes — alumni order directly through Illinois Tech's Parchment page instead of the Portal.,"I am not sure. The context only mentions that Illinois Tech has partnered with Parchment to take online requests for transcript orders, but it does not explicitly state that alumni can use this system."
+Transcripts,Normal,Can transcripts be sent electronically?,"Yes, electronic/PDF transcripts are available through Parchment with worldwide delivery in about an hour.",Yes. All transcripts from 1980 to the present can be delivered in an electronic/PDF format.
+Transcripts,Hard,"If I graduated last year and need a transcript for a job application, how do I request it?","Visit Illinois Tech's Parchment page, complete the online order, and pay by credit card.","You can request an official transcript through the Office of the Registrar's website by clicking on the ""Order Official Transcript"" Tool. Alternatively, you can contact Parchment at 847.716.3005 for assistance with placing an order. Since you graduated last year, your transcript will be available in an electronic/PDF format. Payment for the order must be received before it will be processed, which costs $10 for each electronic/PDF transcript."
+Transcripts,Hard,"If my transcript needs to be sent to multiple schools, how do I request that?","Place a separate Parchment order per recipient; multiple transcripts to the same address ship in one envelope, each individually sealed.","You can contact our service provider, Parchment, at 847.716.3005 for assistance with placing an order."
+Transcripts,Hard,"If I need a transcript urgently, is there an expedited option?",Yes — electronic/PDF transcripts via Parchment are delivered in about an hour and are the fastest option.,I am not sure.
+Tuition,Easy,What is the tuition per credit hour for graduate students on the Mies campus?,"$1,851 per credit hour for Fall 2025, Spring 2026, and Summer 2026; $1,780 for Summer 2025.",I am not sure. The provided information does not specify the tuition per credit hour for graduate students on the Mies campus.
+Tuition,Easy,What is the tuition per credit hour for undergraduate students?,"Flat rate of $25,824 per semester for 12-18 credits; $1,612 per credit hour below 12 credits.","For students admitted Summer 2010-Spring 2015, the tuition per credit hour is $1,574. 
+For students admitted Summer 2015-Spring 2026, the tuition per credit hour is $1,612. 
+For short courses, the tuition per credit hour is $1,977."
+Tuition,Easy,Where can I find current tuition rates?,iit.edu/student-accounting/tuition-and-fees/future-tuition-and-fees/mies-campus-graduate and mies-campus-undergraduate.,I'm not sure based on my available information.
+Tuition,Normal,What happens to my tuition if I drop a class after the add/drop deadline?,No tuition refund; you owe full tuition and receive a W grade on your transcript.,You are not sure.
+Tuition,Normal,Do I get a refund if I drop a course before the add/drop deadline?,"Yes, 100% refundable before the add/drop deadline; submit a Refund Request Form, takes 7-10 business days.","Yes, if you drop a course during the first two weeks of the semester, you will not appear on a student's transcript and tuition will be refunded."
+Tuition,Normal,How is tuition calculated for part-time students?,"Part-time undergraduates (under 12 credits) are charged $1,612 per credit hour instead of the flat rate.",I'm not sure based on my available information.
+Tuition,Hard,"If I drop from 12 credits to 9 credits mid-semester, how does that affect my tuition?",No refund after add/drop deadline; dropping below 12 credits means you are no longer full-time.,I'm not sure based on my available information.
+Tuition,Hard,"If I withdraw from all classes after the fourth week, do I receive a tuition refund?","No refund after the add/drop deadline; W grades appear on transcript; exceptions for military service, serious illness, or university action.","No, you will not receive a tuition refund."
+Tuition,Hard,"If I drop a course but remain full-time, does my tuition change?",If you stay within 12-18 credits the flat rate does not change; dropping below 12 shifts to per-credit billing but no refund after add/drop.,"No, your tuition will not change if you drop a course but remain full-time."
+Tuition,Hard,I'm starting the MDes program. What will I pay per semester?,Tuition rates for the MDes program.,"You will pay $25,488 per semester."
+Tuition,Hard,Are there any fees specific to Chicago-Kent students beyond tuition?,Chicago-Kent graduate students have additional fees.,I am not sure. The provided context does not mention any specific fees beyond tuition for Chicago-Kent students.
+Financial Aid,Easy,Do undergraduate students need to be full-time to receive financial aid?,"Not required for all aid types, but most aid is reduced or eliminated below full-time (12 credits).",I am not sure.
+Financial Aid,Easy,Where can I find financial aid policies?,Contact the Office of Financial Aid at 312.567.7219 or visit iit.edu/financial-aid.,I am not sure.
+Financial Aid,Normal,What happens to my financial aid if I drop below full-time status?,"Aid is reduced or eliminated — federal loans, SEOG, and work-study are zeroed out; Pell Grant recalculated proportionally.",I am not sure.
+Financial Aid,Normal,Does withdrawing from a course affect financial aid eligibility?,"Yes, withdrawing reduces enrolled credits which lowers or eliminates certain aid types and may trigger return of Title IV funds.",I am not sure.
+Financial Aid,Normal,Can dropping a course require repayment of financial aid?,"Yes, dropping below an aid threshold may require repayment of federal Title IV aid.",I am not sure.
+Financial Aid,Hard,I receive financial aid and I'm thinking of dropping below full-time status mid-semester — what happens to my aid and is there any tuition refund?,Aid may reduce; refund depends on deadline.,I'm not sure.
+Financial Aid,Hard,"If I withdraw from all courses mid-semester, how does it affect my financial aid?",Aid may need repayment; refund depends on timing.,I'm not sure. The provided context does not mention the specific policies regarding withdrawing from courses mid-semester and its effect on financial aid.
+Financial Aid,Hard,"If I drop from full-time to part-time, will my grants or loans change?",Grants may drop; loans may adjust.,"According to the context, if you drop from full-time to part-time, your grants and loans may change. 
+
+For undergraduate students enrolled in 9-11 hours, the Federal Pell Grant is adjusted, Federal SEOG is reduced to $500, and Federal Student Loans are prorated. 
+
+For undergraduate students enrolled in 6-8 hours, the Federal Pell Grant is adjusted, Federal SEOG is reduced to $500, and Federal Student Loans are prorated. 
+
+IL MAP Grant is also reduced for both scenarios."
+Transfer Credit,Easy,Can graduate students transfer credits into a master's program?,"Yes, with approval.","Yes, graduate students can transfer credits into a master's program, but the maximum number of applicable credit hours is nine, and the credit hours must have been passed with grades of 'B' or better."
+Transfer Credit,Easy,Do transfer credits count toward degree requirements?,"Yes for credits, not GPA.","Yes, transfer credits can count toward degree requirements, subject to the approval of the academic unit and the Office of Academic Affairs, and meeting the specified grade requirements (grades of 'B' or better)."
+Transfer Credit,Easy,Who approves transfer credits?,Department + Registrar.,The academic unit and the Office of Academic Affairs approve transfer credits.
+Transfer Credit,Normal,What is the maximum number of transfer credits allowed for a master's program?,Up to ~9 credits.,A maximum of nine applicable credit hours.
+Transfer Credit,Normal,Do transfer credits affect GPA calculations?,No GPA impact.,"Yes, grades for transferred credits do not affect the student's GPA, but a non-attendance (""NA"") grade is equivalent to a failing grade of ""E"" for GPA calculations."
+Transfer Credit,Normal,When should transfer credits be submitted?,Early in program.,Transfer credits should be submitted as part of the application for admission to the Office of Undergraduate Admission.
+Transfer Credit,Hard,"I transferred 6 credits into a master's program — how many more transfer credits can I bring in, and could this affect my graduation date?",3 more credits; may graduate sooner.,"You have already transferred 6 credits into a master's program. The maximum allowed transfer credits for a master's degree program is 9 credit hours. 
+
+You can bring in 3 more transfer credits (9 - 6 = 3). 
+
+This may affect your graduation date, as you will need to complete the remaining coursework and fulfill the program requirements within the allowed timeframe."
+Transfer Credit,Hard,"If I transfer the maximum allowed credits, could I graduate earlier?","Yes, if requirements allow.","Yes, if you transfer the maximum allowed credits, you could graduate earlier."
+Transfer Credit,Hard,Can transfer credits from another graduate program be applied to my degree?,"Yes, if approved.","Yes, a maximum of nine graduate-level credit hours taken elsewhere and not applied toward any earned degree, subject to restrictions, may be transferred towards the graduate portion of the co-terminal degree program, subject to the advance approval of the academic unit."
+Multi-topic,Easy,"If I take 9 credits as a graduate student, am I considered full-time?","Yes, full-time.","No, you are not considered full-time as a graduate student. The minimum registration required for full-time status for the fall or spring semester is 9 credit hours, but you are taking exactly 9 credit hours, which is the minimum."
+Multi-topic,Easy,"If I take 12 credits as an undergraduate student, am I considered full-time?","Yes, full-time.","Yes, you are considered full-time."
+Multi-topic,Easy,What happens if I drop a course before the add/drop deadline?,Removed; full refund.,A course dropped during the first two weeks of the semester will not appear on a student's transcript and tuition will be refunded.
+Multi-topic,Normal,I'm a graduate student taking 8 credits — am I full-time and will it affect my tuition?,Not full-time; may affect aid.,"You are taking 8 credits. According to the context, full-time graduate students at Chicago-Kent pay $22,000 per semester. However, there is no information about the credit requirement for full-time status at Chicago-Kent."
+Multi-topic,Normal,"If I drop a course after the add/drop deadline, will it appear on my transcript?",W grade; no refund.,"No, it will not appear on your transcript."
+Multi-topic,Normal,"If I withdraw from a course, does it affect my GPA?",No GPA impact.,"No, withdrawing from a course does not affect your GPA."
+Multi-topic,Hard,"I'm an F-1 grad student taking 9 credits in Spring 2026 — am I full-time, and what happens to my visa status if I drop one 3-credit course after the add/drop deadline?",Not full-time; visa risk without approval.,"You are an F-1 grad student taking 9 credits in Spring 2026. To be considered full-time, you need to take at least 9 credits. So, yes, you are full-time.
+
+If you drop one 3-credit course after the add/drop deadline, your visa status may be affected. As an F-1 student, you are required to maintain a full course load. Dropping a course may lead to a loss of full-time status, which could potentially impact your visa status. However, I would recommend checking with the International Students Office at IIT for specific guidance on this situation."
+Multi-topic,Hard,"I'm an undergraduate student with 12 credits — if I drop a 3-credit course after the add/drop deadline, am I still full-time and will I get a tuition refund?",Not full-time; no refund.,"No, you will not be full-time. Dropping a course after the add/drop deadline is considered withdrawing from the course. However, you will receive a grade of 'W' and it will not affect your grade-point average."
+Multi-topic,Hard,"If I withdraw from all my classes in Spring 2026 after the 4th week, do I get any tuition refund and what grade appears on my transcript?",W grades; likely no refund.,"Based on the given context, I am not sure about the specific tuition refund policy. However, since you are withdrawing after the 4th week, I can tell you that you will not receive a W (Withdrawal) grade on your transcript. 
+
+For Spring 2026, the last day to withdraw for full semester courses is 2026-03-30. Since you are withdrawing after this date, you will likely receive a grade based on your performance in the course."

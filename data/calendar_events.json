@@ -1,0 +1,872 @@
+[
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-01-01",
+    "event_name": "New Year’s Day",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-01-02",
+    "event_name": "Floating Holiday",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term A)",
+    "event_date": "2026-01-12",
+    "event_name": "Courses Begin-Coursera A",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-01-12",
+    "event_name": "Courses Begin for Spring and Online A Session",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-01-16",
+    "event_name": "Early Departure",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-01-19",
+    "event_name": "Martin Luther King, Jr. Day",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term A)",
+    "event_date": "2026-01-19",
+    "event_name": "Martin Luther King, Jr. Day—No Classes",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-01-19",
+    "event_name": "Martin Luther King, Jr. Day—No Classes",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term A)",
+    "event_date": "2026-01-20",
+    "event_name": "Last Day to add a course or drop with no tuition charges",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-01-20",
+    "event_name": "Courses Begin for ID Full Semester and ID A Session",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-01-20",
+    "event_name": "Last Day to Add/Drop for Full Semester and Online A Session Courses with No Tuition Charges",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-01-23",
+    "event_name": "Monday Classes Meet (Dr. King's Birthday Makeup)",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Summer 2026",
+    "event_date": "2026-01-26",
+    "event_name": "Summer Registration Begins-Coursera",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-01-27",
+    "event_name": "Last Day to Add/Drop for ID Full Semester and ID A Session Courses with No Tuition Charges",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-01-27",
+    "event_name": "Last Day to Request Late Registration",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term A)",
+    "event_date": "2026-02-02",
+    "event_name": "Spring Degree Conferral Applications Due",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-02-02",
+    "event_name": "Spring Degree Conferral Applications Due",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term A)",
+    "event_date": "2026-02-09",
+    "event_name": "Last day to enroll for PBA courses for credit—Coursera A",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term A)",
+    "event_date": "2026-02-20",
+    "event_name": "Last Day to Withdraw—Coursera A",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-02-20",
+    "event_name": "Last Day to Withdraw for ID and Online A Session Courses",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-02-23",
+    "event_name": "Fall Incomplete Grades Due",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-03-04",
+    "event_name": "Midterm Grading Begins",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term A)",
+    "event_date": "2026-03-07",
+    "event_name": "Last Day of Courses—Coursera A",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-03-07",
+    "event_name": "Last Day of ID and Online A Session Courses",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term B)",
+    "event_date": "2026-03-09",
+    "event_name": "Courses Begin—Courses B",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-03-09",
+    "event_name": "Online B Session Courses Begin",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term A)",
+    "event_date": "2026-03-11",
+    "event_name": "Final Grades Due—Coursera A",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-03-11",
+    "event_name": "Final Online A Session Courses Grades Due",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-03-11",
+    "event_name": "Spring Final Exam Schedule Published Online",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-03-13",
+    "event_name": "Midterm Grades Due",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term B)",
+    "event_date": "2026-03-16",
+    "event_name": "Spring Break Week—No Classes",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-03-16",
+    "event_name": "Spring Break Week—No Classes",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term B)",
+    "event_date": "2026-03-17",
+    "event_name": "Last Day to add a course or drop with no tuition charges—Coursera B",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term B)",
+    "event_date": "2026-03-17",
+    "event_name": "Spring Break Week—No Classes",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-03-17",
+    "event_name": "Last Day to Add/Drop for Online B Session Courses with No Tuition Charges",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-03-17",
+    "event_name": "Spring Break Week—No Classes",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term B)",
+    "event_date": "2026-03-18",
+    "event_name": "Spring Break Week—No Classes",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-03-18",
+    "event_name": "Spring Break Week—No Classes",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term B)",
+    "event_date": "2026-03-19",
+    "event_name": "Spring Break Week—No Classes",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-03-19",
+    "event_name": "Spring Break Week—No Classes",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term B)",
+    "event_date": "2026-03-20",
+    "event_name": "Spring Break Week—No Classes",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-03-20",
+    "event_name": "Spring Break Week—No Classes",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term B)",
+    "event_date": "2026-03-21",
+    "event_name": "Spring Break Week—No Classes",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-03-21",
+    "event_name": "Spring Break Week—No Classes",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-03-23",
+    "event_name": "Fall Course Schedule Published Online",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-03-23",
+    "event_name": "ID B Session Courses Begin",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-03-30",
+    "event_name": "Last Day to Add/Drop for ID B Session Courses with No Tuition Charges",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-03-30",
+    "event_name": "Last Day to Withdraw for Full Semester Courses",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term B)",
+    "event_date": "2026-04-06",
+    "event_name": "Last day to enroll for PBA courses for credit—Coursera B",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-04-06",
+    "event_name": "Fall Registration Begins",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-04-15",
+    "event_name": "Summer Reinstatement Applications Due for Undergraduate Students",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term B)",
+    "event_date": "2026-04-17",
+    "event_name": "Last Day to Withdraw—Coursera B",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-04-17",
+    "event_name": "Last Day to Withdraw for ID Full Semester Courses",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-04-17",
+    "event_name": "Last Day to Withdraw for ID and Online B Session Courses",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-05-02",
+    "event_name": "Last Day of Spring Courses",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-05-03",
+    "event_name": "Last Day to Request an Incomplete Grade",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-05-04",
+    "event_name": "Final Exam Week/Final Grading Begins on May 4",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-05-05",
+    "event_name": "Final Exam Week/Final Grading Begins on May 4",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-05-06",
+    "event_name": "Final Exam Week/Final Grading Begins on May 4",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-05-07",
+    "event_name": "Final Exam Week/Final Grading Begins on May 4",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-05-08",
+    "event_name": "Final Exam Week/Final Grading Begins on May 4",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term B)",
+    "event_date": "2026-05-09",
+    "event_name": "Last Day of Classes—Coursera B",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-05-09",
+    "event_name": "Final Exam Week/Final Grading Begins on May 4",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-05-09",
+    "event_name": "Last Day of ID Full Semester and ID and Online B Session Courses",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term B)",
+    "event_date": "2026-05-13",
+    "event_name": "Final Grades Due—Coursera B",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-05-13",
+    "event_name": "Final Grades Due at Noon (CST)",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term B)",
+    "event_date": "2026-05-16",
+    "event_name": "Spring Degree Conferral and Commencement",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Spring 2026",
+    "event_date": "2026-05-16",
+    "event_name": "Spring Degree Conferral and Commencement",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Summer 2026",
+    "event_date": "2026-05-18",
+    "event_name": "Courses Begin—Summer 1",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-05-22",
+    "event_name": "Early Departure",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "Summer 2026",
+    "event_date": "2026-05-22",
+    "event_name": "Last Day to Add/Drop Courses with No Tuition Charges—Summer 1",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-05-25",
+    "event_name": "Memorial Day",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "Summer 2026",
+    "event_date": "2026-05-25",
+    "event_name": "Memorial Day—No Classes",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Summer 2026",
+    "event_date": "2026-05-29",
+    "event_name": "Last Day to Request Late Registration—Summer Session 1",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Summer 2026",
+    "event_date": "2026-06-05",
+    "event_name": "Summer Combined Session Degree Conferral Applications Due",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Summer 2026",
+    "event_date": "2026-06-15",
+    "event_name": "Summer Courses Begin",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Summer 2026",
+    "event_date": "2026-06-15",
+    "event_name": "Courses Begin—Summer 2",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-06-18",
+    "event_name": "Early Departure",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "Coursera Summer 2026",
+    "event_date": "2026-06-18",
+    "event_name": "Juneteenth Day Observance—No Classes",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-06-19",
+    "event_name": "Juneteenth Day",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "Summer 2026",
+    "event_date": "2026-06-19",
+    "event_name": "Juneteenth Day—No Classes",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Summer 2026",
+    "event_date": "2026-06-19",
+    "event_name": "Last Day to Add/Drop Courses with No Tuition Charges—Summer 2",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Summer 2026",
+    "event_date": "2026-06-23",
+    "event_name": "Last day to add a course or drop with no tuition charges—Coursera",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Summer 2026",
+    "event_date": "2026-06-23",
+    "event_name": "Last Day to Withdraw—Summer 1",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Summer 2026",
+    "event_date": "2026-06-26",
+    "event_name": "Last Day to Request Late Registration—Summer Session 2",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-07-02",
+    "event_name": "Early Departure",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-07-03",
+    "event_name": "Independence Day",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "Coursera Summer 2026",
+    "event_date": "2026-07-03",
+    "event_name": "Independence Day Observance—No Classes",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Summer 2026",
+    "event_date": "2026-07-03",
+    "event_name": "Independence Day (Observed)—No Classes",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Summer 2026",
+    "event_date": "2026-07-11",
+    "event_name": "Last Day of Courses—Summer 1",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Summer 2026",
+    "event_date": "2026-07-13",
+    "event_name": "Last day to enroll for PBA for credit-Summer Term",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Summer 2026",
+    "event_date": "2026-07-15",
+    "event_name": "Final Grades Due at Noon (CST)—Summer 1",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Summer 2026",
+    "event_date": "2026-07-21",
+    "event_name": "Last Day to Withdraw—Summer 2",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Summer 2026",
+    "event_date": "2026-07-21",
+    "event_name": "PBA: Last Day for Converting MOOC into a Credit—Coursera Summer Term",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Summer 2026",
+    "event_date": "2026-07-24",
+    "event_name": "Last Day to Withdraw—Coursera Summer Term",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Coursera Summer 2026",
+    "event_date": "2026-08-08",
+    "event_name": "Last Day of Courses—Coursera Summer Term",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Summer 2026",
+    "event_date": "2026-08-08",
+    "event_name": "Last Day of Courses—Summer 2",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Summer 2026",
+    "event_date": "2026-08-11",
+    "event_name": "Final Grades Due at Noon (CST)—Summer 2",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Coursera Summer 2026",
+    "event_date": "2026-08-12",
+    "event_name": "Final Grades Due—Coursera Summer Term",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Coursera Summer 2026",
+    "event_date": "2026-08-15",
+    "event_name": "Summer Combined Session Degree Conferral",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Summer 2026",
+    "event_date": "2026-08-15",
+    "event_name": "Summer Combined Session Degree Conferral",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-08-17",
+    "event_name": "Fall term starts",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-08-25",
+    "event_name": "Last Day to Add/Drop for Full Semester Courses with No Tuition Charges",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-09-01",
+    "event_name": "Last Day to Request Late Registration",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-09-04",
+    "event_name": "Early Departure",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-09-04",
+    "event_name": "Fall Degree Conferral Applications Due",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-09-07",
+    "event_name": "Labor Day",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-09-07",
+    "event_name": "Labor Day—No Classes",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-10-05",
+    "event_name": "Spring and Summer Incomplete Grades Due",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-10-12",
+    "event_name": "Fall Break Day—No Classes",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-10-13",
+    "event_name": "Fall Break Day—No Classes",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-10-14",
+    "event_name": "Midterm Grading Begins",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-10-21",
+    "event_name": "Fall Final Exam Schedule Published Online",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-10-23",
+    "event_name": "Midterm Grades Due",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-10-26",
+    "event_name": "Spring and Summer Course Schedules Published Online",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-11-02",
+    "event_name": "Last Day to Withdraw for Full Semester Courses",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term A)",
+    "event_date": "2026-11-03",
+    "event_name": "Spring Registration Begins-Coursera A",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Coursera Spring 2026 (Term B)",
+    "event_date": "2026-11-03",
+    "event_name": "Spring Registration Begins-Coursera",
+    "source_url": "https://www.iit.edu/coursera/coursera-academic-calendar"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-11-09",
+    "event_name": "Spring and Summer Registration Begins",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-11-15",
+    "event_name": "Spring Reinstatement Applications Due for Undergraduate Students",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-11-25",
+    "event_name": "Early Departure",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-11-25",
+    "event_name": "Thanksgiving Break—No Classes",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-11-26",
+    "event_name": "Thanksgiving Day",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-11-26",
+    "event_name": "Thanksgiving Break—No Classes",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-11-27",
+    "event_name": "Floating Holiday",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-11-27",
+    "event_name": "Thanksgiving Break—No Classes",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-11-28",
+    "event_name": "Thanksgiving Break—No Classes",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-12-05",
+    "event_name": "Last Day of Fall Courses",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-12-06",
+    "event_name": "Last Day to Request an Incomplete Grade",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-12-07",
+    "event_name": "Final Exam Week/Final Grading Begins on December 7",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-12-08",
+    "event_name": "Final Exam Week/Final Grading Begins on December 7",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-12-09",
+    "event_name": "Final Exam Week/Final Grading Begins on December 7",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-12-10",
+    "event_name": "Final Exam Week/Final Grading Begins on December 7",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-12-11",
+    "event_name": "Final Exam Week/Final Grading Begins on December 7",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-12-12",
+    "event_name": "Final Exam Week/Final Grading Begins on December 7",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-12-16",
+    "event_name": "Final Grades Due at Noon (CST)",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "Fall 2026",
+    "event_date": "2026-12-19",
+    "event_name": "Fall Degree Conferral",
+    "source_url": "https://www.iit.edu/registrar/academic-calendar/subsequent-academic-years"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-12-23",
+    "event_name": "Early Departure",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-12-24",
+    "event_name": "Floating Holiday",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-12-25",
+    "event_name": "Christmas Day",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-12-28",
+    "event_name": "University Holidays",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-12-29",
+    "event_name": "University Holidays",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-12-30",
+    "event_name": "University Holidays",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2026-12-31",
+    "event_name": "University Holidays",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  },
+  {
+    "term": "2026-27 Calendar Year",
+    "event_date": "2027-01-01",
+    "event_name": "New Year’s Day",
+    "source_url": "https://www.iit.edu/hr/employee-resources/paid-time#h27"
+  }
+]

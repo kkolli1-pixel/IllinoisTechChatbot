@@ -1,0 +1,24 @@
+# Scraping & data
+beautifulsoup4>=4.12.0
+pandas>=2.0.0
+openpyxl>=3.1.0
+requests>=2.28.0
+lxml>=4.9.0
+
+# UI & answer generation
+streamlit>=1.28.0
+python-dotenv>=1.0.0
+groq>=0.4.0
+openai>=1.0.0
+
+# elasticsearch
+elasticsearch>=8.0.0
+sentence-transformers>=2.2.0
+
+# scikit-learn
+scikit-learn>=1.5.2
+numpy>=1.24.0
+
+# API server
+fastapi>=0.100.0
+uvicorn>=0.23.0

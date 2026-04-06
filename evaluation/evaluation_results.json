@@ -1,0 +1,1698 @@
+{
+  "k": 3,
+  "global_summary": {
+    "n_evaluated": 88,
+    "n_skipped": 1,
+    "avg_p_at_k": 0.4659,
+    "avg_r_at_k": 0.8977,
+    "avg_hit_at_k": 0.8977,
+    "avg_faithfulness": 0.7352,
+    "avg_completeness": 0.6409,
+    "avg_correctness": 0.8057
+  },
+  "section_summaries": {
+    "Calendar": {
+      "section": "Calendar",
+      "n_evaluated": 13,
+      "n_skipped": 1,
+      "avg_p_at_k": 0.5641,
+      "avg_r_at_k": 0.9231,
+      "avg_hit_at_k": 0.9231,
+      "avg_faithfulness": 0.8,
+      "avg_completeness": 0.7,
+      "avg_correctness": 0.9
+    },
+    "Contact": {
+      "section": "Contact",
+      "n_evaluated": 9,
+      "n_skipped": 0,
+      "avg_p_at_k": 0.5556,
+      "avg_r_at_k": 0.8889,
+      "avg_hit_at_k": 0.8889,
+      "avg_faithfulness": 0.7111,
+      "avg_completeness": 0.6222,
+      "avg_correctness": 0.8
+    },
+    "Policy": {
+      "section": "Policy",
+      "n_evaluated": 12,
+      "n_skipped": 0,
+      "avg_p_at_k": 0.4167,
+      "avg_r_at_k": 0.8333,
+      "avg_hit_at_k": 0.8333,
+      "avg_faithfulness": 0.7333,
+      "avg_completeness": 0.6417,
+      "avg_correctness": 0.825
+    },
+    "Registration": {
+      "section": "Registration",
+      "n_evaluated": 8,
+      "n_skipped": 0,
+      "avg_p_at_k": 0.5833,
+      "avg_r_at_k": 0.875,
+      "avg_hit_at_k": 0.875,
+      "avg_faithfulness": 0.625,
+      "avg_completeness": 0.5375,
+      "avg_correctness": 0.6125
+    },
+    "Transcripts": {
+      "section": "Transcripts",
+      "n_evaluated": 9,
+      "n_skipped": 0,
+      "avg_p_at_k": 0.4815,
+      "avg_r_at_k": 0.7778,
+      "avg_hit_at_k": 0.7778,
+      "avg_faithfulness": 0.6889,
+      "avg_completeness": 0.5889,
+      "avg_correctness": 0.7889
+    },
+    "Tuition": {
+      "section": "Tuition",
+      "n_evaluated": 11,
+      "n_skipped": 0,
+      "avg_p_at_k": 0.4848,
+      "avg_r_at_k": 0.9091,
+      "avg_hit_at_k": 0.9091,
+      "avg_faithfulness": 0.7818,
+      "avg_completeness": 0.6727,
+      "avg_correctness": 0.8182
+    },
+    "Financial Aid": {
+      "section": "Financial Aid",
+      "n_evaluated": 8,
+      "n_skipped": 0,
+      "avg_p_at_k": 0.2917,
+      "avg_r_at_k": 0.875,
+      "avg_hit_at_k": 0.875,
+      "avg_faithfulness": 0.8,
+      "avg_completeness": 0.7,
+      "avg_correctness": 0.9
+    },
+    "Transfer Credit": {
+      "section": "Transfer Credit",
+      "n_evaluated": 9,
+      "n_skipped": 0,
+      "avg_p_at_k": 0.3333,
+      "avg_r_at_k": 1.0,
+      "avg_hit_at_k": 1.0,
+      "avg_faithfulness": 0.7556,
+      "avg_completeness": 0.6667,
+      "avg_correctness": 0.8444
+    },
+    "Multi-topic": {
+      "section": "Multi-topic",
+      "n_evaluated": 9,
+      "n_skipped": 0,
+      "avg_p_at_k": 0.4444,
+      "avg_r_at_k": 1.0,
+      "avg_hit_at_k": 1.0,
+      "avg_faithfulness": 0.6778,
+      "avg_completeness": 0.6,
+      "avg_correctness": 0.7
+    }
+  },
+  "per_question": [
+    {
+      "section": "Calendar",
+      "query": "When does Spring 2026 semester start?",
+      "domains": [
+        "CALENDAR"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "The Spring 2026 semester at Illinois Institute of Technology starts on different dates for different sessions: \n- January 12, 2026, for Spring and Online A Session, and Coursera Spring 2026 (Term A)\n- January 20, 2026, for ID Full Semester and ID A Session\n- March 9, 2026, for Online B Session\n- March 23, 2026, for ID B Session.",
+      "gold_answer": "The Spring 2026 semester at Illinois Institute of Technology has multiple start dates. For Spring and Online A Session courses, the semester starts on January 12, 2026. For ID Full Semester and ID A Session courses, the start date is January 20, 2026. Note that Online B Session and ID B Session courses have later start dates, on March 9, 2026, and March 23, 2026, respectively.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Calendar",
+      "query": "When are Spring 2026 final exams?",
+      "domains": [
+        "CALENDAR"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "I am not sure about the exact dates of Spring 2026 final exams. However, the Spring Final Exam Schedule was published online on 2026-03-11.",
+      "gold_answer": "The Spring 2026 final exam schedule was published online on March 11, 2026. Final Exam Week for the Spring 2026 term is scheduled to take place from May 4, 2026, to May 9, 2026. During this period, final grading will also begin on May 4, 2026. The exact dates and times of individual final exams are not specified in the provided data, but the schedule was made available online on March 11, 2026, for reference.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Calendar",
+      "query": "When is Spring 2026 commencement?",
+      "domains": [
+        "CALENDAR"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "Spring 2026 commencement is on 2026-05-16.",
+      "gold_answer": "The Spring 2026 commencement at the Illinois Institute of Technology is scheduled to take place on May 16, 2026. This event is part of the Spring Degree Conferral and Commencement, which will occur on the same day. Prior to the commencement, students are required to submit their Spring Degree Conferral Applications by February 2, 2026. The specific details of the commencement ceremony, such as the time and location, are not provided in the available data.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Calendar",
+      "query": "When does Summer 1 2026 start?",
+      "domains": [
+        "CALENDAR"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "Summer 1 2026 starts on 2026-05-18.",
+      "gold_answer": "According to the university calendar, Summer 1 2026 is scheduled to start on May 18, 2026. This date marks the beginning of courses for the Summer 1 term. The specific end date for the event \"Courses Begin\u2014Summer 1\" is also May 18, 2026, indicating that this is the first day of classes. No additional information is provided regarding the duration or end date of the Summer 1 term beyond the start date.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Calendar",
+      "query": "When is the last day to withdraw from a Spring 2026 course?",
+      "domains": [
+        "CALENDAR",
+        "DOCUMENTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "The last day to withdraw from a Spring 2026 course is 2026-04-17 for ID Full Semester Courses, ID and Online B Session Courses, and Coursera Spring 2026 (Term B).",
+      "gold_answer": "The last day to withdraw from a Spring 2026 course at Illinois Institute of Technology varies depending on the course type. For full semester courses, the last day to withdraw is 2026-03-30. For ID full semester courses, the last day to withdraw is 2026-04-17, and for ID and online B session courses, it is also 2026-04-17. Additionally, for ID and online A session courses, the last day to withdraw is 2026-02-20.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Calendar",
+      "query": "When are Spring 2026 midterm grades due?",
+      "domains": [
+        "CALENDAR"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "Midterm grades are due on 2026-03-13.",
+      "gold_answer": "For the Spring 2026 term at the Illinois Institute of Technology, midterm grading begins on March 4, 2026. Midterm grades are due by March 13, 2026. This provides a window of approximately 9 days for grading to take place. The specific deadline for midterm grades to be submitted is March 13, 2026.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Calendar",
+      "query": "How long is the Spring 2026 final exam period?",
+      "domains": [
+        "CALENDAR"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "I am not sure about the length of the Spring 2026 final exam period. However, I can tell you that the Spring 2026 final exam period starts on May 4 and ends on May 9.",
+      "gold_answer": "The Spring 2026 final exam period is scheduled to take place from May 4, 2026, to May 9, 2026. This period is also referred to as Final Exam Week and marks the beginning of final grading. The final exam schedule was published online on March 11, 2026, allowing students to prepare in advance. The duration of the final exam period is 6 days.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Calendar",
+      "query": "How long is the Spring 2026 semester?",
+      "domains": [
+        "CALENDAR"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "The Spring 2026 semester starts on 2026-01-12 for Spring and Online A Session, and 2026-01-20 for ID Full Semester and ID A Session. \n\nThe Spring 2026 semester ends on 2026-05-02 for Spring and Online A Session, and 2026-05-09 for ID Full Semester and ID and Online B Session.",
+      "gold_answer": "The Spring 2026 semester at Illinois Institute of Technology begins on January 12, 2026, with courses starting for Spring and Online A Session. However, the end date of the Spring 2026 semester is not specified in the provided data. The semester includes various events and deadlines, such as the last day to add or drop courses, midterm grading, and final exam schedules, with key dates including January 20 for last day to add/drop for Full Semester and Online A Session Courses, and March 11 for final online A session courses grades due. The exact duration of the semester cannot be determined with the given information.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Calendar",
+      "query": "If I apply for graduation in Summer 2026 but want to walk in the Spring 2026 ceremony, when do I apply and which ceremony?",
+      "domains": [
+        "CALENDAR",
+        "TUITION"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "To walk in the Spring 2026 ceremony but graduate in Summer 2026, you need to apply for graduation in Spring 2026. \n\nThe application deadline for Spring 2026 graduation is 2026-02-02.",
+      "gold_answer": "To walk in the Spring 2026 ceremony, you would need to apply for graduation by February 2, 2026, which is the deadline for Spring Degree Conferral Applications. Although you plan to graduate in Summer 2026, you can still participate in the Spring 2026 commencement ceremony, which will take place on May 16, 2026. Note that if you miss the February 2 deadline, you will need to apply for the Summer 2026 degree conferral by June 5, 2026, but you will not be able to participate in the Spring ceremony. The Summer 2026 degree conferral will occur on August 15, 2026.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Calendar",
+      "query": "If I withdraw from a Spring course on April 10, is that before or after the withdrawal deadline?",
+      "domains": [],
+      "num_chunks": 0,
+      "generated_answer": "",
+      "gold_answer": "",
+      "p_at_k": null,
+      "r_at_k": null,
+      "hit_at_k": null,
+      "faithfulness": null,
+      "completeness": null,
+      "correctness": null,
+      "skipped": true,
+      "reason": "NO_CONTEXT"
+    },
+    {
+      "section": "Calendar",
+      "query": "If the add/drop deadline is January 20 and I register January 21, what happens?",
+      "domains": [
+        "CALENDAR",
+        "DOCUMENTS"
+      ],
+      "num_chunks": 8,
+      "generated_answer": "If you register on January 21, you will not be able to drop the course with no tuition charges. The add/drop deadline is January 20.",
+      "gold_answer": "If you register on January 21, you will be registering after the add/drop deadline for full semester and online A session courses, which was January 20. To register at this time, you will need to request late registration, but the last day to do so is January 27. You will not be able to add or drop courses without tuition charges after January 20 for full semester and online A session courses. Note that specific details about late registration procedures and potential late fees are not provided in the given data.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Calendar",
+      "query": "I have a friend visiting from out of town next week. Are there any days in April when IIT has no classes?",
+      "domains": [
+        "CALENDAR",
+        "DOCUMENTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "I am not sure about the specific days in April when IIT has no classes. However, I can suggest checking the university's academic calendar or contacting the registrar's office for the most up-to-date information.",
+      "gold_answer": "According to the Illinois Institute of Technology's Spring 2026 calendar, there are no specific days in April listed as having no classes. However, it is worth noting that the university had a Spring Break Week with no classes from March 16 to March 21, 2026. Since the provided data does not include any events in April with \"No Classes\" specified, it is unclear if there are any additional days off in April. Further information would be needed to determine if any other days in April have no classes scheduled.",
+      "p_at_k": 0.0,
+      "r_at_k": 0.0,
+      "hit_at_k": 0.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Calendar",
+      "query": "My lease ends in May. When exactly do spring semester classes finish?",
+      "domains": [
+        "CALENDAR"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "Spring semester classes for full semester and online B session courses end on May 9, 2026.",
+      "gold_answer": "The spring semester classes for 2026 are scheduled to finish on May 2, 2026. According to the calendar, this is the last day of spring courses. It's worth noting that there are different sessions and course types, but for the full semester, May 2nd marks the end of classes. This date should help you plan accordingly, given that your lease ends in May.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Calendar",
+      "query": "I have a wedding to attend in late November. Will I miss any class days?",
+      "domains": [
+        "CALENDAR",
+        "DOCUMENTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "Based on the provided context, there are no classes scheduled during the Thanksgiving Break from 2026-11-25 to 2026-11-28. Your wedding is scheduled for late November, and it appears that you will not miss any class days during this time.",
+      "gold_answer": "According to the Fall 2026 calendar, classes will be in session in late November. However, there is a break scheduled for Thanksgiving, from November 25, 2026, to November 28, 2026, during which no classes will be held. If your wedding falls within this time frame, you will miss class days. The last day to withdraw from full semester courses is November 2, 2026, but this does not directly impact your attendance for a wedding in late November.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Contact",
+      "query": "Where is the Registrar's office located?",
+      "domains": [
+        "CONTACTS",
+        "DOCUMENTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "The Registrar's office is located in the Michael Paul Galvin Tower, 10 West 35th Street, Suite 2C4-2.",
+      "gold_answer": "The Registrar's office is located in the Michael Paul Galvin Tower at 10 West 35th Street, specifically in Suite 2C4-2. You can contact the Registrar's office by phone at 312-567-3100 or by email at registrar@illinoistech.edu. For additional assistance, you can also reach out to Khalilah Guyton-Hamlin, a representative from the Registrar's department, at kguytonhamlin@illinoistech.edu. The office's fax number is 312-567-3313.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Contact",
+      "query": "What is the fax number for the Department of Physics?",
+      "domains": [
+        "CONTACTS"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "I am not sure.",
+      "gold_answer": "The fax number for the Department of Physics is not explicitly stated as a departmental fax number, but individual faculty members have listed fax numbers. For example, Daniel M. Kaplan, an Emeritus Professor of Physics, has a fax number of 312-567-3494, and Derrick C. Mancini, a Research Professor of Physics, also shares the same fax number, 312-567-3494. Additionally, David Gidalevitz, an Associate Professor of Physics, has a fax number of 312-567-8874, and Andrew J. Howard, an Associate Professor of Biology and Physics, has a fax number of 312-567-3576. However, it is unclear if any of these fax numbers serve as a general departmental fax number.",
+      "p_at_k": 0.0,
+      "r_at_k": 0.0,
+      "hit_at_k": 0.0,
+      "faithfulness": 0.0,
+      "completeness": 0.0,
+      "correctness": 0.0,
+      "skipped": false
+    },
+    {
+      "section": "Contact",
+      "query": "How do I contact the Pritzker Institute of Biomedical Science?",
+      "domains": [
+        "CONTACTS",
+        "DOCUMENTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "To contact the Pritzker Institute of Biomedical Science, you can use the following information:\n\n- Email: pritzker.institute@illinoistech.edu\n- Phone: 312-567-7984\n- Address: 10 W. 35th Street, 18th Floor, Room 18C3-2",
+      "gold_answer": "To contact the Pritzker Institute of Biomedical Science, you can reach out to the Executive Director, Philip R. Troyk, at 312-567-6902 or via email at troyk@illinoistech.edu. Alternatively, you can contact the institute directly at 312-567-7984 or email pritzker.institute@illinoistech.edu. The institute is located at 10 W. 35th Street, 18th Floor, Room 18C3-2, and also has an office in Wishnick Hall, Room 214-217, at 3255 S Dearborn St. You can also fax them at 312-567-5707.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Contact",
+      "query": "Who should I contact if my transcript request has an issue?",
+      "domains": [
+        "CONTACTS",
+        "DOCUMENTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "If your transcript request has an issue, you should contact Khalilah Guyton-Hamlin, the Registrar, at kguytonhamlin@illinoistech.edu.",
+      "gold_answer": "If you are experiencing an issue with your transcript request, you can contact the Office of the Registrar for assistance. They can be reached by phone at 312-567-3100 or by email at registrar@illinoistech.edu. Additionally, you can also contact Khalilah Guyton-Hamlin, a representative from the Registrar's department, directly at kguytonhamlin@illinoistech.edu. You can also visit their office in person at the Michael Paul Galvin Tower, 10 West 35th Street, Suite 2C4-2, or send a fax to 312-567-3313.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Contact",
+      "query": "Who should I contact about registration problems?",
+      "domains": [
+        "CONTACTS",
+        "DOCUMENTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "You should contact the Office of the Registrar at registrar@illinoistech.edu or 312-567-3100 for registration problems.",
+      "gold_answer": "For registration problems, you can contact Khalilah Guyton-Hamlin, the Registrar, at kguytonhamlin@illinoistech.edu. Alternatively, you can reach out to the Office of the Registrar directly by phone at 312-567-3100 or by email at registrar@illinoistech.edu. They are located in the Michael Paul Galvin Tower, 10 West 35th Street, Suite 2C4-2, and their fax number is 312-567-3313. You can contact them for assistance with registration-related issues.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Contact",
+      "query": "Who should I contact if I have a hold on my account?",
+      "domains": [
+        "DOCUMENTS",
+        "CONTACTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "If you have a hold on your account, you should contact Student Accounting at 312-567-3794.",
+      "gold_answer": "If you have a hold on your account, you should contact the Student Accounting department. You can reach them by phone at 312-567-3794 or by email at sa@illinoistech.edu. Additionally, you can also contact Dalvina A Lane, Assistant Director of Student Accounting, at 312-567-3952 or dlane2@illinoistech.edu, or Tamara Y Posley, Director of Student Accounting, at 312-567-3321 or posley@illinoistech.edu. They are located in the Michael Paul Galvin Tower, 10 West 35th Street, Suite 2C4-2, and TC 4A4-1, respectively.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Contact",
+      "query": "I want to contact someone at the Wanger Institute. What is their number?",
+      "domains": [
+        "CONTACTS"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "The phone number for the Wanger Institute for Sustainable Energy Research (WISER) is 312-567-6881.",
+      "gold_answer": "To contact the Wanger Institute, you can reach them by phone at 312-567-6881. Alternatively, you can also fax them at 312-567-3622 or email them at wiser@illinoistech.edu. The Wanger Institute is located at the Michael Paul Galvin Tower, 10 West 35th Street, 16th Floor. For more information or to verify their contact details, you can visit their office in person or check the university's website for the most up-to-date information.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Contact",
+      "query": "I want to take a semester off. What is the process?",
+      "domains": [
+        "DOCUMENTS"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "To take a semester off, you have two options: a Leave of Absence (LOA) or a Medical Leave of Absence (MLOA). \n\nFor a Leave of Absence (LOA), you can submit a request through the Illinois Tech portal (portal.iit.edu) by selecting the Academics tab, followed by the Undergraduate Academic Affairs channel for undergraduate students or the Graduate Academic Affairs channel for graduate students. The request must be submitted by the end of the 12th week of the semester to take effect that semester. \n\nFor a Medical Leave of Absence (MLOA), you must provide a letter from a health professional, physician, or therapist recommending such leave. You will be asked to sign a release so that the appropriate Illinois Tech representative may speak with the health professional regarding your condition. Requests for and approval of MLOA must be issued by the last day of classes in the semester. \n\nPlease note that any request submitted after the 12th week will take effect the following semester, and exceptions can be made due to extenuating circumstances.",
+      "gold_answer": "To take a semester off, you should contact the Office of Academic Affairs, which can be reached at 312-567-3300 or aa@illinoistech.edu. You may also want to reach out to specific departments or advisors, such as Justine Grant, Senior Director of Academic Affairs and Advising, at 312-906-6535 or jgrant2@illinoistech.edu. However, the exact process and required steps for taking a semester off are not specified in the provided data, so it's recommended to contact the Office of Academic Affairs or your advisor for more information. Additionally, you may want to consult with the Registrar, Khalilah Guyton-Hamlin, at kguytonhamlin@illinoistech.edu, for guidance on the process.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Contact",
+      "query": "If my advisor approval is missing during registration, who should I contact?",
+      "domains": [
+        "CONTACTS"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "You should contact Gail L Harder or Mia Eastlin, as they are both in the Enrollment Advisor department.",
+      "gold_answer": "If your advisor approval is missing during registration, you should contact the Office of Academic Affairs at 312-567-3300 or email aa@illinoistech.edu. You can also visit their office in the Michael Paul Galvin Tower, 10 West 35th Street, Suite 2C4-2. Additionally, you may want to reach out to your specific academic advisor, such as Cynthia Torres, Director of Academic Affairs, at 312-567-8835 or ctorres2@illinoistech.edu, for more personalized assistance.",
+      "p_at_k": 1.0,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Policy",
+      "query": "How many credits do graduate students need to be full-time?",
+      "domains": [
+        "TUITION",
+        "DOCUMENTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "For graduate students at Illinois Institute of Technology, the minimum registration required for full-time status for the fall or spring semester is 9 credit hours.",
+      "gold_answer": "According to the Illinois Tech student handbook, graduate students are considered full-time when registered for 9 academic hours. This information is found in the section on Unauthorized Keys or Keycards, which mentions the CTA UPass program and the definition of full-time academic hours for graduate and undergraduate students. Specifically, it states \"Grad students - 9 hours\" as the requirement for full-time status. No additional information is needed to answer this question, as the relevant details are provided in Chunk 9.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Policy",
+      "query": "How many credits do undergraduate students need to be full-time?",
+      "domains": [
+        "DOCUMENTS",
+        "TUITION"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "According to the policy, undergraduate students need to be enrolled in at least 12 credit hours to be considered full-time during the fall or spring semester.",
+      "gold_answer": "Undergraduate students at Illinois Institute of Technology need to be enrolled in at least 12 academic hours to be considered full-time. This information is found in the context of the CTA UPass program, which is administered by the Campus Business Services Center. The full-time status is also relevant to other university policies, such as the First and Second Year Residency Requirement. No additional details are provided regarding the benefits or implications of full-time status beyond these specific policies.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Policy",
+      "query": "What is the pass/fail policy at IIT?",
+      "domains": [
+        "DOCUMENTS"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "I am not sure about the pass/fail policy at IIT. The provided context does not mention a pass/fail policy.",
+      "gold_answer": "The pass/fail policy at IIT is noted in the registrar's grade legend, where \"P/F\" is defined as Pass/Fail, used for non-degree, continuing education courses, and training courses. This policy is specifically applied to courses that are not part of an academic degree program. The details of how pass/fail grades are assigned and changed are not fully outlined in the provided data, but it is mentioned that grade changes are initiated by the instructor of record or authorized academic officer. Further information on the pass/fail policy, such as the criteria for passing or failing, is not available in the given data.",
+      "p_at_k": 0.0,
+      "r_at_k": 0.0,
+      "hit_at_k": 0.0,
+      "faithfulness": 0.0,
+      "completeness": 0.0,
+      "correctness": 0.0,
+      "skipped": false
+    },
+    {
+      "section": "Policy",
+      "query": "I am a graduate student taking 8 credits this semester \u2014 am I full-time?",
+      "domains": [
+        "DOCUMENTS",
+        "TUITION"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "As a graduate student taking 8 credits this semester, you are not full-time according to the policy for graduate students, which requires a minimum of 9 credit hours for full-time status.",
+      "gold_answer": "As a graduate student taking 8 credits this semester, you are considered full-time if you meet the university's definition of full-time academic hours, which is 9 hours for graduate students. According to the student handbook, students registered for full-time academic hours are eligible for certain benefits and programs, such as the CTA UPass program. To confirm your full-time status, you can contact the Office of Academic Affairs at 312.567.3300 or aa@illinoistech.edu. Since you are taking 8 credits, which is less than the 9 hours required for full-time status, you are not considered full-time.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Policy",
+      "query": "What is the difference between withdrawing and dropping a course?",
+      "domains": [
+        "DOCUMENTS",
+        "CALENDAR"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "According to the provided context, the main differences between withdrawing and dropping a course are:\n\n1. Tuition and fees: Dropping a course means the student will not be charged any tuition and/or fees associated with the course, whereas withdrawing from a course means the student is responsible for any tuition and/or fees associated with the course.\n\n2. Grade: Dropping a course means the course is entirely removed from the student's transcript, whereas withdrawing from a course assigns a letter grade of 'W' to the withdrawn course and is visible on the transcript.\n\n3. Credits: Dropping a course means the removed credits do not count toward the student's maximum credit hours, whereas withdrawing from a course means withdrawn credits count toward the student's total maximum credit hours.\n\n4. Deadline: Dropping a course refers to having the course removed from the student's schedule before the add/drop deadline, whereas withdrawing from a course is taken after the add/drop deadline.",
+      "gold_answer": "The difference between withdrawing and dropping a course is that dropping a course during the first two weeks of the semester will not appear on a student's transcript and tuition will be refunded, whereas withdrawing from a course after the add/drop deadline will result in a \"W\" grade on the transcript. To drop a course, students must do so by the relevant semester's specified Add/Drop deadline, which can be found on the Academic Calendar. If a student fails to drop a course by the deadline, they will need to follow the withdrawal process, which is outlined in the student handbook. The exact deadlines and procedures for dropping or withdrawing from a course can be found on the Illinois Tech website or by contacting the Office of Academic Affairs at 312.567.3300.",
+      "p_at_k": 1.0,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Policy",
+      "query": "I failed a class and want to retake it. Will both grades show on my transcript?",
+      "domains": [
+        "DOCUMENTS",
+        "CALENDAR"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "According to the policy section \"Z. Repeating a Course\" in the student handbook, if you repeat a course for a grade exclusion, both grades will be recorded on all transcripts issued.",
+      "gold_answer": "When retaking a class, both the original and new grades will be shown on your transcript, but the specifics of this policy are not detailed in the provided data chunks. According to Chunk 9, if a course is dropped during the first two weeks of the semester, it will not appear on the transcript, but this does not apply to retaking a previously failed class. The provided chunks do not explicitly state the transcript policy for retaking classes, so it is recommended to consult the Illinois Institute of Technology's academic regulations or contact the Office of Academic Affairs for more information.",
+      "p_at_k": 0.0,
+      "r_at_k": 0.0,
+      "hit_at_k": 0.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Policy",
+      "query": "I'm graduating but haven't registered for any courses this semester. Is that a problem?",
+      "domains": [
+        "DOCUMENTS",
+        "CALENDAR"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "You are graduating but haven't registered for any courses this semester. According to the policy, students are required to be actively enrolled in the semester they intend to graduate. Since you haven't registered for any courses, it may result in the postponement of your graduation. I recommend checking with the Office of Academic Affairs for degree checkout planning to ensure you meet the necessary requirements.",
+      "gold_answer": "As a graduating student who hasn't registered for any courses this semester, you may want to contact the Office of Academic Affairs at 312.567.3300 or aa@illinoistech.edu to confirm your status and ensure a smooth graduation process. According to the student handbook, the Office of Academic Affairs provides academic support services from admission to graduation, including evaluation of transfer credits and student petitions. However, the provided data does not explicitly state the consequences of not registering for courses as a graduating student, so it's best to reach out to the Office of Academic Affairs for specific guidance. You can visit their website at iit.edu/academic-affairs for more information.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Policy",
+      "query": "How many courses can I take pass/fail as an undergraduate?",
+      "domains": [
+        "DOCUMENTS",
+        "TUITION"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "I am not sure how many courses you can take pass/fail as an undergraduate.",
+      "gold_answer": "The number of courses an undergraduate can take pass/fail is not specified in the provided data. However, according to the registrar_grade_legend document, the Pass/Fail (P/F) grade is used for non-degree, continuing education courses, and training courses. There is no information available on the pass/fail policy for undergraduate degree courses. Further information would be needed to provide a complete answer to this question.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Policy",
+      "query": "What is the max pass/fail courses I can take as an undergrad, and if I take a required major course pass/fail, will it count toward my degree?",
+      "domains": [
+        "DOCUMENTS"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "As an undergrad at Illinois Institute of Technology, you can take a maximum of 3 300- and 400-level courses pass/fail for your undergraduate degree program. \n\nIf you take a required major course pass/fail, it will not count toward your degree.",
+      "gold_answer": "The provided data does not specify the maximum number of pass/fail courses an undergraduate can take. Additionally, it is unclear if taking a required major course pass/fail will count toward the degree. The data only mentions that pass/fail grading is used for non-degree, continuing education courses, and training courses, but does not provide information on its application to undergraduate degree requirements. Further information from the university's policies or academic regulations is needed to answer this question accurately.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Policy",
+      "query": "As a coterminal student, am I considered undergraduate or graduate for full-time status purposes, and how does tuition work?",
+      "domains": [
+        "TUITION"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "As a coterminal student, you are considered a graduate student for full-time status purposes. \n\nFor tuition purposes, since you are a graduate student, you will be charged the graduate tuition rate. However, I am not sure what the specific tuition rate is for coterminal students.",
+      "gold_answer": "As a coterminal student, your full-time status is determined by the requirements of your graduate program, which is 9 credit hours per semester. For tuition purposes, coterminal students are considered graduate students, but specific tuition details are not provided in the available data. According to the student handbook, full-time graduate students are required to enroll in at least 9 credit hours, and undergraduate students are required to enroll in at least 12 credit hours. The exact tuition amount and any potential differences in tuition rates between undergraduate and graduate programs are not specified in the provided data.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Policy",
+      "query": "I'm a grad student who got a C in a required course \u2014 can I repeat it, will the old grade be replaced, and how does it affect my GPA?",
+      "domains": [
+        "DOCUMENTS"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "As a graduate student who received a C in a required course, you can repeat it. \n\nThe old grade will remain on your transcript, but the new grade will be used to calculate your GPA. \n\nYou can repeat up to three distinct courses with each course being repeated once.",
+      "gold_answer": "As a graduate student, the provided information does not fully address your question, but according to the undergraduate policies, students may repeat a course for a grade exclusion, and only the second grade will be used to compute the GPA. However, it is unclear if this policy applies to graduate students. The policy for undergraduate students can be found in the student handbook, and a request to repeat a course for a grade exclusion must be submitted through the online form (iit.edu/ugaa/services) during registration. To determine the specific policy for graduate students, it is recommended to consult the graduate student handbook or contact the Office of Graduate Academic Affairs.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Policy",
+      "query": "Can I work on a research project with a professor and keep the intellectual property?",
+      "domains": [
+        "DOCUMENTS"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "Based on the provided context, if you work on a research project with a professor and it is considered 'personal research', you will likely retain the intellectual property rights. However, if the research project is sponsored or funded by a third party, the ownership of and use rights associated with the work will be determined by the applicable terms and provisions of the sponsorship agreement, which may vest with Illinois Tech and/or the sponsoring entity. \n\nTo clarify, you should consider the following:\n\n- If the research project is for course credit or a degree requirement, you will retain the intellectual property rights.\n- If the research project is sponsored or funded by a third party, the ownership and use rights will be determined by the sponsorship agreement.\n- If the research project is a collaborative effort, the rights of each participant will be determined by applicable patent, copyright, or other intellectual property rights statutes and the facts and circumstances of the particular collaborative effort.\n\nIt is recommended that you discuss the intellectual property rights with your professor and/or the sponsoring entity to understand the specific terms and conditions of the research project.",
+      "gold_answer": "According to the Illinois Tech student handbook, work done by students for course credit or degree requirement, including IPROs and theses, belongs to the students, not the university. This means that if you work on a research project with a professor as part of a course or degree requirement, you will retain the intellectual property rights. However, the specific rights of each student will be determined by applicable intellectual property statutes and the circumstances of the project. For work done outside of course credit, if it qualifies as 'personal research' as defined in Appendix K of the Illinois Tech Faculty Handbook, the work belongs to the student and any other creators, including faculty members.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Registration",
+      "query": "How do I request a late registration?",
+      "domains": [
+        "CONTACTS",
+        "CALENDAR",
+        "DOCUMENTS"
+      ],
+      "num_chunks": 15,
+      "generated_answer": "To request a late registration, you should contact the Office of the Registrar at registrar@illinoistech.edu or call 312-567-3100. You can also reach out to Maureen Tully, the Enrollment Records Manager, at tully@illinoistech.edu or 312-567-5208. \n\nPlease note that you must submit your request before the last day to request late registration, which varies by term:\n\n- Fall 2026: 2026-09-01\n- Spring 2026: 2026-01-27\n- Summer Session 1 2026: 2026-05-29\n- Summer Session 2 2026: 2026-06-26",
+      "gold_answer": "To request a late registration, you should contact the Office of the Registrar, which can be reached by phone at 312-567-3100, email at registrar@illinoistech.edu, or in person at the Michael Paul Galvin Tower, 10 West 35th Street, Suite 2C4-2. The last day to request late registration varies by term, with specific dates including January 27, 2026, for Spring 2026, May 29, 2026, for Summer Session 1, June 26, 2026, for Summer Session 2, and September 1, 2026, for Fall 2026. You can also email Khalilah Guyton-Hamlin, Registrar, at kguytonhamlin@illinoistech.edu for assistance. Additionally, you can check the university's calendar for the most up-to-date information on registration deadlines.",
+      "p_at_k": 1.0,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Registration",
+      "query": "How do I add a course during the add/drop period?",
+      "domains": [
+        "CALENDAR",
+        "DOCUMENTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "To add a course during the add/drop period, you can follow these steps:\n\n1. Check the Academic Calendar for the exact deadlines for the term you are in.\n2. Make sure you are within the add/drop period for your term.\n3. Use the same procedure as initial registration to add the course to your schedule.\n4. The changes made during this period will not be displayed on an official transcript, but will affect the total number of credit hours enrolled.\n\nPlease note that courses cannot be added after the last day to add or drop, and any courses removed from a schedule after this date are considered to be withdrawn.",
+      "gold_answer": "To add a course during the add/drop period, students must make changes to their schedule no later than the relevant semester's specified Add/Drop deadline, which can be found on the Academic Calendar. For the Spring 2026 semester, the last day to add/drop for full semester and online A session courses with no tuition charges is January 20, 2026, and for online B session courses, it is March 17, 2026. Students can consult the Academic Calendar for exact deadlines and should contact the Office of Academic Affairs at 312.567.3300 or aa@illinoistech.edu for further assistance. It is essential to note that a course dropped during the first two weeks of the semester will not appear on a student's transcript, and tuition will be refunded.",
+      "p_at_k": 1.0,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Registration",
+      "query": "When does registration open for Fall 2026?",
+      "domains": [
+        "CALENDAR"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "Registration for Fall 2026 opens on 2026-04-06 during the Spring 2026 term.",
+      "gold_answer": "The provided data does not specify the exact date when registration opens for Fall 2026. However, it does mention that the last day to request late registration for Fall 2026 is September 1, 2026, which implies that registration would have started before this date. For more information on registration, students can contact the Office of the Registrar at 312-567-3100 or email registrar@illinoistech.edu. Unfortunately, the exact registration start date is not available in the given data.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.0,
+      "completeness": 0.0,
+      "correctness": 0.0,
+      "skipped": false
+    },
+    {
+      "section": "Registration",
+      "query": "Who do I contact if I have a registration issue?",
+      "domains": [
+        "CONTACTS",
+        "DOCUMENTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "If you have a registration issue, you should contact the Office of The Registrar at registrar@illinoistech.edu or call 312-567-3100.",
+      "gold_answer": "If you have a registration issue, you can contact the Office of the Registrar at 312-567-3100 or email them at registrar@illinoistech.edu. Alternatively, you can reach out to Khalilah Guyton-Hamlin, the Registrar, at kguytonhamlin@illinoistech.edu. The Office of the Registrar is located in the Michael Paul Galvin Tower, 10 West 35th Street, Suite 2C4-2, and their fax number is 312-567-3313. For specific registration deadlines, you can refer to the university's calendar, which includes dates such as the Last Day to Request Late Registration for each term.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Registration",
+      "query": "What happens if I try to register after the add/drop deadline?",
+      "domains": [
+        "CALENDAR",
+        "DOCUMENTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "If you try to register after the add/drop deadline, you will not be able to add any courses to your schedule. Any courses that you remove from your schedule after this date will be considered withdrawn, and the course will appear on your official transcript with a grade of 'W', indicating that you withdrew from the course. This grade does not affect your grade-point average.",
+      "gold_answer": "If you try to register after the add/drop deadline, you will need to request late registration. For the Spring 2026 term, the last day to request late registration is January 27, 2026. You can contact the Office of the Registrar at 312-567-3100 or email registrar@illinoistech.edu for more information on the late registration process. Additionally, you can also reach out to Khalilah Guyton-Hamlin, Registrar, at kguytonhamlin@illinoistech.edu for further assistance.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.4,
+      "completeness": 0.4,
+      "correctness": 0.0,
+      "skipped": false
+    },
+    {
+      "section": "Registration",
+      "query": "I have a hold on my account and registration opens tomorrow \u2014 what types of holds exist and how do I find out what mine is?",
+      "domains": [
+        "DOCUMENTS",
+        "CONTACTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "There are four types of holds mentioned in the context:\n\n1. Student Accounting Hold: This hold is related to unpaid balances and can be resolved by contacting Student Accounting at 312.567.3794.\n2. Document Hold: This hold is related to missing documents and can be resolved by contacting Graduate Admission at 312.567.3020.\n3. Academic Affairs Hold: This hold is related to academic issues and can be resolved by contacting Undergraduate Academic Affairs at 312.567.3300 or Graduate Academic Affairs at 312.567.3024.\n4. Third Party Sponsor Hold: This hold is related to sponsorship issues and can be resolved by contacting Student Accounting at 312.567.3794.\n\nTo find out what type of hold you have, you can:\n\n1. Check your student account online.\n2. Contact the Office of the Registrar at 312-567-3100.\n3. Email Khalilah Guyton-Hamlin at kguytonhamlin@illinoistech.edu.\n4. Visit the Office of the Registrar in person at Michael Paul Galvin Tower, 10 West 35th Street, Suite 2C4-2.",
+      "gold_answer": "To find out what type of hold is on your account, you can contact the Office of the Registrar at 312-567-3100 or email registrar@illinoistech.edu. The Registrar's office can provide information on the different types of holds that may be placed on a student's account, such as academic, financial, or administrative holds. You can also visit the Office of the Registrar in person at Michael Paul Galvin Tower, 10 West 35th Street, Suite 2C4-2, to inquire about your hold. Additionally, you can contact Student Accounting at 312-567-3794 or email sa@illinoistech.edu for assistance with financial holds.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Registration",
+      "query": "If registration opens tomorrow but I have a financial hold, can I still register?",
+      "domains": [
+        "DOCUMENTS",
+        "CALENDAR",
+        "CONTACTS"
+      ],
+      "num_chunks": 15,
+      "generated_answer": "You have a financial hold, which means you cannot register for classes until the hold is resolved. According to the policy, students with unpaid balances or other conditions that warrant a registration hold are prevented from enrolling in classes until the condition is resolved and the hold is removed. You should contact the Student Accounting office at 312.567.3794 to resolve the hold before you can register for classes.",
+      "gold_answer": "If registration opens tomorrow but you have a financial hold, you may not be able to register. To resolve this issue, you can contact the Student Accounting department at 312-567-3794 or email them at sa@illinoistech.edu. You can also reach out to Dalvina A Lane, Asst Dir Student Accounting, at 312-567-3952 or dlane2@illinoistech.edu for assistance with your financial hold. However, the provided data does not explicitly state the registration process for students with financial holds, so it is recommended to contact the Office of the Registrar at 312-567-3100 or registrar@illinoistech.edu for more information.",
+      "p_at_k": 0.0,
+      "r_at_k": 0.0,
+      "hit_at_k": 0.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Registration",
+      "query": "If I miss the add/drop deadline, can I still add a class?",
+      "domains": [
+        "CALENDAR",
+        "DOCUMENTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "If you miss the add/drop deadline, you can still make changes to your schedule, but it will be considered a withdrawal. According to the policy, courses cannot be added after the last day to add or drop. Any courses that are removed from a schedule after this date are considered to be withdrawn, and the course will appear on official transcripts with a grade of 'W'.",
+      "gold_answer": "If you miss the add/drop deadline, you cannot add a class without incurring potential tuition charges or other penalties. The add/drop deadlines vary by semester and course session, but for example, the last day to add/drop for full semester courses in Spring 2026 is January 20, 2026, and for Online B Session Courses is March 17, 2026. To determine the specific add/drop deadline for your course, please consult the Academic Calendar. It is recommended to contact the Office of Academic Affairs at 312.567.3300 or aa@illinoistech.edu for further guidance on adding a class after the deadline.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.6,
+      "completeness": 0.4,
+      "correctness": 0.4,
+      "skipped": false
+    },
+    {
+      "section": "Transcripts",
+      "query": "How do I get an official transcript from IIT?",
+      "domains": [
+        "DOCUMENTS"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "To get an official transcript from IIT, follow these steps:\n\n1. Click on the \"Order Official Transcript\" Tool.\n2. After placing your order, you will be contacted when your transcript request has been processed.\n3. If you do not have access to the internet, you may contact our service provider, Parchment, at 847.716.3005 for assistance with placing an order.\n4. Payment for orders must be received before a transcript request will be processed. The fees are:\n   - $10 for each electronic/PDF transcript\n   - $12 for each printed transcript sent via the United States Postal Service first-class mail (regular mail)\n   - Federal Express (FedEx) delivery service is available for an additional fee\n\nNote: If a hold has been placed on a student's transcript for reasons other than a debt owed, the student must contact the appropriate department to resolve the hold.",
+      "gold_answer": "To obtain an official transcript from Illinois Institute of Technology (IIT), you should contact the Office of the Registrar. You can reach them by phone at 312-567-3100, by fax at 312-567-3313, or by email at registrar@illinoistech.edu. The Office of the Registrar is located in the Michael Paul Galvin Tower, 10 West 35th Street, Suite 2C4-2. Additionally, you can also email Khalilah Guyton-Hamlin, the Registrar, at kguytonhamlin@illinoistech.edu for assistance with transcript requests.",
+      "p_at_k": 1.0,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.6,
+      "completeness": 0.4,
+      "correctness": 0.8,
+      "skipped": false
+    },
+    {
+      "section": "Transcripts",
+      "query": "Can I order an official transcript online?",
+      "domains": [
+        "DOCUMENTS"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "Yes, you can order an official transcript online. Illinois Tech has partnered with Parchment to take online requests for transcript orders.",
+      "gold_answer": "To order an official transcript online, you can contact the Office of the Registrar, which can be reached at 312-567-3100 or by email at registrar@illinoistech.edu. You can also reach out to Khalilah Guyton-Hamlin, the Registrar, at kguytonhamlin@illinoistech.edu for assistance. However, the provided data does not include a direct link or specific instructions for ordering a transcript online. For more information, you can visit the Office of the Registrar in person at Michael Paul Galvin Tower, 10 West 35th Street, Suite 2C4-2.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Transcripts",
+      "query": "Is there a fee for ordering an official transcript?",
+      "domains": [
+        "DOCUMENTS"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "Yes, there is a fee for ordering an official transcript. The fee is $10 for each electronic/PDF transcript and $12 for each printed transcript sent via the United States Postal Service first-class mail (regular mail).",
+      "gold_answer": "The provided data chunks do not explicitly mention a fee for ordering an official transcript. However, it is recommended to contact the Office of the Registrar for more information, as they can be reached at 312-567-3100 or via email at registrar@illinoistech.edu. Additionally, Khalilah Guyton-Hamlin, the Registrar, can also be contacted at kguytonhamlin@illinoistech.edu for further assistance. The exact cost and process for obtaining an official transcript are not specified in the given data chunks.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Transcripts",
+      "query": "How long does it take to process a transcript request?",
+      "domains": [
+        "DOCUMENTS",
+        "CONTACTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "I am not sure. The provided context does not mention the processing time for a transcript request.",
+      "gold_answer": "The provided data chunks do not specify the exact time it takes to process a transcript request. However, it is mentioned that students who are delinquent in payment or have a record of indebtedness with Illinois Tech will not be given a copy of their transcript until the indebtedness is fully paid. For questions or concerns about transcript requests, students can contact the Office of the Registrar at 312-567-3100 or email registrar@illinoistech.edu. Additionally, students can also reach out to Khalilah Guyton-Hamlin, the Registrar, at kguytonhamlin@illinoistech.edu for further assistance.",
+      "p_at_k": 0.0,
+      "r_at_k": 0.0,
+      "hit_at_k": 0.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Transcripts",
+      "query": "Can alumni request transcripts through the same system?",
+      "domains": [
+        "DOCUMENTS",
+        "CONTACTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "Alumni can request transcripts through the same system as students, specifically through the Parchment online request system.",
+      "gold_answer": "The provided data does not explicitly state whether alumni can request transcripts through the same system. However, it is mentioned that students who are delinquent in payment or have a record of indebtedness with Illinois Tech will not be given a copy of their transcript until the debt is paid (Chunk 6). For transcript-related inquiries, alumni can contact the Office of the Registrar at 312-567-3100 or email registrar@illinoistech.edu. Additionally, Khalilah Guyton-Hamlin, the Registrar, can be reached at kguytonhamlin@illinoistech.edu for further assistance.",
+      "p_at_k": 0.0,
+      "r_at_k": 0.0,
+      "hit_at_k": 0.0,
+      "faithfulness": 0.0,
+      "completeness": 0.0,
+      "correctness": 0.0,
+      "skipped": false
+    },
+    {
+      "section": "Transcripts",
+      "query": "Can transcripts be sent electronically?",
+      "domains": [
+        "DOCUMENTS",
+        "CONTACTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "Yes, transcripts can be sent electronically. According to the policy, all transcripts from 1980 to the present can be delivered in an electronic/PDF format. PDF transcripts viewed electronically are recognized as official documents.",
+      "gold_answer": "The provided data chunks do not explicitly state whether transcripts can be sent electronically. However, it can be noted that the Office of the Registrar, which handles transcript requests, has an email address (registrar@illinoistech.edu) and may potentially accept electronic requests or send transcripts electronically. For more information, students can contact the Office of the Registrar at 312-567-3100 or email registrar@illinoistech.edu. The Registrar's office is located in Michael Paul Galvin Tower, 10 West 35th Street, Suite 2C4-2.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Transcripts",
+      "query": "If I graduated last year and need a transcript for a job application, how do I request it?",
+      "domains": [
+        "DOCUMENTS"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "To request a transcript for a job application, follow these steps:\n\n1. Click on the \"Order Official Transcript\" Tool.\n2. Place your order and pay the required fee ($10 for electronic/PDF transcript or $12 for printed transcript sent via the United States Postal Service first-class mail).\n3. If you do not have access to the internet, contact Parchment at 847.716.3005 for assistance with placing an order.\n4. Payment for orders must be received before a transcript request will be processed.\n5. If you have a financial hold on your account, you may be eligible for an exemption to have your transcript released for a job application. Contact Student Accounting for more information.",
+      "gold_answer": "To request a transcript, you can contact the Office of the Registrar at 312-567-3100 or email them at registrar@illinoistech.edu. You can also reach out to Khalilah Guyton-Hamlin, the Registrar, at kguytonhamlin@illinoistech.edu for assistance. The Office of the Registrar is located in the Michael Paul Galvin Tower, 10 West 35th Street, Suite 2C4-2, and their fax number is 312-567-3313. Please note that if you have any outstanding financial obligations to Illinois Tech, you may not be able to obtain a transcript until those debts are paid.",
+      "p_at_k": 1.0,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Transcripts",
+      "query": "If my transcript needs to be sent to multiple schools, how do I request that?",
+      "domains": [
+        "DOCUMENTS"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "To request that your transcript be sent to multiple schools, you can follow these steps:\n\n1. Click on the \"Order Official Transcript\" Tool.\n2. Place your order, and you will be contacted when your transcript request has been processed.\n3. You can also contact Parchment at 847.716.3005 for assistance with placing an order if you do not have access to the internet.\n\nNote that payment for orders must be received before a transcript request will be processed. You can pay for each electronic/PDF transcript ($10) or each printed transcript sent via the United States Postal Service first-class mail (regular mail) ($12), and Federal Express (FedEx) delivery service is available for an additional fee.",
+      "gold_answer": "To request that your transcript be sent to multiple schools, you should contact the Office of the Registrar at Illinois Institute of Technology. You can reach them by phone at 312-567-3100, by fax at 312-567-3313, or by email at registrar@illinoistech.edu. Additionally, you can also email Khalilah Guyton-Hamlin, the Registrar, at kguytonhamlin@illinoistech.edu for assistance with your transcript request. The Office of the Registrar is located in the Michael Paul Galvin Tower, 10 West 35th Street, Suite 2C4-2, and they will be able to provide you with further guidance on the transcript request process.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Transcripts",
+      "query": "If I need a transcript urgently, is there an expedited option?",
+      "domains": [
+        "DOCUMENTS"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "No, there is no expedited option mentioned in the provided context for ordering a transcript urgently.",
+      "gold_answer": "To determine if there is an expedited option for obtaining a transcript urgently, you should contact the Office of the Registrar. You can reach them by phone at 312-567-3100, by fax at 312-567-3313, or by email at registrar@illinoistech.edu. The Registrar's office, located in Michael Paul Galvin Tower, 10 West 35th Street, Suite 2C4-2, can provide information on expedited transcript options and any associated fees. Unfortunately, the provided data does not specify the details of the expedited option, such as the cost or processing time.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Tuition",
+      "query": "What is the tuition per credit hour for graduate students on the Mies campus?",
+      "domains": [
+        "TUITION"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "The tuition per credit hour for graduate students on the Mies campus is $1,851.",
+      "gold_answer": "The tuition per credit hour for graduate students on the Mies campus varies by semester. For Summer 2025, the tuition rate is $1,780 per credit hour. However, for Fall 2025 and Spring 2026, the tuition rate is $1,851 per credit hour, and the same rate applies to Summer 2026. Note that these rates do not include additional fees, such as the activity fee and student service fee, which are also applicable to graduate students on the Mies campus.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Tuition",
+      "query": "What is the tuition per credit hour for undergraduate students?",
+      "domains": [
+        "TUITION"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "The tuition per credit hour for undergraduate students is $1,977.",
+      "gold_answer": "The tuition per credit hour for undergraduate students at the Institute of Design is $1,888 per credit for part-time students (fewer than 9 credits). However, the provided data does not specify the tuition per credit hour for full-time undergraduate students, as the rates listed are per term for 9-18 credits. The tuition rates are for the 2024-2025 academic year, specifically for admitted Fall 2024 MDES students. Unfortunately, the data does not provide a general tuition per credit hour for all undergraduate students at Illinois Institute of Technology.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Tuition",
+      "query": "Where can I find current tuition rates?",
+      "domains": [
+        "TUITION",
+        "CONTACTS"
+      ],
+      "num_chunks": 8,
+      "generated_answer": "You can find current tuition rates on the Illinois Institute of Technology website under the Chicago-Kent graduate tuition rates for the 2024-2025 academic year.",
+      "gold_answer": "For current tuition rates, you can refer to the specific programs and their corresponding rates. For example, the Chicago-Kent graduate program tuition rates for 2024-25 are $22,000 per semester for full-time students and $1,835 per credit hour for part-time and non-matriculants. The Institute of Design tuition rates for 2024-2025 vary by program, such as $25,488 per term for full-time MDES students and $1,888 per credit for part-time students. However, the provided data does not include tuition rates for the 2025-2026 academic year or other programs, and it is recommended to check the university's website or contact the relevant department for the most up-to-date information.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Tuition",
+      "query": "What happens to my tuition if I drop a class after the add/drop deadline?",
+      "domains": [
+        "CALENDAR",
+        "DOCUMENTS",
+        "TUITION"
+      ],
+      "num_chunks": 13,
+      "generated_answer": "If you drop a class after the add/drop deadline, you will not receive a tuition refund. However, you will not be charged tuition for the dropped course.",
+      "gold_answer": "If you drop a class after the add/drop deadline, the tuition will not be refunded. According to the student handbook, a course dropped during the first two weeks of the semester will not appear on a student's transcript and tuition will be refunded, but this refund policy does not apply after the add/drop deadline. The exact deadlines can be found on the Academic Calendar, but the specific refund or tuition adjustment policy for dropping a class after the deadline is not specified in the provided data. Students should consult the Academic Calendar or contact the Office of Academic Affairs at 312.567.3300 for more information.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Tuition",
+      "query": "Do I get a refund if I drop a course before the add/drop deadline?",
+      "domains": [
+        "DOCUMENTS",
+        "CALENDAR"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "According to the policy section \"O. Dropping or Adding Courses\" in the student handbook, if you drop a course during the first two weeks of the semester, the course will not appear on your transcript and tuition will be refunded.",
+      "gold_answer": "The provided data chunks do not explicitly state the refund policy for dropping a course before the add/drop deadline. However, students can contact the Office of Academic Affairs at 312.567.3300 or aa@illinoistech.edu for information on academic policies, including course drop and refund procedures. Additionally, the Student Accounting Office at 312.567.3794 or sa@illinoistech.edu may be able to provide information on tuition and fees related to course drops. Further information on refund policies is not available in the provided data chunks.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.6,
+      "completeness": 0.4,
+      "correctness": 0.0,
+      "skipped": false
+    },
+    {
+      "section": "Tuition",
+      "query": "How is tuition calculated for part-time students?",
+      "domains": [
+        "TUITION"
+      ],
+      "num_chunks": 3,
+      "generated_answer": "For part-time students at the Chicago-Kent graduate program for the 2024-2025 academic year, tuition is calculated at $1,835 per credit hour.",
+      "gold_answer": "For part-time students at Chicago-Kent, tuition is calculated at $1,835 per credit hour for the 2024-2025 academic year. At the Institute of Design, part-time tuition rates for the 2024-2025 academic year vary depending on the program, but are generally $1,888 per credit for programs such as MDES, MDES + Foundation, and MDES + English Sequences. The tuition calculation is based on the number of credit hours taken, with part-time students typically taking fewer than 9 credits per term. Specific tuition rates may vary depending on the program and academic year.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Tuition",
+      "query": "If I drop from 12 credits to 9 credits mid-semester, how does that affect my tuition?",
+      "domains": [
+        "TUITION"
+      ],
+      "num_chunks": 3,
+      "generated_answer": "Based on the provided context, it appears that you are a graduate student at Chicago-Kent. \n\nIf you drop from 12 credits to 9 credits mid-semester, you will be considered a part-time student. The tuition rate for part-time students is $1,835 per credit hour. \n\nTo calculate the new tuition, you can multiply the number of credits by the per-credit rate. \n\n12 credits * $1,835 per credit = $22,020 (initial tuition)\n9 credits * $1,835 per credit = $16,505 (new tuition)\n\nYou will be charged $16,505 for the remaining credits.",
+      "gold_answer": "If you drop from 12 credits to 9 credits mid-semester as a graduate student at Chicago-Kent, your tuition will change from the full-time rate of $22,000 per semester to the part-time rate of $1,835 per credit hour. For 9 credits, your new tuition would be $1,835 * 9 = $16,515 per semester. However, the provided data does not specify if there are any additional fees or penalties associated with dropping credits mid-semester. It is recommended to contact the Office of Academic Affairs at 312.567.3300 or aa@illinoistech.edu for more information on the specific policies and procedures.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Tuition",
+      "query": "If I withdraw from all classes after the fourth week, do I receive a tuition refund?",
+      "domains": [
+        "DOCUMENTS",
+        "TUITION",
+        "CALENDAR"
+      ],
+      "num_chunks": 13,
+      "generated_answer": "Based on the provided context, I am not sure if you receive a tuition refund if you withdraw from all classes after the fourth week. However, according to the policy, a course dropped during the first two weeks of the semester will not appear on a student's transcript and tuition will be refunded.",
+      "gold_answer": "If you withdraw from all classes after the fourth week, the provided data does not specify the exact tuition refund policy. However, according to the student handbook, a course dropped during the first two weeks of the semester will not appear on a student's transcript and tuition will be refunded. Unfortunately, the data does not provide information on refunds for withdrawals after the fourth week, and it is recommended to consult the Academic Calendar or contact the Student Accounting Office (312.567.3794 / sa@illinoistech.edu) for more information on the refund policy.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Tuition",
+      "query": "If I drop a course but remain full-time, does my tuition change?",
+      "domains": [
+        "DOCUMENTS",
+        "TUITION"
+      ],
+      "num_chunks": 8,
+      "generated_answer": "If you drop a course but remain full-time, your tuition will not change.",
+      "gold_answer": "If you drop a course but remain full-time, your tuition will not change as long as you are still enrolled in the required number of credits to be considered full-time. For Chicago-Kent graduate students, full-time is defined as enrollment in a certain number of credits, but the specific number is not provided in the given data. However, for Institute of Design students, full-time is defined as 9-18 credits per term. The tuition rates for full-time students at Chicago-Kent and Institute of Design are $22,000 per semester and $25,488 per term, respectively, for the 2024-2025 academic year.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Tuition",
+      "query": "I'm starting the MDes program. What will I pay per semester?",
+      "domains": [
+        "TUITION"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "For the MDes program, the tuition per semester for the 2024-2025 academic year is $25,488.",
+      "gold_answer": "As a student in the MDes program, your tuition rate for the 2024-2025 academic year will depend on your enrollment status. If you are enrolled full-time (9-18 credits), your tuition will be $25,488 per term. If you are enrolled part-time (fewer than 9 credits), your tuition will be $1,888 per credit. Please note that these rates are specific to the MDes program without any additional degree or certificate programs.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Tuition",
+      "query": "Are there any fees specific to Chicago-Kent students beyond tuition?",
+      "domains": [
+        "TUITION",
+        "CONTACTS"
+      ],
+      "num_chunks": 8,
+      "generated_answer": "I am not sure if there are any fees specific to Chicago-Kent students beyond tuition. The provided information only includes tuition rates for the 2024-2025 academic year.",
+      "gold_answer": "The provided data does not specify any fees beyond tuition that are specific to Chicago-Kent students. The available information only includes tuition rates for Chicago-Kent graduate students, which are $22,000 per semester for full-time students, $1,835 per credit hour for part-time and non-matriculants, and $11,000 per semester for the Certificate in International Law and Practice. There is no mention of additional fees in the provided chunks. Further information would be needed to determine if any other fees apply to Chicago-Kent students.",
+      "p_at_k": 0.0,
+      "r_at_k": 0.0,
+      "hit_at_k": 0.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Financial Aid",
+      "query": "Do undergraduate students need to be full-time to receive financial aid?",
+      "domains": [
+        "DOCUMENTS",
+        "TUITION",
+        "CONTACTS"
+      ],
+      "num_chunks": 15,
+      "generated_answer": "No, undergraduate students do not necessarily need to be full-time to receive financial aid. However, co-terminal students are considered full-time undergraduate students and are eligible for financial aid as such.",
+      "gold_answer": "Undergraduate students at Illinois Institute of Technology are required to be full-time to receive certain benefits, such as living in campus residence halls, but the provided data does not explicitly state that full-time enrollment is a requirement for receiving financial aid. However, it is mentioned that students who are registered for full-time academic hours (12 hours for undergraduates) are eligible for the CTA UPass program. The Office of Financial Aid can be contacted at 312.567.7219 or finaid@illinoistech.edu for more information on financial aid requirements. Unfortunately, the provided data does not fully answer the question, and more information is needed to determine if full-time enrollment is a requirement for receiving financial aid.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Financial Aid",
+      "query": "Where can I find financial aid policies?",
+      "domains": [
+        "CONTACTS",
+        "DOCUMENTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "You can find financial aid policies on the Illinois Institute of Technology's website at http://web.iit.edu/financial-aid/policies-procedures.",
+      "gold_answer": "To find financial aid policies, you can visit the Office of Financial Aid's website at web.iit.edu/financial-aid or contact them directly at 312.567.7219 or 886.901.1866, or email finaid@illinoistech.edu. The student handbook, available as a document titled student handbook.pdf, also provides information on financial aid policies, including the Statement of Financial Responsibility and Continued Eligibility for Financial Assistance. Additionally, students can review the university's tuition rates and fees, such as the $22,000 per semester full-time tuition rate for Chicago-Kent graduate students, to understand their financial obligations.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Financial Aid",
+      "query": "What happens to my financial aid if I drop below full-time status?",
+      "domains": [
+        "DOCUMENTS",
+        "CONTACTS",
+        "TUITION"
+      ],
+      "num_chunks": 15,
+      "generated_answer": "If you drop below full-time status, your financial aid may be affected. According to the policy, students who drop below full-time status must notify the Office of Financial Aid if they are receiving financial aid. This could potentially impact your eligibility for financial aid.",
+      "gold_answer": "If you drop below full-time status, your financial aid may be affected. According to the provided data, full-time status is defined as 12 hours for undergraduate students and 9 hours for graduate students. You can contact the Office of Financial Aid at 312.567.7219 or 886.901.1866, or email finaid@illinoistech.edu, to discuss how dropping below full-time status may impact your financial aid. However, the exact impact on financial aid is not specified in the provided data, and it is recommended to consult with the Office of Financial Aid for personalized guidance.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Financial Aid",
+      "query": "Does withdrawing from a course affect financial aid eligibility?",
+      "domains": [
+        "DOCUMENTS",
+        "CONTACTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "Withdrawing from a course may affect financial aid eligibility. Students receiving federal and/or state financial assistance should contact the Office of Financial Aid to address any possible financial implications, including those related to Title IV funding.",
+      "gold_answer": "Withdrawing from a course may affect financial aid eligibility, but the provided data does not fully explain the impact of withdrawal on financial aid. According to the Office of Financial Aid, which can be contacted at 312.567.7219 or 886.901.1866, or via email at finaid@illinoistech.edu, the office provides financial assistance for students and families. However, the specific effects of course withdrawal on financial aid are not detailed in the given documents. Students should contact the Office of Financial Aid for more information on how withdrawing from a course may affect their financial aid eligibility.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Financial Aid",
+      "query": "Can dropping a course require repayment of financial aid?",
+      "domains": [
+        "DOCUMENTS",
+        "CALENDAR",
+        "CONTACTS"
+      ],
+      "num_chunks": 15,
+      "generated_answer": "Dropping a course before the drop deadline (which varies by term) will not require repayment of financial aid. However, withdrawing from a course after the drop deadline may result in repayment of financial aid, as per the policy \"Withdrawing from vs. Dropping a Course\" in the Illinois Institute of Technology's handbook.",
+      "gold_answer": "Dropping a course may require repayment of financial aid, but the provided data does not fully answer this question. According to the Statement of Financial Responsibility (Chunk 9 and 10), students are financially responsible for all education-related charges and fees, regardless of their expected reliance on third-party resources such as financial aid. However, the data does not specify the conditions under which dropping a course would require repayment of financial aid. For more information, students can contact the Office of Financial Aid at 312.567.7219 or finaid@illinoistech.edu.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Financial Aid",
+      "query": "I receive financial aid and I'm thinking of dropping below full-time status mid-semester \u2014 what happens to my aid and is there any tuition refund?",
+      "domains": [
+        "TUITION",
+        "DOCUMENTS",
+        "CONTACTS"
+      ],
+      "num_chunks": 13,
+      "generated_answer": "If you receive financial aid and drop below full-time status mid-semester, your aid will be affected. According to the Packaging and Processing policy, your financial aid package will be reviewed every semester for the duration of your enrollment in the co-terminal program. This review will begin after the late add/drop period for the term has passed.\n\nAs for tuition refund, according to the O. Dropping or Adding Courses policy, if you drop a course during the first two weeks of the semester, it will not appear on your transcript and tuition will be refunded. However, if you drop below full-time status mid-semester, you may not be eligible for a full refund. \n\nTo determine the specific refund amount, you should contact the Office of Financial Aid at 312-567-7219 or finaid@illinoistech.edu.",
+      "gold_answer": "If you receive financial aid and drop below full-time status mid-semester, you should contact the Office of Financial Aid at 312.567.7219 or 886.901.1866 to discuss how this change may affect your aid. The office, located at web.iit.edu/financial-aid, can provide personalized counseling on the financial aid process. However, the provided data does not specify the exact impact on your aid or potential tuition refund, so it's essential to reach out to the Office of Financial Aid directly for more information. You can also email them at finaid@illinoistech.edu.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Financial Aid",
+      "query": "If I withdraw from all courses mid-semester, how does it affect my financial aid?",
+      "domains": [
+        "DOCUMENTS",
+        "TUITION",
+        "CONTACTS"
+      ],
+      "num_chunks": 15,
+      "generated_answer": "If you withdraw from all courses mid-semester, it may affect your financial aid. You should contact the Office of Financial Aid to address any possible financial implications, including those related to Title IV funding. \n\nYou may be eligible for a refund of the original tuition, fee, and any other charges for the term of the withdrawal, depending on the information submitted along with university records, including but not limited to enrollment, financial aid, and billing.",
+      "gold_answer": "If you withdraw from all courses mid-semester, the impact on your financial aid is not explicitly stated in the provided data chunks. However, according to the Statement of Financial Responsibility (Chunk 7 and 8), by registering for classes, you are promising to assume financial responsibility for the payment of all education-related charges and fees. It is recommended that you contact the Office of Financial Aid at 312.567.7219 or finaid@illinoistech.edu to discuss how withdrawing from courses may affect your financial aid. The provided data does not specify the exact consequences of mid-semester withdrawal on financial aid.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Financial Aid",
+      "query": "If I drop from full-time to part-time, will my grants or loans change?",
+      "domains": [
+        "TUITION",
+        "DOCUMENTS",
+        "CALENDAR"
+      ],
+      "num_chunks": 15,
+      "generated_answer": "If you drop from full-time to part-time, your grants or loans may change. According to the Policy Section: H. Change of Status, students changing from full-time degree-seeking status to part-time degree-seeking status must notify the Office of Financial Aid if they are receiving financial aid. This implies that your financial aid package may be adjusted based on your new enrollment status.",
+      "gold_answer": "If you drop from full-time to part-time, your tuition rates will change, with part-time tuition being $1,835 per credit hour for Chicago-Kent graduate students in the 2024-2025 academic year. Additionally, as a part-time student, you will no longer be automatically charged for the CTA U-Pass, but you may opt in to receive one for $146 per semester or $79 for the summer term. However, the provided data does not specifically address how dropping from full-time to part-time will affect grants or loans, so it is recommended to contact the Office of Academic Affairs at 312.567.3300 or aa@illinoistech.edu for more information on potential changes to your financial aid.",
+      "p_at_k": 0.0,
+      "r_at_k": 0.0,
+      "hit_at_k": 0.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Transfer Credit",
+      "query": "Can graduate students transfer credits into a master's program?",
+      "domains": [
+        "DOCUMENTS",
+        "TUITION",
+        "CONTACTS"
+      ],
+      "num_chunks": 15,
+      "generated_answer": "Yes, graduate students can transfer credits into a master's program. According to the policy, a maximum of nine applicable credit hours earned prior to matriculation into an Illinois Institute of Technology graduate degree program may be considered for transfer credit. The credit hours must have been passed with grades of 'B' or better, and are subject to the approval of the academic unit and the Office of Academic Affairs.",
+      "gold_answer": "The Office of Academic Affairs at Illinois Institute of Technology provides evaluation of transfer credits as part of its academic support services. Graduate students can transfer credits into a master's program, but the specific details and requirements for transfer credits are not provided in the available data. For more information, students can contact the Office of Academic Affairs at 312.567.3300 or aa@illinoistech.edu. The evaluation of transfer credits is part of the office's services, which also include academic advising and official academic program audits.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Transfer Credit",
+      "query": "Do transfer credits count toward degree requirements?",
+      "domains": [
+        "DOCUMENTS",
+        "CONTACTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "Yes, transfer credits can count toward degree requirements. According to the policies, a maximum of 9 graduate-level credit hours, 42 credit hours for doctoral degree candidates, and 9 applicable credit hours for master's degree programs can be transferred and applied toward the degree requirements, subject to certain restrictions and approvals.",
+      "gold_answer": "According to the Illinois Tech student handbook, transfer credits are evaluated by the Office of Academic Affairs, which provides official academic program audits for students. This process helps determine how transfer credits count toward degree requirements. However, the specific details on how transfer credits are applied to degree requirements are not provided in the given data chunks.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Transfer Credit",
+      "query": "Who approves transfer credits?",
+      "domains": [
+        "CONTACTS",
+        "DOCUMENTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "According to the provided context, the following individuals and offices are involved in approving transfer credits:\n\n1. Academic unit (department) for graduate transfer credit (Policy Section: Master's Transfer Credit)\n2. Office of Academic Affairs for evaluation of transfer credits (Policy Section: Academic Affairs)\n3. Academic department for transfer credit if a long period of time has elapsed since the course was completed (Policy Section: CC. Transfer of College Level Credit)\n4. Alfredo Estrada, Director of Articulation and Transfer Systems, for articulation and transfer systems (Contact: Alfredo Estrada)\n5. Mayra Zamarron, Trans Credit & Artic Anlys, for transfer credit and articulation analysis (Contact: Mayra Zamarron)\n6. Lauren K Kessler, Transfer Partnership Manager, for transfer partnership (Contact: Lauren K Kessler)\n\nHowever, the specific person or office responsible for approving transfer credits is not explicitly stated in the provided context.",
+      "gold_answer": "According to the Office of Academic Affairs, the evaluation of transfer credits is provided by this office. The Office of Academic Affairs is located in Galvin Tower 2C4-2 and can be contacted at 312.567.3300 or aa@illinoistech.edu.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.4,
+      "completeness": 0.4,
+      "correctness": 0.4,
+      "skipped": false
+    },
+    {
+      "section": "Transfer Credit",
+      "query": "What is the maximum number of transfer credits allowed for a master's program?",
+      "domains": [
+        "DOCUMENTS",
+        "TUITION"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "The maximum number of transfer credits allowed for a master's program is 9 credit hours.",
+      "gold_answer": "Unfortunately, the provided data does not contain information about the maximum number of transfer credits allowed for a master's program. The data does mention the evaluation of transfer credits (Chunk 2) and the academic program audit (Chunk 7), but it does not specify the maximum number of transfer credits allowed.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Transfer Credit",
+      "query": "Do transfer credits affect GPA calculations?",
+      "domains": [
+        "DOCUMENTS",
+        "CONTACTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "Transfer credits do not affect GPA calculations at Illinois Institute of Technology.",
+      "gold_answer": "Unfortunately, the provided data does not directly answer the question of whether transfer credits affect GPA calculations. However, it does mention that the Office of Academic Affairs evaluates transfer credits (Chunk 2). The Illinois Tech Undergraduate Bulletin, which is not provided in the given data, likely contains information on how transfer credits are applied to GPA calculations.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Transfer Credit",
+      "query": "When should transfer credits be submitted?",
+      "domains": [
+        "DOCUMENTS",
+        "CONTACTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "According to the provided context, transfer credits should be submitted as part of the application for admission to the Office of Undergraduate Admission, regardless of the transferability of credits.",
+      "gold_answer": "Unfortunately, the provided data does not explicitly state when transfer credits should be submitted. However, it does mention that the Office of Academic Affairs provides evaluation of transfer credits as part of their academic support services for students from the time of admission to graduation. The exact timeline for submitting transfer credits is not specified in the provided data.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Transfer Credit",
+      "query": "I transferred 6 credits into a master's program \u2014 how many more transfer credits can I bring in, and could this affect my graduation date?",
+      "domains": [
+        "DOCUMENTS",
+        "TUITION"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "You have transferred 6 credits into a master's program. \n\nFor master's degree programs, a maximum of 9 applicable credit hours earned prior to matriculation into an Illinois Institute of Technology graduate degree program may be considered for transfer credit. Since you have already transferred 6 credits, you can bring in up to 3 more transfer credits.\n\nThis may not affect your graduation date, as the transfer credit policy for master's programs does not specify a limit on the total number of credits that can be transferred. However, it's best to consult with your academic advisor to determine how the transfer credits will be applied to your program and to confirm your graduation date.",
+      "gold_answer": "Unfortunately, the provided data does not contain information about the maximum number of transfer credits that can be brought into a master's program at Illinois Institute of Technology. However, it does mention that the Office of Academic Affairs provides evaluation of transfer credits as part of their academic support services. To determine the specific transfer credit policy, I would recommend contacting the Office of Academic Affairs directly at 312.567.3300 or aa@illinoistech.edu. This information may also be available on the iit.edu/academic-affairs website.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Transfer Credit",
+      "query": "If I transfer the maximum allowed credits, could I graduate earlier?",
+      "domains": [
+        "DOCUMENTS"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "Based on the provided context, if you transfer the maximum allowed credits, you could potentially graduate earlier. \n\nFor undergraduate students, the maximum allowed transfer credits are 68 semester hours from a two-year college and there is no maximum from a four-year college, but the final 45 semester hours must be completed at Illinois Tech. \n\nFor graduate students, the maximum allowed transfer credits are 9 graduate-level credit hours for co-terminal degree programs, 42 credit hours beyond the baccalaureate degree for doctoral programs, and 9 applicable credit hours for master's degree programs. \n\nHowever, the actual impact on graduation time will depend on the specific program requirements and the student's individual circumstances.",
+      "gold_answer": "Unfortunately, the provided data does not contain information about the maximum allowed credits that can be transferred or the specific requirements for graduation. However, according to the Office of Academic Affairs (Chunk 2), they provide academic advising, evaluation of transfer credits, and official academic program audits, which may be helpful in determining the transfer credits and potential graduation timeline. The data does not provide a direct answer to the question, but it suggests that students can consult with the Office of Academic Affairs for guidance on transferring credits and graduating earlier.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Transfer Credit",
+      "query": "Can transfer credits from another graduate program be applied to my degree?",
+      "domains": [
+        "DOCUMENTS",
+        "CONTACTS",
+        "TUITION"
+      ],
+      "num_chunks": 15,
+      "generated_answer": "Yes, transfer credits from another graduate program can be applied to your degree, subject to certain restrictions and requirements. \n\nFor co-terminal degree programs, a maximum of nine graduate-level credit hours taken elsewhere and not applied toward any earned degree, with grades of 'B' or better, may be transferred towards the graduate portion of the co-terminal degree program, subject to the advance approval of the academic unit.\n\nFor doctoral degree candidates, up to 42 credit hours beyond the baccalaureate degree, or 50 percent of their total Ph.D. program credit hour requirements, whichever is smaller, may be transferred from a completed master's degree, provided the work was completed with grades of 'B' or better and is relevant to the current doctoral program.\n\nFor master's degree programs, a maximum of nine applicable credit hours earned prior to matriculation into an Illinois Institute of Technology graduate degree program may be considered for transfer credit, subject to the graduate studies rules and restrictions.\n\nYou should consult with the Office of Graduate Admission or the academic unit for specific requirements and approval procedures.",
+      "gold_answer": "According to the Office of Academic Affairs, students can have their transfer credits evaluated for potential application to their degree. This service is provided by the Office of Academic Affairs, which can be contacted at 312.567.3300 or aa@illinoistech.edu. The evaluation process includes official academic program audits, which help determine how transfer credits can be applied to a student's degree.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Multi-topic",
+      "query": "If I take 9 credits as a graduate student, am I considered full-time?",
+      "domains": [
+        "DOCUMENTS",
+        "TUITION"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "Yes, as a graduate student, taking 9 credits is considered full-time according to the policy.",
+      "gold_answer": "According to the provided data, taking 9 credits as a graduate student at the Illinois Institute of Technology (IIT) is considered full-time. This is stated in Chunk 9, which mentions that students who are registered for full-time academic hours (Grad students - 9 hours) are eligible for the CTA UPass program. The tuition rates for full-time graduate students at IIT's Chicago-Kent College of Law are $22,000 per semester (Chunk 26).",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Multi-topic",
+      "query": "If I take 12 credits as an undergraduate student, am I considered full-time?",
+      "domains": [
+        "TUITION",
+        "DOCUMENTS"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "Yes, you are considered full-time as an undergraduate student if you take 12 credits.",
+      "gold_answer": "According to the Illinois Tech Undergraduate Bulletin, an undergraduate student is considered full-time if they are enrolled in 12 or more credits. This information is not explicitly stated in the provided data, but it is implied in the context of the university's policies and procedures. The tuition rates for full-time students, as listed in the provided data, range from $25,488 to $31,151 per term, depending on the program and degree.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Multi-topic",
+      "query": "What happens if I drop a course before the add/drop deadline?",
+      "domains": [
+        "DOCUMENTS",
+        "CALENDAR"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "If you drop a course before the add/drop deadline, the course will be removed from your schedule, and tuition will be refunded. The course will not appear on your transcript, and you will not receive a grade for the course.",
+      "gold_answer": "If you drop a course before the add/drop deadline, the course will not appear on your transcript and tuition will be refunded. The add/drop deadline varies by semester, with the last day to add/drop for full semester and online A session courses with no tuition charges being January 20, 2026, for the Spring 2026 term. Please consult the Academic Calendar for exact deadlines.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Multi-topic",
+      "query": "I'm a graduate student taking 8 credits \u2014 am I full-time and will it affect my tuition?",
+      "domains": [
+        "TUITION"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "Based on the provided context, I can see that there are two different tuition rates for graduate students: one for Chicago-Kent and one for Mies. \n\nFor Chicago-Kent, the full-time tuition rate is $22,000 per semester. However, I do not see the part-time tuition rate for Chicago-Kent that corresponds to 8 credits. \n\nFor Mies, the tuition rate is $1,851 per credit. To calculate the total tuition for 8 credits, I would multiply 8 by $1,851. \n\nSince I do not have information on the part-time tuition rate for Chicago-Kent, I am not sure if you are considered full-time or part-time. However, based on the Mies tuition rate, taking 8 credits would be equivalent to 1 semester, which is considered full-time.",
+      "gold_answer": "Based on the provided data, taking 8 credits as a graduate student at the Illinois Institute of Technology (IIT) would be considered part-time, not full-time. According to the tuition rates for the Institute of Design (Chunk 29), full-time students (9-18 credits) pay $25,488 per term, while part-time students (fewer than 9 credits) pay $1,888 per credit. Therefore, taking 8 credits would fall under the part-time category, and the tuition rate would be $1,888 per credit.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Multi-topic",
+      "query": "If I drop a course after the add/drop deadline, will it appear on my transcript?",
+      "domains": [
+        "DOCUMENTS",
+        "CALENDAR"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "If you drop a course after the add/drop deadline, it will appear on your transcript with a grade of 'W' (withdraw).",
+      "gold_answer": "Unfortunately, the provided data does not directly answer the question of whether a dropped course after the add/drop deadline will appear on a student's transcript. However, based on the information in Chunk 8, it is noted that \"Notation of the violation of the Code of Academic Honesty is generally made on the student's transcript.\" This implies that a dropped course may be recorded on the transcript, but it does not explicitly state that it will be.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.5,
+      "completeness": 0.5,
+      "correctness": 0.0,
+      "skipped": false
+    },
+    {
+      "section": "Multi-topic",
+      "query": "If I withdraw from a course, does it affect my GPA?",
+      "domains": [
+        "DOCUMENTS"
+      ],
+      "num_chunks": 5,
+      "generated_answer": "No, withdrawing from a course does not affect your GPA.",
+      "gold_answer": "Based on the provided data, withdrawing from a course may affect a student's GPA, but the specific impact depends on the student's academic standing and the policies of their individual college or department. According to the student handbook, students who are on academic probation for two consecutive semesters are candidates for academic dismissal from Illinois Tech. The student handbook does not provide explicit information on how withdrawing from a course affects GPA, but it does mention that students must maintain satisfactory academic progress to avoid probation or dismissal.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.0,
+      "completeness": 0.0,
+      "correctness": 0.0,
+      "skipped": false
+    },
+    {
+      "section": "Multi-topic",
+      "query": "I'm an F-1 grad student taking 9 credits in Spring 2026 \u2014 am I full-time, and what happens to my visa status if I drop one 3-credit course after the add/drop deadline?",
+      "domains": [
+        "DOCUMENTS",
+        "CALENDAR"
+      ],
+      "num_chunks": 10,
+      "generated_answer": "You are taking 9 credits in Spring 2026, which meets the minimum registration required for full-time status for graduate students (9 credit hours). \n\nIf you drop one 3-credit course after the add/drop deadline, you will be considered to have withdrawn from that course. According to the policy, courses dropped after the add/drop deadline will appear on your official transcript with a grade of 'W' (withdraw). This grade does not affect your grade-point average.",
+      "gold_answer": "Based on the provided data, as an F-1 grad student taking 9 credits in Spring 2026, you are considered full-time. However, if you drop one 3-credit course after the add/drop deadline, your visa status may be affected, but the specific consequences are not mentioned in the provided data. The add/drop deadlines for Spring 2026 are January 20 for full semester and online A session courses, January 27 for ID full semester and ID A session courses, March 17 for online B session courses, and March 30 for ID B session courses.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Multi-topic",
+      "query": "I'm an undergraduate student with 12 credits \u2014 if I drop a 3-credit course after the add/drop deadline, am I still full-time and will I get a tuition refund?",
+      "domains": [
+        "CALENDAR",
+        "DOCUMENTS",
+        "TUITION"
+      ],
+      "num_chunks": 15,
+      "generated_answer": "Based on the provided context, you are an undergraduate student with 12 credits. If you drop a 3-credit course after the add/drop deadline, you will still be considered full-time because you have 12 credits remaining. \n\nHowever, according to the policy, if you drop a course during the first two weeks of the semester, you will not receive a tuition refund. Since the add/drop deadline for the Fall 2026 term is on 2026-08-25, and you are dropping a course after this date, you will not be eligible for a tuition refund.",
+      "gold_answer": "Unfortunately, the provided data does not contain information about tuition refunds or the definition of full-time status for undergraduate students. However, based on the tuition rates provided in the data, it appears that the tuition rates for the 2024-2025 academic year are as follows: full-time students (9-18 credits) pay $25,488 per term, while part-time students (fewer than 9 credits) pay $1,888 per credit. The data does not specify the tuition refund policy or the deadline for dropping courses without tuition charges.",
+      "p_at_k": 0.3333333333333333,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    },
+    {
+      "section": "Multi-topic",
+      "query": "If I withdraw from all my classes in Spring 2026 after the 4th week, do I get any tuition refund and what grade appears on my transcript?",
+      "domains": [
+        "DOCUMENTS",
+        "TUITION",
+        "CALENDAR"
+      ],
+      "num_chunks": 15,
+      "generated_answer": "Based on the provided context, if you withdraw from all your classes in Spring 2026 after the 4th week, you will not get a full tuition refund. \n\nThe last day to withdraw for Full Semester Courses is 2026-03-30. Since you are withdrawing after this date, you will not be eligible for a tuition refund.\n\nAs for the grade that appears on your transcript, according to the policy, students who withdraw from a course after the last day to add and drop classes will receive a grade of 'W' (withdraw).",
+      "gold_answer": "Based on the provided data, if you withdraw from all your classes in Spring 2026 after the 4th week, you will not be eligible for a tuition refund. The last day to withdraw for full semester courses is March 30, 2026, and the last day to withdraw for ID and online courses is April 17, 2026. However, since you are withdrawing after the 4th week, you will likely receive a grade of W (Withdrawn) on your transcript, as per the university's policies. For specific information on tuition rates and refund policies, please contact the Office of the Registrar at 312-567-3100 or kguytonhamlin@illinoistech.edu.",
+      "p_at_k": 0.6666666666666666,
+      "r_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "faithfulness": 0.8,
+      "completeness": 0.7,
+      "correctness": 0.9,
+      "skipped": false
+    }
+  ]
+}
