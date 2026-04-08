@@ -251,7 +251,7 @@ def ask(req: AskRequest):
 
         if bare in tuition_schools:
             answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer_for_domain(
-                prompt, DOMAIN_TUITION, chat_history=[]
+                f"What are the tuition rates for all student levels at {prompt}?", DOMAIN_TUITION, chat_history=[]
             )
         elif bare in calendar_terms:
             answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer_for_domain(
