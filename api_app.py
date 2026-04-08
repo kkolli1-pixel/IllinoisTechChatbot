@@ -242,10 +242,29 @@ def ask(req: AskRequest):
                 chat_history=[],
             )
     else:
-        # Fresh question
-        answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer(
-            query=prompt, chat_history=chat_history
-        )
+        # Fresh question — but if it's a bare known school/dept/term name, go straight
+        # to the right domain so the rewrite pipeline doesn't lose the entity.
+        bare = prompt.strip().lower()
+        tuition_schools = [s.lower() for s in (options_cache.tuition_schools or [])]
+        calendar_terms  = [t.lower() for t in (options_cache.calendar_terms  or [])]
+        contact_opts    = [o.lower() for o in CONTACT_DEPT_PICKER_OPTIONS]
+
+        if bare in tuition_schools:
+            answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer_for_domain(
+                prompt, DOMAIN_TUITION, chat_history=[]
+            )
+        elif bare in calendar_terms:
+            answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer_for_domain(
+                prompt, DOMAIN_CALENDAR, chat_history=[]
+            )
+        elif bare in contact_opts:
+            answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer_for_domain(
+                prompt, DOMAIN_CONTACTS, chat_history=[]
+            )
+        else:
+            answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer(
+                query=prompt, chat_history=chat_history
+            )
 
     # Build response
     resp_pending = None
