@@ -128,6 +128,7 @@ class PendingContext(BaseModel):
     original_query: str | None = None
     clarification_message: str | None = None
     domain: str | None = None
+    clarification_options: list[str] = []
 
 
 class ChatMessage(BaseModel):
@@ -198,6 +199,7 @@ def ask(req: AskRequest):
             pending.original_query,
             pending.clarification_message,
             prompt,
+            pending.clarification_options or [],
         )
 
         if action == "CANCEL":
@@ -220,7 +222,7 @@ def ask(req: AskRequest):
             answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer_for_domain(
                 combined,
                 pending.domain or "",
-                chat_history=chat_history,
+                chat_history=[],
             )
     else:
         # Fresh question
@@ -235,6 +237,7 @@ def ask(req: AskRequest):
             original_query=prompt,
             clarification_message=clar_msg,
             domain=clar_domain or None,
+            clarification_options=_clar_opts or [],
         )
 
     answer = (answer or "").strip()
