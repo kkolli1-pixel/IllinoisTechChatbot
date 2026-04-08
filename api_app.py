@@ -98,7 +98,23 @@ from ui.app_with_clarification_memory import (
     get_answer_for_domain,
     reformulate_query,
     GROQ_API_KEY,
+    DOMAIN_TUITION,
+    DOMAIN_CONTACTS,
+    DOMAIN_CALENDAR,
 )
+from common.clarification_options import options_cache
+from common.slot_filling import CONTACT_DEPT_PICKER_OPTIONS
+
+
+def _options_for_domain(domain: str) -> list[str]:
+    """Re-derive clarification options from domain when frontend doesn't pass them back."""
+    if domain == DOMAIN_TUITION:
+        return list(options_cache.tuition_schools or [])
+    if domain == DOMAIN_CONTACTS:
+        return list(CONTACT_DEPT_PICKER_OPTIONS)
+    if domain == DOMAIN_CALENDAR:
+        return list(options_cache.calendar_terms or [])
+    return []
 
 # ── FastAPI app ───────────────────────────────────────────────────────────────
 
@@ -195,11 +211,12 @@ def ask(req: AskRequest):
 
     if pending and pending.original_query and pending.clarification_message:
         # We're in a clarification follow-up
+        opts = pending.clarification_options or _options_for_domain(pending.domain or "")
         action = classify_pending_response(
             pending.original_query,
             pending.clarification_message,
             prompt,
-            pending.clarification_options or [],
+            opts,
         )
 
         if action == "CANCEL":
