@@ -140,7 +140,7 @@ def is_escape(clarification_message: str, user_response: str) -> bool:
     )
     return result.strip().upper().startswith("NO")
 
-def classify_pending_response(original_query: str, clarification_message: str, user_response: str) -> str:
+def classify_pending_response(original_query: str, clarification_message: str, user_response: str, clarification_options: list = None) -> str:
     """
     Classify a response to a pending clarification as one of:
     - ANSWER: the user is answering the clarification
@@ -152,6 +152,12 @@ def classify_pending_response(original_query: str, clarification_message: str, u
     response = (user_response or "").strip()
     if not response:
         return "ANSWER"
+
+    if clarification_options:
+        response_lower = response.lower()
+        for opt in clarification_options:
+            if response_lower == (opt or "").strip().lower():
+                return "ANSWER"
 
     if contact_reply_matches_picker_option(user_response):
         return "ANSWER"
@@ -212,7 +218,10 @@ def reformulate_query(original_query: str, user_clarification: str) -> str:
                     "You are a query reformulation assistant for a university chatbot. "
                     "Combine the original question and the clarification into one clear, "
                     "complete, standalone question. Return only the reformulated question — "
-                    "no explanation, no punctuation changes beyond what is natural."
+                    "no explanation, no punctuation changes beyond what is natural. "
+                    "The user's clarification is a slot value (school name, program level, "
+                    "fee type, department name, etc.) that must be inserted directly into "
+                    "the question as-is — do not paraphrase or reinterpret it."
                 ),
             },
             {
@@ -515,11 +524,11 @@ def rewrite_query(query: str, domains: list, context_hint: str = "") -> str:
     )
     return result if result else query
 
-def get_answer_for_domain(query: str, domain: str, chat_history: list = None) -> tuple[str, list, dict, bool, str, str]:
+def get_answer_for_domain(query: str, domain: str, chat_history: list = None) -> tuple[str, list, dict, bool, str, str, list]:
     """
     Bypass the router and search a specific domain directly.
     Used for clarification follow-ups where we already know the domain.
-    Returns same 6-tuple as get_answer.
+    Returns same 7-tuple as get_answer.
     """
     system_prompt = """You are Hawk, Illinois Tech's official university assistant. You help students, faculty, and staff with questions about the academic calendar, tuition and fees, staff contacts, and university policies.
 
@@ -538,7 +547,7 @@ Be direct and concise. Lead with the answer, then supporting detail. Do not open
 
     q = (query or "").strip()
     if not q:
-        return "Please enter a question.", [], {}, False, "", domain
+        return "Please enter a question.", [], {}, False, "", domain, []
 
     route_details = {"domains": [domain], "needs_clarification": False, "sub_queries": {domain: q}}
 
@@ -603,8 +612,8 @@ Be direct and concise. Lead with the answer, then supporting detail. Do not open
         if clarification_messages:
             raw_msg, options = clarification_messages[0]
             display_msg = _format_clarification(raw_msg, options)
-            return display_msg, [], route_details, True, raw_msg, domain
-        return "I couldn't find anything matching that. Could you try rephrasing?", [], route_details, False, "", ""
+            return display_msg, [], route_details, True, raw_msg, domain, options
+        return "I couldn't find anything matching that. Could you try rephrasing?", [], route_details, False, "", "", []
 
     context_text = "\n\n---\n\n".join(context_parts)
     unique_sources = list(dict.fromkeys(all_sources))
@@ -637,21 +646,21 @@ Be direct and concise. Lead with the answer, then supporting detail. Do not open
             answer = (raw_content or "").strip()
             if not answer:
                 raise ValueError("empty Groq completion")
-            return answer, unique_sources, route_details, False, "", ""
+            return answer, unique_sources, route_details, False, "", "", []
         except Exception as e:
             _log.warning("Groq completion failed (domain follow-up): %s", e)
 
     if not GROQ_API_KEY:
-        return f"**Context found:**\n\n{context_text}", unique_sources, route_details, False, "", ""
+        return f"**Context found:**\n\n{context_text}", unique_sources, route_details, False, "", "", []
 
     return (
         "I found relevant information but couldn't generate a response right now. "
         "Please try again in a moment."
-    ), unique_sources, route_details, False, "", ""
+    ), unique_sources, route_details, False, "", "", []
 
-def get_answer(query: str, chat_history: list = None) -> tuple[str, list, dict, bool, str, str]:
+def get_answer(query: str, chat_history: list = None) -> tuple[str, list, dict, bool, str, str, list]:
     """
-    Returns: (reply, sources, route_details, is_clarification, clarification_message, clarifying_domain)
+    Returns: (reply, sources, route_details, is_clarification, clarification_message, clarifying_domain, clarification_options)
     clarifying_domain: the domain that triggered clarification (empty string if none)
     """
     system_prompt = """You are Hawk, Illinois Tech's official university assistant. You help students, faculty, and staff with questions about the academic calendar, tuition and fees, staff contacts, and university policies.
@@ -671,11 +680,11 @@ Be direct and concise. Lead with the answer, then supporting detail. Do not open
 
     q = (query or "").strip()
     if not q:
-        return "Please enter a question.", [], {}, False, "", ""
+        return "Please enter a question.", [], {}, False, "", "", []
 
     small = _off_topic_short_reply(q)
     if small:
-        return small, [], {}, False, "", ""
+        return small, [], {}, False, "", "", []
 
     # Step 1: Route
     route_details = get_routing_intent(q)
@@ -686,7 +695,7 @@ Be direct and concise. Lead with the answer, then supporting detail. Do not open
     # Step 2: Router-level clarification (low confidence / out of scope)
     if needs_clarification or not domains:
         msg = "I can help with the university calendar, staff contacts, tuition and fees, and academic policies. Could you rephrase with more detail?"
-        return msg, [], route_details, False, "", ""
+        return msg, [], route_details, False, "", "", []
 
     # Step 2.5: Rewrite query into retrieval-ready language
     # prev_user = second-to-last user message (not current) for follow-up context
@@ -804,7 +813,7 @@ Be direct and concise. Lead with the answer, then supporting detail. Do not open
                 else clarification_messages[0]
             )
             display_msg = _format_clarification(raw_msg, options)
-            return display_msg, [], route_details, True, raw_msg, clarifying_domain
+            return display_msg, [], route_details, True, raw_msg, clarifying_domain, options
 
     if total_hits == 0:
         msg = (
@@ -812,7 +821,7 @@ Be direct and concise. Lead with the answer, then supporting detail. Do not open
             if is_followup
             else "I don't have information matching your question. Could you try rephrasing or adding more detail?"
         )
-        return msg, [], route_details, False, "", ""
+        return msg, [], route_details, False, "", "", []
 
     # Step 5: Synthesize
     context_text = "\n\n---\n\n".join(context_parts)
@@ -854,8 +863,8 @@ Be direct and concise. Lead with the answer, then supporting detail. Do not open
             if clarification_messages:
                 clarifying_domain, raw_msg, options = clarification_messages[0]
                 reply = _append_partial_clarification(answer, raw_msg, options)
-                return reply, unique_sources, route_details, True, raw_msg, clarifying_domain
-            return answer, unique_sources, route_details, False, "", ""
+                return reply, unique_sources, route_details, True, raw_msg, clarifying_domain, options
+            return answer, unique_sources, route_details, False, "", "", []
         except Exception as e:
             _log.warning("Groq completion failed: %s", e)
 
@@ -865,8 +874,8 @@ Be direct and concise. Lead with the answer, then supporting detail. Do not open
         if clarification_messages:
             clarifying_domain, raw_msg, options = clarification_messages[0]
             reply = _append_partial_clarification(answer, raw_msg, options)
-            return reply, unique_sources, route_details, True, raw_msg, clarifying_domain
-        return answer, unique_sources, route_details, False, "", ""
+            return reply, unique_sources, route_details, True, raw_msg, clarifying_domain, options
+        return answer, unique_sources, route_details, False, "", "", []
 
     answer = (
         "I found relevant information but couldn't generate a response right now. "
@@ -875,8 +884,8 @@ Be direct and concise. Lead with the answer, then supporting detail. Do not open
     if clarification_messages:
         clarifying_domain, raw_msg, options = clarification_messages[0]
         reply = _append_partial_clarification(answer, raw_msg, options)
-        return reply, unique_sources, route_details, True, raw_msg, clarifying_domain
-    return answer, unique_sources, route_details, False, "", ""
+        return reply, unique_sources, route_details, True, raw_msg, clarifying_domain, options
+    return answer, unique_sources, route_details, False, "", "", []
 
 def stream_generator(text):
     import time
@@ -899,6 +908,8 @@ if "pending_clarification_msg" not in st.session_state:
     st.session_state.pending_clarification_msg = None
 if "pending_domain" not in st.session_state:
     st.session_state.pending_domain = None  # domain that triggered clarification
+if "pending_clarification_options" not in st.session_state:
+    st.session_state.pending_clarification_options = []
 if "last_turn_was_answer" not in st.session_state:
     st.session_state.last_turn_was_answer = False  # True only when last turn was a real answer
 
@@ -931,25 +942,29 @@ if prompt := st.chat_input("E.g., When is spring break?"):
             pending_domain = st.session_state.get("pending_domain")
 
             if pending and pending_msg:
-                pending_action = classify_pending_response(pending, pending_msg, prompt)
+                pending_opts = st.session_state.get("pending_clarification_options", [])
+                pending_action = classify_pending_response(pending, pending_msg, prompt, pending_opts)
 
                 if pending_action == "CANCEL":
                     st.session_state.pending_query = None
                     st.session_state.pending_clarification_msg = None
                     st.session_state.pending_domain = None
+                    st.session_state.pending_clarification_options = []
                     reply = "No problem. I cleared that question. Ask me something else whenever you're ready."
                     sources = []
                     route_details = {}
                     is_clarification = False
                     clarification_msg = ""
                     clarifying_domain = ""
+                    clarification_options = []
                 elif pending_action == "NEW_TOPIC":
                     effective_query = prompt.strip()
                     # User changed topic — fresh query through normal pipeline
                     st.session_state.pending_query = None
                     st.session_state.pending_clarification_msg = None
                     st.session_state.pending_domain = None
-                    reply, sources, route_details, is_clarification, clarification_msg, clarifying_domain = get_answer(
+                    st.session_state.pending_clarification_options = []
+                    reply, sources, route_details, is_clarification, clarification_msg, clarifying_domain, clarification_options = get_answer(
                         effective_query,
                         chat_history=st.session_state.messages,
                     )
@@ -966,21 +981,23 @@ if prompt := st.chat_input("E.g., When is spring break?"):
                         st.session_state.pending_query = None
                         st.session_state.pending_clarification_msg = None
                         st.session_state.pending_domain = None
-                        reply, sources, route_details, is_clarification, clarification_msg, clarifying_domain = get_answer_for_domain(
+                        st.session_state.pending_clarification_options = []
+                        reply, sources, route_details, is_clarification, clarification_msg, clarifying_domain, clarification_options = get_answer_for_domain(
                             effective_query,
                             pending_domain,
-                            chat_history=st.session_state.messages,
+                            chat_history=[],
                         )
                     else:
                         st.session_state.pending_query = None
                         st.session_state.pending_clarification_msg = None
                         st.session_state.pending_domain = None
-                        reply, sources, route_details, is_clarification, clarification_msg, clarifying_domain = get_answer(
+                        st.session_state.pending_clarification_options = []
+                        reply, sources, route_details, is_clarification, clarification_msg, clarifying_domain, clarification_options = get_answer(
                             effective_query,
                             chat_history=st.session_state.messages,
                         )
             else:
-                reply, sources, route_details, is_clarification, clarification_msg, clarifying_domain = get_answer(
+                reply, sources, route_details, is_clarification, clarification_msg, clarifying_domain, clarification_options = get_answer(
                     effective_query,
                     chat_history=st.session_state.messages,
                 )
@@ -989,11 +1006,13 @@ if prompt := st.chat_input("E.g., When is spring break?"):
             st.session_state.pending_query = effective_query
             st.session_state.pending_clarification_msg = clarification_msg
             st.session_state.pending_domain = clarifying_domain or None
+            st.session_state.pending_clarification_options = clarification_options or []
             st.session_state.last_turn_was_answer = False  # clarification, not an answer
         else:
             st.session_state.pending_query = None
             st.session_state.pending_clarification_msg = None
             st.session_state.pending_domain = None
+            st.session_state.pending_clarification_options = []
             if pending_action == "CANCEL":
                 st.session_state.last_turn_was_answer = False
             else:

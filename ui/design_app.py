@@ -867,7 +867,7 @@ def get_model_b_response(prompt: str, use_api_mode: bool, selected_topic: str | 
                 st.session_state.pending_query_b = None
                 st.session_state.pending_clarification_msg_b = None
                 st.session_state.pending_domain_b = None
-                answer, sources, route_details, is_clarification, clar_msg, clar_domain = get_answer(
+                answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer(
                     query=prompt, chat_history=chat_history
                 )
                 metadata = {"sources": sources, "route_details": route_details}
@@ -880,14 +880,14 @@ def get_model_b_response(prompt: str, use_api_mode: bool, selected_topic: str | 
                 st.session_state.pending_query_b = None
                 st.session_state.pending_clarification_msg_b = None
                 st.session_state.pending_domain_b = None
-                answer, sources, route_details, is_clarification, clar_msg, clar_domain = get_answer_for_domain(
+                answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer_for_domain(
                     combined,
                     pending_domain,
                     chat_history=chat_history,
                 )
                 metadata = {"sources": sources, "route_details": route_details}
         else:
-            answer, sources, route_details, is_clarification, clar_msg, clar_domain = get_answer(
+            answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer(
                 query=prompt, chat_history=chat_history
             )
             metadata = {"sources": sources, "route_details": route_details}

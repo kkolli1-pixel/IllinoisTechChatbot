@@ -207,7 +207,7 @@ def ask(req: AskRequest):
 
         if action == "NEW_TOPIC":
             # User changed topic — fresh query
-            answer, sources, route_details, is_clarification, clar_msg, clar_domain = get_answer(
+            answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer(
                 query=prompt, chat_history=chat_history
             )
         else:
@@ -217,14 +217,14 @@ def ask(req: AskRequest):
                 if GROQ_API_KEY
                 else f"{pending.original_query} {prompt}".strip()
             )
-            answer, sources, route_details, is_clarification, clar_msg, clar_domain = get_answer_for_domain(
+            answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer_for_domain(
                 combined,
                 pending.domain or "",
                 chat_history=chat_history,
             )
     else:
         # Fresh question
-        answer, sources, route_details, is_clarification, clar_msg, clar_domain = get_answer(
+        answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer(
             query=prompt, chat_history=chat_history
         )
 

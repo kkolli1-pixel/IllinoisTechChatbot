@@ -135,7 +135,7 @@ def run_section(section_name):
         print(f"Q{count}: {q}")
         
         # Reset chat history for each question to isolate testing
-        reply, sources, route_details, is_clarification, clarification_msg, clarifying_domain = get_answer(
+        reply, sources, route_details, is_clarification, clarification_msg, clarifying_domain, _clar_opts = get_answer(
             query=q,
             chat_history=[]
         )

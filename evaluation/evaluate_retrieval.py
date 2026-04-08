@@ -265,7 +265,7 @@ def main():
 
             # 1. Real chatbot answer
             try:
-                reply, sources, route_details, is_clarification, clarification_msg, _ = get_answer(
+                reply, sources, route_details, is_clarification, clarification_msg, _, _clar_opts = get_answer(
                     query=question, chat_history=[]
                 )
                 if is_clarification:

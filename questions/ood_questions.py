@@ -1,4 +1,22 @@
 OOD_PROTOTYPES = [
+    # Sports and ticketing
+    "where can I buy tickets to an NBA game",
+    "how do I get tickets to an NFL football game",
+    "where to buy concert tickets online",
+    "how much do sports event tickets cost",
+    "where to purchase tickets for entertainment events",
+    # Commerce and shopping
+    "where can I buy something online",
+    "how do I shop for products on the internet",
+    "what is the best online store for electronics",
+    "how to return a product I bought online",
+    "where can I find deals on consumer goods",
+    # Entertainment and media
+    "what streaming service should I subscribe to",
+    "how do I watch live sports on TV",
+    "what are the best video games right now",
+    "how do I listen to music online",
+    "where can I watch movies and TV shows",
     # Weather and environment
     "what is the weather forecast for Chicago",
     "is it going to rain tomorrow",
