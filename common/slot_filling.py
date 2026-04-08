@@ -426,6 +426,9 @@ def tuition_query_validation(query: str) -> Dict[str, Any]:
     school_opts = _options(options_cache.tuition_schools if _OPTIONS_AVAILABLE else [])
 
     if len(q.split()) <= 1:
+        w = q.strip(string.punctuation)
+        if school_opts and any(w == opt.lower() for opt in school_opts):
+            return {"needs_clarification": False, "options": []}
         return _clarify("Which school or program are you asking about?", school_opts)
 
     # Previous broad pass-through kept for easy rollback:
