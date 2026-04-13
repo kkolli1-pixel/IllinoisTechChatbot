@@ -421,6 +421,13 @@ _TUITION_LEVEL = re.compile(
     re.IGNORECASE
 )
 
+# Short aliases for schools that ES aggregations store as full names
+_TUITION_SCHOOL_ALIASES = re.compile(
+    r"\b(kent|chicago[\s-]kent|law\s*school|stuart|business\s*school|mies|"
+    r"institute\s*of\s*design|iep|intensive\s*english)\b",
+    re.IGNORECASE
+)
+
 def tuition_query_validation(query: str) -> Dict[str, Any]:
     q = (query or "").lower()
     school_opts = _options(options_cache.tuition_schools if _OPTIONS_AVAILABLE else [])
@@ -437,7 +444,9 @@ def tuition_query_validation(query: str) -> Dict[str, Any]:
     #     return {"needs_clarification": False, "options": []}
 
     has_anchor = _match(_patterns.tuition_anchor, q)
-    has_specific = _match(_patterns.tuition_specific, q) or bool(_TUITION_LEVEL.search(q))
+    has_specific = (_match(_patterns.tuition_specific, q)
+                    or bool(_TUITION_LEVEL.search(q))
+                    or bool(_TUITION_SCHOOL_ALIASES.search(q)))
     has_generic_money = bool(_GENERIC_MONEY.search(q))
     has_pricing_intent = bool(re.search(r"\b(tuition|fee|fees|cost|costs|rate|rates|price|prices|billing|bill|per credit|credit hour)\b", q))
 

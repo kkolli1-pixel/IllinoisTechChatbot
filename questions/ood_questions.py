@@ -45,12 +45,17 @@ OOD_PROTOTYPES = [
     "how to apply to MIT graduate program",
     "what is the salary for a software engineer at Apple",
     "how much does a data scientist make",
-    # Personal advice
+    # Personal advice and philosophy
     "can you write my essay for me",
+    "write my homework assignment",
+    "do my project for me",
     "help me solve this math problem",
     "what should I wear to a party",
     "how do I make friends in college",
     "what is the meaning of life",
+    "what is the purpose of existence",
+    "tell me a joke",
+    "what do you think about politics",
     # Entertainment and media
     "what movies are playing this weekend",
     "who won the game last night",
