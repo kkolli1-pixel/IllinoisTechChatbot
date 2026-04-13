@@ -186,6 +186,8 @@ class _PatternCache:
                 "graduate", "undergraduate", "full-time", "part-time",
                 "full time", "part time", "billing", "llm", "mdes", "mdm",
                 "per semester", "per term", "upass", "u-pass",
+                "deposit", "admissions deposit", "application fee",
+                "refund", "payment", "installment",
             ]
             short_fees = _shorten_fee_names(fee_names, exclude_generic=False)
             return _build_pattern(schools + short_fees + levels + years + structural)
@@ -202,7 +204,7 @@ class _PatternCache:
             years     = options_cache.tuition_years     if _OPTIONS_AVAILABLE else []
             short_fees = _shorten_fee_names(fee_names, exclude_generic=True)
             # Add common short forms that won't appear in 2-word truncations
-            extra_specifics = ["upass", "u-pass"]
+            extra_specifics = ["upass", "u-pass", "deposit", "application fee"]
             return _build_pattern(schools + short_fees + levels + years + extra_specifics)
         return self._get("_tuition_specific", _build)
 

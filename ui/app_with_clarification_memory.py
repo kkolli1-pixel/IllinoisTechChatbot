@@ -809,6 +809,17 @@ Use prior turns only to resolve pronouns and short references in the current que
             if isinstance(hits, dict) and hits.get("needs_clarification"):
                 clarification_messages.append((DOMAIN_DOCUMENTS, hits["message"], hits.get("options", [])))
                 hits = []
+            # Also search with original query when rewrite differs — the rewriter
+            # can add noise that derails retrieval, so merge both result sets.
+            if doc_query.lower() != q.lower():
+                orig_hits = documents_rrf_search(q)
+                if isinstance(orig_hits, list) and orig_hits:
+                    seen_ids = {h["_id"] for h in (hits or [])}
+                    for oh in orig_hits:
+                        if oh["_id"] not in seen_ids:
+                            hits = hits or []
+                            hits.append(oh)
+                            seen_ids.add(oh["_id"])
             if hits:
                 total_hits += len(hits)
                 domain_hit_counts[DOMAIN_DOCUMENTS] += len(hits)

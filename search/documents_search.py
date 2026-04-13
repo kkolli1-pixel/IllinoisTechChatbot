@@ -24,7 +24,7 @@ def documents_lexical_search(query: str, top_k: int):
                         "query": cleaned_query,
                         "fields": [
                             "content^2",
-                            "topic^1.5",
+                            "topic^3",
                             "doc_name^2",
                             "doc_type"
                         ]
