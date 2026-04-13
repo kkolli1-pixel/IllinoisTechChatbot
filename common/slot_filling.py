@@ -408,7 +408,8 @@ def contacts_query_validation(query: str) -> Dict[str, Any]:
 
     # Reformulated follow-ups often name the department but omit "phone/email/contact"
     # (e.g. "What is the Physics department?") — still a concrete directory ask.
-    if has_generic_unit and _mentions_dept_picker_option(q):
+    # Also catches clarification answers like "I need to speak with Computer Science".
+    if _mentions_dept_picker_option(q):
         return {"needs_clarification": False, "options": []}
 
     return _clarify(
