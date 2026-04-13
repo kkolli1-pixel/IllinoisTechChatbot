@@ -115,7 +115,15 @@ def _strip_markdown(text: str) -> str:
     # Bold/italic: **text** or *text* → text
     s = re.sub(r"\*{1,3}(.+?)\*{1,3}", r"\1", s)
     # Bullet points: keep as-is (- item), they read fine as plain text
-    return s
+    # Strip trailing pleasantries the LLM sometimes adds despite instructions
+    s = re.sub(
+        r"\n*(?:Let me know if you [\w\s,!.]*"
+        r"|Feel free to [\w\s,!.]*"
+        r"|(?:I )?hope (?:this|that) helps[\w\s,!.]*"
+        r"|If you (?:have|need) [\w\s,!.]*)\s*$",
+        "", s, flags=re.IGNORECASE
+    )
+    return s.rstrip()
 
 
 def _options_for_domain(domain: str) -> list[str]:

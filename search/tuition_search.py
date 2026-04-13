@@ -237,5 +237,21 @@ def tuition_rrf_search(query: str, top_k: int = 10):
         lexical_hits = tuition_lexical_search(expanded_query, top_k)
         semantic_hits = tuition_semantic_search(query, top_k)
 
+    # Level diversification: when school is specified but level is not,
+    # search separately per level and merge so the LLM sees all student levels.
+    needs_diversification = "school" in filters and "level" not in filters
+    if needs_diversification:
+        per_level_hits = []
+        for lvl in ("graduate", "undergrad", "all"):
+            lvl_filters = {**filters, "level": lvl}
+            lvl_clauses = _build_filter_clause(lvl_filters) + fee_kind_clauses
+            lvl_lex = tuition_lexical_search(expanded_query, 5, lvl_clauses if lvl_clauses else None)
+            lvl_sem = tuition_semantic_search(query, 5, lvl_clauses if lvl_clauses else None)
+            per_level_hits.extend(lvl_lex)
+            per_level_hits.extend(lvl_sem)
+        if per_level_hits:
+            lexical_hits.extend(per_level_hits)
+
     fused = rrf_fuse(lexical_hits, semantic_hits)
-    return rerank_chunks(query, fused, top_k=5)
+    rerank_k = 10 if needs_diversification else 5
+    return rerank_chunks(query, fused, top_k=rerank_k)
