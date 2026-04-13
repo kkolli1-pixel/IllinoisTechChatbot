@@ -24,6 +24,10 @@ os.chdir(project_root)
 
 load_dotenv(project_root / ".env")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
+AZURE_OPENAI_KEY = os.getenv("AZURE_OPENAI_KEY")
+AZURE_OPENAI_DEPLOYMENT = os.getenv("AZURE_OPENAI_DEPLOYMENT")
+AZURE_OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "2024-02-01")
 
 try:
     from router.router import get_routing_intent, DOMAIN_CALENDAR, DOMAIN_CONTACTS, DOMAIN_DOCUMENTS, DOMAIN_TUITION
@@ -84,6 +88,27 @@ def _groq_call(messages: list, max_tokens: int = 60) -> str:
         )
         return resp.choices[0].message.content.strip()
     except Exception:
+        return ""
+
+def _openai_synthesis(messages: list) -> str:
+    """Azure OpenAI synthesis call. Returns empty string on failure."""
+    if not (AZURE_OPENAI_ENDPOINT and AZURE_OPENAI_KEY and AZURE_OPENAI_DEPLOYMENT):
+        return ""
+    try:
+        from openai import AzureOpenAI
+        client = AzureOpenAI(
+            azure_endpoint=AZURE_OPENAI_ENDPOINT,
+            api_key=AZURE_OPENAI_KEY,
+            api_version=AZURE_OPENAI_API_VERSION,
+        )
+        resp = client.chat.completions.create(
+            model=AZURE_OPENAI_DEPLOYMENT,
+            messages=messages,
+            temperature=0.0,
+        )
+        return (resp.choices[0].message.content or "").strip()
+    except Exception as e:
+        _log.warning("Azure OpenAI synthesis failed: %s", e)
         return ""
 
 def is_escape(clarification_message: str, user_response: str) -> bool:
@@ -633,7 +658,11 @@ Be direct and concise. Lead with the answer, then supporting detail. Do not open
 
     messages = _build_messages(system_prompt, chat_history or [], q, context_text)
 
-    if GROQ_API_KEY:
+    # ── Primary: OpenAI gpt-4o-mini ──────────────────────────────────────────
+    answer = _openai_synthesis(messages)
+
+    # ── Fallback: Groq ────────────────────────────────────────────────────────
+    if not answer and GROQ_API_KEY:
         try:
             from groq import Groq
             client = Groq(api_key=GROQ_API_KEY)
@@ -646,17 +675,13 @@ Be direct and concise. Lead with the answer, then supporting detail. Do not open
             answer = (raw_content or "").strip()
             if not answer:
                 raise ValueError("empty Groq completion")
-            return answer, unique_sources, route_details, False, "", "", []
         except Exception as e:
             _log.warning("Groq completion failed (domain follow-up): %s", e)
 
-    if not GROQ_API_KEY:
+    if not answer:
         return f"**Context found:**\n\n{context_text}", unique_sources, route_details, False, "", "", []
 
-    return (
-        "I found relevant information but couldn't generate a response right now. "
-        "Please try again in a moment."
-    ), unique_sources, route_details, False, "", "", []
+    return answer, unique_sources, route_details, False, "", "", []
 
 def get_answer(query: str, chat_history: list = None) -> tuple[str, list, dict, bool, str, str, list]:
     """
@@ -846,8 +871,11 @@ Be direct and concise. Lead with the answer, then supporting detail. Do not open
     history = chat_history or []
     messages = _build_messages(system_prompt, history, q, context_text)
 
-    # ── Primary: Groq (fast, reliable) ───────────────────────────────────────
-    if GROQ_API_KEY:
+    # ── Primary: OpenAI gpt-4o-mini ──────────────────────────────────────────
+    answer = _openai_synthesis(messages)
+
+    # ── Fallback: Groq ────────────────────────────────────────────────────────
+    if not answer and GROQ_API_KEY:
         try:
             from groq import Groq
             client = Groq(api_key=GROQ_API_KEY)
@@ -860,27 +888,13 @@ Be direct and concise. Lead with the answer, then supporting detail. Do not open
             answer = (raw_content or "").strip()
             if not answer:
                 raise ValueError("empty Groq completion")
-            if clarification_messages:
-                clarifying_domain, raw_msg, options = clarification_messages[0]
-                reply = _append_partial_clarification(answer, raw_msg, options)
-                return reply, unique_sources, route_details, True, raw_msg, clarifying_domain, options
-            return answer, unique_sources, route_details, False, "", "", []
         except Exception as e:
             _log.warning("Groq completion failed: %s", e)
 
-    # ── No Groq key: return raw context only ─────────────────────────────────
-    if not GROQ_API_KEY:
+    # ── No LLM available: return raw context ─────────────────────────────────
+    if not answer:
         answer = f"**Context found:**\n\n{context_text}"
-        if clarification_messages:
-            clarifying_domain, raw_msg, options = clarification_messages[0]
-            reply = _append_partial_clarification(answer, raw_msg, options)
-            return reply, unique_sources, route_details, True, raw_msg, clarifying_domain, options
-        return answer, unique_sources, route_details, False, "", "", []
 
-    answer = (
-        "I found relevant information but couldn't generate a response right now. "
-        "Please try again in a moment."
-    )
     if clarification_messages:
         clarifying_domain, raw_msg, options = clarification_messages[0]
         reply = _append_partial_clarification(answer, raw_msg, options)
