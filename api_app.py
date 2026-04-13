@@ -10,6 +10,7 @@ Interactive docs at:
 
 import json
 import os
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -104,6 +105,17 @@ from ui.app_with_clarification_memory import (
 )
 from common.clarification_options import options_cache
 from common.slot_filling import CONTACT_DEPT_PICKER_OPTIONS
+
+
+def _strip_markdown(text: str) -> str:
+    """Convert markdown to plain text for frontends that don't render it."""
+    s = text
+    # Headers: ### Title → Title
+    s = re.sub(r"^#{1,6}\s+", "", s, flags=re.MULTILINE)
+    # Bold/italic: **text** or *text* → text
+    s = re.sub(r"\*{1,3}(.+?)\*{1,3}", r"\1", s)
+    # Bullet points: keep as-is (- item), they read fine as plain text
+    return s
 
 
 def _options_for_domain(domain: str) -> list[str]:
@@ -282,6 +294,9 @@ def ask(req: AskRequest):
             "I couldn't generate a reply just now. If searches keep failing, "
             "confirm Elasticsearch is running (port 9200) and try again."
         )
+
+    # Strip markdown for frontends that render plain text (e.g. Azure)
+    answer = _strip_markdown(answer)
 
     return AskResponse(
         response=answer,
