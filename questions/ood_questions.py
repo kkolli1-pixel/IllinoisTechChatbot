@@ -5,6 +5,17 @@ OOD_PROTOTYPES = [
     "where to buy concert tickets online",
     "how much do sports event tickets cost",
     "where to purchase tickets for entertainment events",
+    # Sports scores and results
+    "who won the NBA finals",
+    "what team won the Super Bowl this year",
+    "who is the current NBA champion",
+    "what are today's NBA scores",
+    "who won the World Series",
+    "what was the score of last night's game",
+    "who won the championship game",
+    "what NFL team is in first place",
+    "who won the NCAA tournament",
+    "what are the playoff standings",
     # Commerce and shopping
     "where can I buy something online",
     "how do I shop for products on the internet",
