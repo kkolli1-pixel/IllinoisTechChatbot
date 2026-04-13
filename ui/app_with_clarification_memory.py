@@ -186,6 +186,32 @@ def classify_pending_response(original_query: str, clarification_message: str, u
     if contact_reply_matches_picker_option(user_response):
         return "ANSWER"
 
+    # Heuristic: if the reply starts with a topic-switch signal word and contains
+    # a wh-question or a policy/topic keyword, treat as NEW_TOPIC without LLM.
+    _SWITCH_SIGNALS = re.compile(
+        r"^\s*(actually|instead|wait|hold on|forget that|different question|"
+        r"what about|never mind|on second thought)\b",
+        re.IGNORECASE,
+    )
+    _WH_QUESTION = re.compile(r"\b(what|when|where|who|how|why|is there|are there|can I|do I)\b", re.IGNORECASE)
+    if _SWITCH_SIGNALS.match(response) and _WH_QUESTION.search(response):
+        return "NEW_TOPIC"
+
+    # Heuristic: a complete question (ends with ?) that shares no words with
+    # the clarification options is almost certainly a topic switch.
+    if response.rstrip().endswith("?") and clarification_options:
+        reply_words = set(re.findall(r"\b[a-z0-9]+\b", response.lower()))
+        opt_words = set(
+            w
+            for opt in clarification_options
+            for w in re.findall(r"\b[a-z0-9]+\b", (opt or "").lower())
+            if len(w) > 2
+        )
+        # If fewer than 2 option words appear in the reply, it's a new topic
+        overlap = reply_words & opt_words
+        if len(overlap) < 2:
+            return "NEW_TOPIC"
+
     if not GROQ_API_KEY:
         return "NEW_TOPIC" if is_escape(clarification_message, response) else "ANSWER"
 
@@ -211,7 +237,13 @@ def classify_pending_response(original_query: str, clarification_message: str, u
                     "even if incomplete or requiring further refinement. This includes: school "
                     "names, department names, student levels, semesters, years, fee types, "
                     "partial answers, or references to the same concept the chatbot asked about.\n"
-                    "NEW_TOPIC — The reply is an unrelated question on a different subject.\n"
+                    "NEW_TOPIC — The reply is an unrelated question on a DIFFERENT subject "
+                    "that is NOT responsive to the clarification. Key signals: the reply asks "
+                    "a full question about a different topic, begins with 'actually', 'instead', "
+                    "'what about', or introduces a completely new subject (e.g., asking about "
+                    "plagiarism when the clarification was about finals dates). If the reply "
+                    "contains a question mark and asks about something unrelated to the "
+                    "clarification, it is NEW_TOPIC.\n"
                     "CANCEL — The reply explicitly abandons the conversation "
                     "(e.g., \"never mind,\" \"forget it,\" \"stop\").\n"
                     "</label_definitions>\n\n"
@@ -750,12 +782,36 @@ Use prior turns only to resolve pronouns and short references in the current que
         return msg, [], route_details, False, "", "", []
 
     # Step 2.5: Rewrite query into retrieval-ready language
-    # prev_user = second-to-last user message (not current) for follow-up context
+    # prev_user = second-to-last user message (not current) for follow-up context.
+    # In the Streamlit path, the current question IS already appended to chat_history
+    # before get_answer is called, so users[-2] is the previous turn.
+    # In the API path, the current question is NOT in chat_history, so users[-1]
+    # is already the previous turn — _previous_user_utterance would return "" (only 1 user).
+    # Detect which path we're in and handle accordingly.
     prev_user = _previous_user_utterance(chat_history)
+    if not prev_user and chat_history:
+        # API path: fall back to the last user message in history
+        api_users = [
+            (t.get("content") or "").strip()
+            for t in chat_history
+            if t.get("role") == "user" and (t.get("content") or "").strip()
+        ]
+        if api_users:
+            prev_user = api_users[-1]
     retrieval_query = rewrite_query(q, domains, context_hint=prev_user)
     # Only treat as follow-up when the previous turn was a real answer (not clarification/error)
     # Prevents is_followup from firing after unrelated answered questions in long sessions
     last_was_answer = st.session_state.get("last_turn_was_answer", False)
+    # API path: infer from chat_history when session_state is unavailable
+    if not last_was_answer and chat_history and len(chat_history) >= 2:
+        last_asst = chat_history[-1].get("content", "") if chat_history[-1].get("role") == "assistant" else ""
+        # If the last assistant message looks like a real answer (not a clarification prompt),
+        # treat this as a follow-up candidate
+        if last_asst and not any(kw in last_asst.lower() for kw in [
+            "could you specify", "which semester", "which school",
+            "could you clarify", "options:",
+        ]):
+            last_was_answer = True
     is_followup = last_was_answer and is_followup_query(q, prev_user)
     retrieval_sub_queries = {domain: retrieval_query for domain in domains}
 
@@ -768,7 +824,10 @@ Use prior turns only to resolve pronouns and short references in the current que
 
     # Step 3: Retrieve
     if DOMAIN_CALENDAR in domains:
-        cal_query = q
+        # Use the rewritten query for routing — it includes semester context
+        # resolved from the previous turn (e.g. "when do they end?" → "when do
+        # spring 2026 classes end?"), avoiding spurious clarification prompts.
+        cal_query = retrieval_query if retrieval_query else q
         try:
             hits = calendar_route_query(cal_query)
             if isinstance(hits, dict) and hits.get("needs_clarification"):

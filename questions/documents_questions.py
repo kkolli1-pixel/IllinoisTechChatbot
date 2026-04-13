@@ -165,4 +165,30 @@ DOCUMENTS_PROTOTYPES = [
     "intellectual property policy",
     "student research ownership",
     "third party sponsorship work",
+    # Parking
+    "how does parking work on campus",
+    "student parking permit policy",
+    "visitor parking rules",
+    "daily parking rates campus",
+    "where can I park at IIT",
+    "parking regulations illinois tech",
+    # Course load and enrollment
+    "maximum course load per semester",
+    "how many courses can I take per semester",
+    "maximum credit hours per semester",
+    "full time credit hour requirement",
+    "course overload policy",
+    "minimum credit hours for full time status",
+    "part time enrollment credit hours",
+    # Attendance
+    "class attendance policy",
+    "attendance requirements",
+    "what is the attendance policy at IIT",
+    "can professors take attendance",
+    "attendance and registration policy",
+    # Late registration
+    "late registration policy",
+    "how do I request a late registration",
+    "late add request process",
+    "can I register after the deadline",
 ]
