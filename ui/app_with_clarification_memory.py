@@ -493,6 +493,13 @@ def _off_topic_short_reply(query: str) -> str | None:
         "it's broken",
         "its broken",
         "this is broken",
+        "goodbye",
+        "bye",
+        "bye!",
+        "goodbye!",
+        "see you",
+        "see ya",
+        "good bye",
     }
     if s in exact:
         return (
@@ -502,6 +509,25 @@ def _off_topic_short_reply(query: str) -> str | None:
     if s in {"what?", "what", "huh", "huh?"}:
         return (
             "I did not quite catch that — what do you need about the calendar, directory, tuition, or policies?"
+        )
+    # Self-identity questions
+    if s in {"who are you", "who are you?", "what are you", "what are you?",
+             "what is this", "what is this?", "what can you do", "what can you do?",
+             "what do you do", "what do you do?"}:
+        return (
+            "I am Hawk, the Illinois Institute of Technology virtual assistant. "
+            "I can help with the academic calendar, staff contacts, tuition and fees, "
+            "and university policies. What would you like to know?"
+        )
+    # Homework / essay / personal task requests — only unambiguous academic dishonesty phrases
+    _TASK_REQUEST = re.compile(
+        r"\b(write|do|complete)\b.{0,30}\b(essay|homework|assignment)\b",
+        re.IGNORECASE,
+    )
+    if _TASK_REQUEST.search(query):
+        return (
+            "I am not able to help with assignments or personal tasks. "
+            "I can assist with Illinois Tech calendar, contacts, tuition, and policy questions."
         )
     return None
 

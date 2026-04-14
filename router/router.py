@@ -111,8 +111,10 @@ def get_routing_intent(query: str) -> Dict[str, List[str]]:
 
         best_score = similarities[0][1]
 
-        # Confidence check
-        if best_score < CONFIDENCE_THRESHOLD:
+        # Confidence check — raise threshold for very short queries
+        word_count = len(query.strip().split())
+        effective_threshold = 0.68 if word_count < 3 else CONFIDENCE_THRESHOLD
+        if best_score < effective_threshold:
             logger.debug("Router confidence too low.")
             return {
                 "domains": [],

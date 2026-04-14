@@ -30,6 +30,11 @@ OOD_PROTOTYPES = [
     "where can I watch movies and TV shows",
     # Weather and environment
     "what is the weather forecast for Chicago",
+    "what is the weather in Chicago today",
+    "what is the weather like in Chicago",
+    "how cold is it in Chicago right now",
+    "current weather in Chicago",
+    "Chicago weather today",
     "is it going to rain tomorrow",
     "what is the temperature outside right now",
     "will it snow this weekend in Chicago",
