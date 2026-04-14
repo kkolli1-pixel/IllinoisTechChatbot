@@ -191,4 +191,18 @@ DOCUMENTS_PROTOTYPES = [
     "how do I request a late registration",
     "late add request process",
     "can I register after the deadline",
+    # CTA U-Pass / transit
+    "how do I get a Chicago transit card",
+    "how do I get a CTA U-Pass",
+    "student transit pass Illinois Tech",
+    "CTA U-Pass for IIT students",
+    "how to get a Ventra card as a student",
+    "public transit card for students",
+    # Faculty grade submission
+    "how do I submit final grades",
+    "how to enter grades as a professor",
+    "faculty grade submission process",
+    "where do I submit student grades",
+    "grade submission portal for faculty",
+    "how to submit grades illinois tech",
 ]
