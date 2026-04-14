@@ -270,15 +270,18 @@ def ask(req: AskRequest):
         contact_opts    = [o.lower() for o in CONTACT_DEPT_PICKER_OPTIONS]
 
         # Detect bare proper names (e.g. "Yuhan Ding") — route straight to CONTACTS.
-        # Guards: 2-3 words, all start uppercase, no digits (rules out "Fall 2026"),
+        # Guards: 2-3 purely alphabetic words, no digits (rules out "Fall 2026"),
         # no question/punctuation, and not a known calendar/academic keyword.
+        # Case-insensitive: title-case the prompt for the check so "yuhan ding"
+        # and "YUHAN DING" both match identically to "Yuhan Ding".
         _NON_NAME_WORDS = {"fall", "spring", "summer", "winter", "never", "mind",
                            "registration", "coursera", "term", "semester", "campus"}
         _prompt_words = prompt.split()
+        _prompt_title = prompt.title()
+        _title_words = _prompt_title.split()
         _is_proper_name = (
             len(_prompt_words) in (2, 3)
-            and all(w[0].isupper() for w in _prompt_words if w)
-            and all(w[0].isalpha() for w in _prompt_words if w)
+            and all(w.isalpha() for w in _prompt_words if w)
             and not any(c in prompt for c in ("?", "!", "@", ","))
             and not any(w.lower() in _NON_NAME_WORDS for w in _prompt_words)
         )
@@ -297,7 +300,7 @@ def ask(req: AskRequest):
             )
         elif _is_proper_name:
             answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer_for_domain(
-                f"contact information for {prompt}", DOMAIN_CONTACTS, chat_history=[]
+                f"contact information for {_prompt_title}", DOMAIN_CONTACTS, chat_history=[]
             )
         else:
             answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer(
