@@ -212,4 +212,17 @@ DOCUMENTS_PROTOTYPES = [
     "where do I submit student grades",
     "grade submission portal for faculty",
     "how to submit grades illinois tech",
+    # Financial distress / hardship
+    "i cant pay my tuition right now",
+    "i cannot afford tuition this semester",
+    "i dont have money to pay for school",
+    "will they kick me out if i dont pay tuition",
+    "what happens if i cant pay my bill",
+    "is there any way to get help paying for school",
+    "financial hardship tuition help",
+    "i need help paying for school",
+    "how do i know how much i owe the school",
+    "where can i see my account balance",
+    "tuition payment plan options",
+    "can i get a payment plan for tuition",
 ]

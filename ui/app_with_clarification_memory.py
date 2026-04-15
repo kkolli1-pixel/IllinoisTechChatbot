@@ -564,6 +564,22 @@ def _off_topic_short_reply(query: str) -> str | None:
             "I can help with the academic calendar, staff contacts, tuition and fees, "
             "and university policies. What would you like to know?"
         )
+    # Emotional / wellbeing — redirect compassionately to counseling
+    _EMOTIONAL = re.compile(
+        r"\b(cant focus|can't focus|overwhelmed|too much right now|don't want to be here"
+        r"|dont want to be here|everything is too much|stressed out|breaking down"
+        r"|falling apart|cant handle|can't handle|need someone to talk to"
+        r"|nobody cares|no one cares|give up|giving up|want to quit"
+        r"|mental health|anxiety|depression)\b",
+        re.IGNORECASE,
+    )
+    if _EMOTIONAL.search(query):
+        return (
+            "It sounds like you are going through a tough time. "
+            "Illinois Tech's Counseling Services are here to help — "
+            "you can reach them at counseling@iit.edu or 312-567-5395. "
+            "The Office of Student Affairs is also available at dos@illinoistech.edu or 312-567-3081."
+        )
     # Homework / essay / personal task requests — only unambiguous academic dishonesty phrases
     _TASK_REQUEST = re.compile(
         r"\b(write|do|complete)\b.{0,30}\b(essay|homework|assignment)\b",
