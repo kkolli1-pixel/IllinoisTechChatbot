@@ -27,6 +27,7 @@ if str(project_root) not in sys.path:
 os.chdir(project_root)
 load_dotenv(project_root / ".env")
 
+
 # ── Stub out streamlit so the import of app_with_clarification_memory works ───
 # That module uses `st.error`, `st.session_state`, `st.set_page_config`, etc.
 # at import time and inside functions.  We provide a lightweight no-op shim
@@ -273,15 +274,17 @@ def ask(req: AskRequest):
         # Guards: 2-3 purely alphabetic words, no digits (rules out "Fall 2026"),
         # no question/punctuation, and not a known calendar/academic keyword.
         # Case-insensitive: title-case the prompt for the check so "yuhan ding"
-        # and "YUHAN DING" both match identically to "Yuhan Ding".
+        # Require at least one word to start with uppercase — real names always
+        # have at least one capital (Yuhan ding, YUHAN DING, Yuhan Ding all pass;
+        # "hi there", "whats the cost", "help me" all fail and fall through normally).
         _NON_NAME_WORDS = {"fall", "spring", "summer", "winter", "never", "mind",
                            "registration", "coursera", "term", "semester", "campus"}
         _prompt_words = prompt.split()
         _prompt_title = prompt.title()
-        _title_words = _prompt_title.split()
         _is_proper_name = (
             len(_prompt_words) in (2, 3)
             and all(w.isalpha() for w in _prompt_words if w)
+            and any(w[0].isupper() for w in _prompt_words if w)
             and not any(c in prompt for c in ("?", "!", "@", ","))
             and not any(w.lower() in _NON_NAME_WORDS for w in _prompt_words)
         )

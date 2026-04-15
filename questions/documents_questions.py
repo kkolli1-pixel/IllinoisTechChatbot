@@ -186,6 +186,13 @@ DOCUMENTS_PROTOTYPES = [
     "what is the attendance policy at IIT",
     "can professors take attendance",
     "attendance and registration policy",
+    # Leave of absence — casual phrasing
+    "i need a break from school",
+    "i want to take time off from classes",
+    "i need to step away from school",
+    "i want to pause my studies",
+    "can i stop going to school for a semester",
+    "i need to stop attending classes",
     # Late registration
     "late registration policy",
     "how do I request a late registration",

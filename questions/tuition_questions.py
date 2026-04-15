@@ -54,5 +54,16 @@ TUITION_PROTOTYPES = [
     "cost comparison by school",
     "how do fees compare between programs",
     "what fees are charged each semester",
-    "how much is the graduate program fee"
+    "how much is the graduate program fee",
+    # Casual / natural language cost questions
+    "whats the cost",
+    "how much does it cost",
+    "how much do i have to pay",
+    "how much will i pay",
+    "what do i owe",
+    "what am i paying",
+    "i wanna know about tuition",
+    "tell me about tuition",
+    "money for school",
+    "how expensive is iit",
 ]
