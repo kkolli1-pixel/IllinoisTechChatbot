@@ -280,6 +280,9 @@ def ask(req: AskRequest):
         _NON_NAME_WORDS = {
             # Seasons / time
             "fall", "spring", "summer", "winter",
+            # Months
+            "january", "february", "march", "april", "may", "june",
+            "july", "august", "september", "october", "november", "december",
             # Academic calendar
             "holiday", "holidays", "break", "breaks", "schedule", "schedules",
             "deadline", "deadlines", "term", "semester", "session", "orientation",
