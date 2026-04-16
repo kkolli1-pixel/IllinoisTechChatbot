@@ -285,6 +285,7 @@ def ask(req: AskRequest):
             "deadline", "deadlines", "term", "semester", "session", "orientation",
             "finals", "final", "exam", "exams", "week", "day", "year",
             "commencement", "graduation", "convocation",
+            "early", "departure", "midterm", "midterms", "grading", "begins",
             # Registration / academics
             "registration", "coursera", "campus", "course", "courses",
             "class", "classes", "credit", "credits", "load", "limit",
