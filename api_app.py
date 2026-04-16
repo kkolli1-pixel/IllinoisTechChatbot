@@ -278,7 +278,9 @@ def ask(req: AskRequest):
         # have at least one capital (Yuhan ding, YUHAN DING, Yuhan Ding all pass;
         # "hi there", "whats the cost", "help me" all fail and fall through normally).
         _NON_NAME_WORDS = {"fall", "spring", "summer", "winter", "never", "mind",
-                           "registration", "coursera", "term", "semester", "campus"}
+                           "registration", "coursera", "term", "semester", "campus",
+                           "holiday", "holidays", "break", "breaks", "schedule",
+                           "deadline", "deadlines", "policy", "policies", "fee", "fees"}
         _prompt_words = prompt.split()
         _prompt_title = prompt.title()
         _is_proper_name = (
