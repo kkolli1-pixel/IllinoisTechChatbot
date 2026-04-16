@@ -277,10 +277,27 @@ def ask(req: AskRequest):
         # Require at least one word to start with uppercase — real names always
         # have at least one capital (Yuhan ding, YUHAN DING, Yuhan Ding all pass;
         # "hi there", "whats the cost", "help me" all fail and fall through normally).
-        _NON_NAME_WORDS = {"fall", "spring", "summer", "winter", "never", "mind",
-                           "registration", "coursera", "term", "semester", "campus",
-                           "holiday", "holidays", "break", "breaks", "schedule",
-                           "deadline", "deadlines", "policy", "policies", "fee", "fees"}
+        _NON_NAME_WORDS = {
+            # Seasons / time
+            "fall", "spring", "summer", "winter",
+            # Academic calendar
+            "holiday", "holidays", "break", "breaks", "schedule", "schedules",
+            "deadline", "deadlines", "term", "semester", "session", "orientation",
+            "finals", "final", "exam", "exams", "week", "day", "year",
+            "commencement", "graduation", "convocation",
+            # Registration / academics
+            "registration", "coursera", "campus", "course", "courses",
+            "class", "classes", "credit", "credits", "load", "limit",
+            "add", "drop", "withdraw", "withdrawal", "audit", "overload",
+            "grade", "grades", "appeal", "transcript", "enrollment",
+            "transfer", "abroad", "study", "research", "advising",
+            # People/role words (not names)
+            "student", "students", "faculty", "staff", "advisor", "dean",
+            "professor", "instructor", "new", "office", "hours",
+            # Misc
+            "honor", "honors", "roll", "list", "labor", "policy", "policies",
+            "fee", "fees", "never", "mind",
+        }
         _prompt_words = prompt.split()
         _prompt_title = prompt.title()
         _is_proper_name = (
