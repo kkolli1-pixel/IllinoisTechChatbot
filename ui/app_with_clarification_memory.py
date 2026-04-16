@@ -939,7 +939,7 @@ Use prior turns only to resolve pronouns and short references in the current que
     if (
         domains == [DOMAIN_DOCUMENTS]
         and not prev_user
-        and len(q.split()) >= 3
+        and len(q.split()) >= 2
     ):
         retrieval_query = q
     # Only treat as follow-up when the previous turn was a real answer (not clarification/error)
