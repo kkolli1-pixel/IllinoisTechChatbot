@@ -486,6 +486,8 @@ def _off_topic_short_reply(query: str) -> str | None:
         "whats up",
         "whats up?",
         "what's up?",
+        "hey what's up",
+        "hey whats up",
         "sup",
         "hey",
         "hi",
@@ -576,7 +578,8 @@ def _off_topic_short_reply(query: str) -> str | None:
              "what do you do", "what do you do?",
              "what even is this chatbot", "what is this chatbot",
              "what does this chatbot do", "what does this do",
-             "what does this do?"}:
+             "what does this do?",
+             "what even are you", "what even are you?"}:
         return (
             "I am Hawk, the Illinois Institute of Technology virtual assistant. "
             "I can help with the academic calendar, staff contacts, tuition and fees, "
