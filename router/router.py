@@ -68,7 +68,7 @@ prototype_embeddings = {}
 for domain, questions in PROTOTYPES.items():
 
     embeddings = model_large.encode(
-        [f"query: {q}" for q in questions],
+        [f"query: {q.lower()}" for q in questions],
         normalize_embeddings=True
     )
 
