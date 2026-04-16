@@ -613,7 +613,9 @@ def _off_topic_short_reply(query: str) -> str | None:
         )
     # Clearly off-topic: math, translation, trivia, general knowledge
     _OOD_HARD = re.compile(
-        r"\b(what is \d+[\s\+\-\*\/]+\d+|calculate|solve for|translate (this|to|into)|"
+        r"\b(what is \d+[\s\+\-\*\/]+(plus|minus|times|divided)?\s*\d+|"
+        r"what is \d+\s*(plus|minus|times|divided by)\s*\d+|"
+        r"calculate|solve for|translate (this|to|into)|"
         r"weather (today|tomorrow|forecast)|who (won|is winning)|super bowl|world cup|"
         r"stock price|bitcoin|recipe for|how to cook|recommend (a |me a )?(restaurant|movie|song|book)|"
         r"capital of [a-z]+|president of (the )?(us|usa|united states|[a-z]+\s[a-z]+))\b",
