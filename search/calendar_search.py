@@ -89,6 +89,41 @@ def calendar_semantic_search(query: str, top_k: int):
         logger.error(f"Calendar semantic search failed for query '{query}': {e}")
         return []
 
+# Dedicated search for all holiday/break events (bypasses reranker top_k cap)
+def calendar_holidays_search(term_filter: str = None) -> list:
+    """Return all holiday and break events, optionally filtered by term."""
+    should = [
+        {"wildcard": {"event_name": "*oliday*"}},
+        {"wildcard": {"event_name": "*reak*"}},
+        {"wildcard": {"event_name": "*hanksgiv*"}},
+        {"wildcard": {"event_name": "*uneteenth*"}},
+        {"wildcard": {"event_name": "*ndependence*"}},
+        {"wildcard": {"event_name": "*emorial*"}},
+        {"wildcard": {"event_name": "*abor*"}},
+        {"wildcard": {"event_name": "*hristmas*"}},
+        {"wildcard": {"event_name": "*artin Luther*"}},
+        {"wildcard": {"event_name": "*ew Year*"}},
+        {"wildcard": {"event_name": "*loating*"}},
+    ]
+    query_body = {"bool": {"should": should, "minimum_should_match": 1}}
+    if term_filter:
+        query_body = {
+            "bool": {
+                "must": [{"bool": {"should": should, "minimum_should_match": 1}}],
+                "filter": [{"match": {"term": term_filter}}],
+            }
+        }
+    try:
+        results = es.search(
+            index="iit_calendar",
+            body={"size": 30, "query": query_body, "sort": [{"start_date": {"order": "asc"}}]},
+        )
+        return results["hits"]["hits"]
+    except Exception as e:
+        logger.error(f"Calendar holidays search failed: {e}")
+        return []
+
+
 # RRF search + reranker
 def calendar_rrf_search(query: str, top_k: int = 10):
 

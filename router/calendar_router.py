@@ -1,7 +1,7 @@
 import re
 
 from common.es_client import es
-from search.calendar_search import calendar_rrf_search
+from search.calendar_search import calendar_rrf_search, calendar_holidays_search
 from utils.reranker import rerank_chunks
 
 try:
@@ -215,6 +215,17 @@ def route_query(query: str):
     has_term_or_year = bool(_CALENDAR_TERM_OR_YEAR.search(q))
     has_named_holiday = bool(_CALENDAR_NAMED_HOLIDAY.search(q))
     has_month = bool(_re_month.search(query))
+
+    # Generic holiday list queries — return ALL holidays, not just top 5
+    _GENERIC_HOLIDAY_LIST = re.compile(r"\b(holiday list|holidays list|list of holidays|all holidays|university holidays|holiday schedule)\b", re.IGNORECASE)
+    if _GENERIC_HOLIDAY_LIST.search(q):
+        # Extract term filter if present (e.g. "fall 2026 holiday list")
+        term_match = _CALENDAR_TERM_OR_YEAR.search(q)
+        term_filter = term_match.group(0) if term_match else None
+        hits = calendar_holidays_search(term_filter)
+        if hits:
+            return hits
+        return calendar_rrf_search(query)
 
     # Named holidays are unambiguous — retrieve directly without requiring term/year
     if has_named_holiday:
