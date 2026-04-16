@@ -84,7 +84,8 @@ def documents_rrf_search(query: str, top_k: int = 10):
     ql = (query or "").lower()
     extra_phrases = []
     if any(k in ql for k in ("housing", "residence", "dorm", "dormitory")):
-        extra_phrases.extend(["residence life handbook", "residence halls", "residence life"])
+        extra_phrases.extend(["residence life handbook", "residence halls", "residence life",
+                               "on-campus housing rules", "residence hall policy"])
     if any(k in ql for k in ("visa", "immigration", "international student", "iss")):
         extra_phrases.extend(["office of global services", "immigration status", "iss"])
     if extra_phrases:
@@ -97,7 +98,7 @@ def documents_rrf_search(query: str, top_k: int = 10):
     # rerank ES hits directly using cross-encoder
     # Use the expanded query for reranking so the cross-encoder can align on
     # the same key entities we boosted in lexical retrieval.
-    reranked_hits = rerank_chunks(expanded_query, fused, top_k=5)
+    reranked_hits = rerank_chunks(expanded_query, fused, top_k=7)
 
     # final top results
     return reranked_hits
