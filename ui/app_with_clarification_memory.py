@@ -71,24 +71,42 @@ contact_reply_matches_picker_option = getattr(
     _contact_reply_matches_picker_option_fallback,
 )
 
-# ── Small LLM helper (Groq only) ───────────────────────────────────────────────
+# ── Small LLM helper (Groq primary, GPT fallback) ──────────────────────────────
 
 def _groq_call(messages: list, max_tokens: int = 60) -> str:
-    """Minimal Groq call for intent/reformulation tasks."""
-    if not GROQ_API_KEY:
-        return ""
-    try:
-        from groq import Groq
-        client = Groq(api_key=GROQ_API_KEY)
-        resp = client.chat.completions.create(
-            model="llama-3.1-8b-instant",
-            messages=messages,
-            temperature=0.0,
-            max_tokens=max_tokens,
-        )
-        return resp.choices[0].message.content.strip()
-    except Exception:
-        return ""
+    """Groq call for intent/reformulation tasks. Falls back to GPT if Groq fails."""
+    if GROQ_API_KEY:
+        try:
+            from groq import Groq
+            client = Groq(api_key=GROQ_API_KEY)
+            resp = client.chat.completions.create(
+                model="llama-3.1-8b-instant",
+                messages=messages,
+                temperature=0.0,
+                max_tokens=max_tokens,
+            )
+            return resp.choices[0].message.content.strip()
+        except Exception:
+            _log.warning("Groq call failed — falling back to GPT.")
+    # GPT fallback
+    if AZURE_OPENAI_ENDPOINT and AZURE_OPENAI_KEY and AZURE_OPENAI_DEPLOYMENT:
+        try:
+            from openai import AzureOpenAI
+            client = AzureOpenAI(
+                azure_endpoint=AZURE_OPENAI_ENDPOINT,
+                api_key=AZURE_OPENAI_KEY,
+                api_version=AZURE_OPENAI_API_VERSION,
+            )
+            resp = client.chat.completions.create(
+                model=AZURE_OPENAI_DEPLOYMENT,
+                messages=messages,
+                temperature=0.0,
+                max_tokens=max_tokens,
+            )
+            return (resp.choices[0].message.content or "").strip()
+        except Exception as e:
+            _log.warning("GPT fallback also failed: %s", e)
+    return ""
 
 def _openai_synthesis(messages: list) -> str:
     """Azure OpenAI synthesis call. Returns empty string on failure."""
