@@ -611,6 +611,19 @@ def _off_topic_short_reply(query: str) -> str | None:
             "I am not able to help with assignments or personal tasks. "
             "I can assist with Illinois Tech calendar, contacts, tuition, and policy questions."
         )
+    # Clearly off-topic: math, translation, trivia, general knowledge
+    _OOD_HARD = re.compile(
+        r"\b(what is \d+[\s\+\-\*\/]+\d+|calculate|solve for|translate (this|to|into)|"
+        r"weather (today|tomorrow|forecast)|who (won|is winning)|super bowl|world cup|"
+        r"stock price|bitcoin|recipe for|how to cook|recommend (a |me a )?(restaurant|movie|song|book)|"
+        r"capital of [a-z]+|president of (the )?(us|usa|united states|[a-z]+\s[a-z]+))\b",
+        re.IGNORECASE,
+    )
+    if _OOD_HARD.search(query):
+        return (
+            "I can help with the university calendar, staff contacts, tuition and fees, "
+            "and academic policies. Could you rephrase with more detail?"
+        )
     return None
 
 def _previous_user_utterance(chat_history: list | None) -> str:
