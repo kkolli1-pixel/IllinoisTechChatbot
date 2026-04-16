@@ -295,7 +295,10 @@ def reformulate_query(original_query: str, user_clarification: str) -> str:
                     "(2) Insert the clarification value verbatim — do not paraphrase, "
                     "translate, or reinterpret slot values such as school names, "
                     "departments, levels, or fee types. "
-                    "(3) Preserve the original question's intent and scope."
+                    "(3) Preserve the original question's intent and topic exactly. "
+                    "If the original is about holidays, the output must be about holidays. "
+                    "If the original is about tuition, the output must be about tuition. "
+                    "Never broaden or shift the topic."
                 ),
             },
             {

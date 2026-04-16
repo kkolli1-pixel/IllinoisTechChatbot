@@ -194,7 +194,8 @@ _CALENDAR_TERM_OR_YEAR = re.compile(
 
 _CALENDAR_NAMED_HOLIDAY = re.compile(
     r"\b(thanksgiving|christmas|labor day|memorial day|juneteenth|independence day|"
-    r"martin luther king|mlk|new year|spring break|fall break|winter break)\b",
+    r"martin luther king|mlk|new year|spring break|fall break|winter break|"
+    r"holiday|holidays|university holiday|paid holiday|floating holiday)\b",
     re.IGNORECASE,
 )
 
