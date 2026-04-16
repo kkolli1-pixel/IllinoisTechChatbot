@@ -246,7 +246,8 @@ _CALENDAR_TERM  = re.compile(r"\b(spring|fall|summer|winter|semester|term)\b", r
 _CALENDAR_WEAK  = re.compile(r"\b(deadline|due|start|end|begin|close|week|weeks|first day|last day|first class|last class|orientation)\b", re.IGNORECASE)
 _CALENDAR_STRONG_HOLIDAY = re.compile(
     r"\b(thanksgiving|christmas|labor day|memorial day|juneteenth|independence day|"
-    r"martin luther king|mlk|new year|spring break|fall break|winter break)\b",
+    r"martin luther king|mlk|new year|spring break|fall break|winter break|"
+    r"holiday|holidays|university holiday|paid holiday|floating holiday)\b",
     re.IGNORECASE
 )
 _CALENDAR_DATE  = re.compile(
