@@ -12,6 +12,7 @@ import json
 import os
 import re
 import sys
+import time
 from pathlib import Path
 from typing import Any
 
@@ -26,7 +27,6 @@ if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 os.chdir(project_root)
 load_dotenv(project_root / ".env")
-
 
 # ── Stub out streamlit so the import of app_with_clarification_memory works ───
 # That module uses `st.error`, `st.session_state`, `st.set_page_config`, etc.
@@ -106,7 +106,7 @@ from ui.app_with_clarification_memory import (
 )
 from common.clarification_options import options_cache
 from common.slot_filling import CONTACT_DEPT_PICKER_OPTIONS
-
+from common.es_client import es
 
 def _strip_markdown(text: str) -> str:
     """Convert markdown to plain text for frontends that don't render it."""
@@ -126,7 +126,6 @@ def _strip_markdown(text: str) -> str:
     )
     return s.rstrip()
 
-
 def _options_for_domain(domain: str) -> list[str]:
     """Re-derive clarification options from domain when frontend doesn't pass them back."""
     if domain == DOMAIN_TUITION:
@@ -136,6 +135,48 @@ def _options_for_domain(domain: str) -> list[str]:
     if domain == DOMAIN_CALENDAR:
         return list(options_cache.calendar_terms or [])
     return []
+
+def _is_known_contact_name(prompt: str) -> bool:
+
+    words = [w for w in (prompt or "").split() if w]
+    if len(words) < 2 or len(words) > 4:
+        return False
+    if not all(re.fullmatch(r"[A-Za-z][A-Za-z'-]*", w) for w in words):
+        return False
+    try:
+        res = es.search(
+            index="iit_contacts",
+            body={
+                "size": 3,
+                "query": {
+                    "match_phrase": {
+                        "name": prompt
+                    }
+                },
+            },
+        )
+        target = " ".join(words).lower()
+        for hit in res.get("hits", {}).get("hits", []):
+            name = ((hit.get("_source", {}) or {}).get("name") or "").strip().lower()
+            if name == target:
+                return True
+        return False
+    except Exception:
+        return False
+
+def _extract_contact_candidate(prompt: str) -> str:
+
+    text = (prompt or "").strip()
+    if not text:
+        return ""
+    m = re.match(r"(?i)\s*(?:who\s+is|contact\s+(?:for|info\s+for)|info\s+for)\s+(.+?)\s*$", text)
+    if not m:
+        return ""
+    candidate = m.group(1).strip().strip("?.!,")
+    tokens = [t for t in candidate.split() if t]
+    if 2 <= len(tokens) <= 4 and all(re.fullmatch(r"[A-Za-z][A-Za-z'-]*", t) for t in tokens):
+        return " ".join(tokens)
+    return ""
 
 # ── FastAPI app ───────────────────────────────────────────────────────────────
 
@@ -157,7 +198,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 # ── Request / Response models ─────────────────────────────────────────────────
 
 class PendingContext(BaseModel):
@@ -167,11 +207,9 @@ class PendingContext(BaseModel):
     domain: str | None = None
     clarification_options: list[str] = []
 
-
 class ChatMessage(BaseModel):
     role: str
     content: str
-
 
 class AskRequest(BaseModel):
     """What the client sends to /ask."""
@@ -186,7 +224,6 @@ class AskRequest(BaseModel):
         description="If the previous response was a clarification, send this back with the user's answer",
     )
 
-
 class AskResponse(BaseModel):
     """What the API returns from /ask."""
     response: str = Field(..., description="The chatbot's answer or clarification question")
@@ -198,14 +235,12 @@ class AskResponse(BaseModel):
     )
     route_details: dict[str, Any] = Field(default_factory=dict, description="Router debug info")
 
-
 # ── Endpoints ─────────────────────────────────────────────────────────────────
 
 @app.get("/health")
 def health_check():
     """Simple liveness probe."""
     return {"status": "ok", "model": "chatbot_b"}
-
 
 @app.post("/ask", response_model=AskResponse)
 def ask(req: AskRequest):
@@ -302,15 +337,25 @@ def ask(req: AskRequest):
             "honor", "honors", "roll", "list", "labor", "policy", "policies",
             "fee", "fees", "never", "mind",
         }
+        _DIRECT_NON_CONTACT_ANCHORS = {
+            "tuition", "fee", "fees", "cost", "costs", "rate", "rates",
+            "policy", "policies", "rule", "rules", "probation", "gpa",
+            "housing", "visa", "handbook", "calendar", "holiday", "holidays",
+            "deadline", "deadlines", "break", "breaks", "semester", "term",
+            "document", "documents",
+        }
         _prompt_words = prompt.split()
         _prompt_title = prompt.title()
+        _has_non_contact_anchor = any(w.lower() in _DIRECT_NON_CONTACT_ANCHORS for w in _prompt_words)
         _is_proper_name = (
             len(_prompt_words) in (2, 3)
-            and all(w.isalpha() for w in _prompt_words if w)
-            and any(w[0].isupper() for w in _prompt_words if w)
+            and all(re.fullmatch(r"[A-Za-z][A-Za-z'-]*", w) for w in _prompt_words if w)
             and not any(c in prompt for c in ("?", "!", "@", ","))
             and not any(w.lower() in _NON_NAME_WORDS for w in _prompt_words)
+            and not _has_non_contact_anchor
         )
+        _candidate_name = _extract_contact_candidate(prompt)
+        _is_known_contact = _is_known_contact_name(prompt) or (_is_known_contact_name(_candidate_name) if _candidate_name else False)
 
         if bare in tuition_schools:
             answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer_for_domain(
@@ -324,9 +369,10 @@ def ask(req: AskRequest):
             answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer_for_domain(
                 prompt, DOMAIN_CONTACTS, chat_history=[]
             )
-        elif _is_proper_name:
+        elif _is_proper_name or _is_known_contact:
+            name_for_query = _candidate_name if _candidate_name else _prompt_title
             answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer_for_domain(
-                f"contact information for {_prompt_title}", DOMAIN_CONTACTS, chat_history=[]
+                f"contact information for {name_for_query}", DOMAIN_CONTACTS, chat_history=[]
             )
         else:
             answer, sources, route_details, is_clarification, clar_msg, clar_domain, _clar_opts = get_answer(

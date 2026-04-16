@@ -925,6 +925,23 @@ Use prior turns only to resolve pronouns and short references in the current que
         if api_users:
             prev_user = api_users[-1]
     retrieval_query = rewrite_query(q, domains, context_hint=prev_user)
+    # Prevent LLM rewrite drift on explicit tuition comparison asks.
+    # Example failure observed: "compare tuition for mies vs chicago-kent"
+    # rewritten into unrelated law-school program text.
+    if (
+        DOMAIN_TUITION in domains
+        and re.search(r"\b(compare|comparison|vs|versus)\b", (q or "").lower())
+    ):
+        retrieval_query = q
+    # For DOCUMENTS-only queries, skip rewrite when the original query is already
+    # specific enough (contains a policy/topic keyword). The rewriter adds noise that
+    # derails retrieval (e.g., "international student visa policy" → vague paraphrase).
+    if (
+        domains == [DOMAIN_DOCUMENTS]
+        and not prev_user
+        and len(q.split()) >= 3
+    ):
+        retrieval_query = q
     # Only treat as follow-up when the previous turn was a real answer (not clarification/error)
     # Prevents is_followup from firing after unrelated answered questions in long sessions
     last_was_answer = st.session_state.get("last_turn_was_answer", False)

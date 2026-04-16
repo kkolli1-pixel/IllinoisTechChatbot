@@ -24,7 +24,6 @@ except Exception:
     _OPTIONS_AVAILABLE = False
     options_cache = None
 
-
 # ── Documents config (only thing that can't come from ES cleanly) ─────────────
 
 def _load_documents_config() -> Dict:
@@ -42,9 +41,7 @@ def _load_documents_config() -> Dict:
     logger.warning("documents_topics.json not found — document validation will be permissive.")
     return {"topic_keywords": [], "doc_type_keywords": []}
 
-
 _DOCS_CONFIG = _load_documents_config()
-
 
 # ── Pattern builder ───────────────────────────────────────────────────────────
 
@@ -55,7 +52,6 @@ def _build_pattern(terms: List[str], flags=re.IGNORECASE) -> "re.Pattern | None"
         return None
     escaped = sorted([re.escape(t) for t in clean], key=len, reverse=True)
     return re.compile(r"\b(" + "|".join(escaped) + r")\b", flags)
-
 
 # ── Department alias expansion ────────────────────────────────────────────────
 
@@ -119,10 +115,8 @@ def _expand_department_aliases(departments: List[str]) -> List[str]:
 
     return aliases
 
-
 # Fee names too generic to count as specific tuition anchors
 _GENERIC_FEE_NAMES = {"tuition", "fees", "fee", "cost", "costs", "rate", "rates"}
-
 
 def _shorten_fee_names(fee_names: List[str], exclude_generic: bool = False) -> List[str]:
     """Truncate fee names to first 2 words and strip trailing punctuation.
@@ -138,7 +132,6 @@ def _shorten_fee_names(fee_names: List[str], exclude_generic: bool = False) -> L
         if short and (not exclude_generic or short not in _GENERIC_FEE_NAMES):
             result.append(short)
     return result
-
 
 # ── Lazy pattern cache ────────────────────────────────────────────────────────
 
@@ -220,9 +213,7 @@ class _PatternCache:
             _DOCS_CONFIG.get("doc_type_keywords", [])
         ))
 
-
 _patterns = _PatternCache()
-
 
 # ── Shared helpers ────────────────────────────────────────────────────────────
 
@@ -231,14 +222,11 @@ def _options(values: List[str], max_items: int = 15) -> List[str]:
         return []
     return values[:max_items]
 
-
 def _clarify(message: str, options: List[str] = None) -> Dict[str, Any]:
     return {"needs_clarification": True, "message": message, "options": options or []}
 
-
 def _match(pattern, text: str) -> bool:
     return bool(pattern.search(text)) if pattern else False
-
 
 # ── Structural patterns (vocabulary, not domain data — always fixed) ──────────
 
@@ -276,7 +264,6 @@ _GENERIC_MONEY  = re.compile(
 )
 _GENERIC_DOC    = re.compile(r"\b(document|documents|info|information)\b", re.IGNORECASE)
 
-
 # Curated contacts clarification list (offices/schools shown when the query is underspecified)
 CONTACT_DEPT_PICKER_OPTIONS = [
     "Registrar", "Financial Aid", "Student Accounting", "Academic Affairs",
@@ -286,7 +273,6 @@ CONTACT_DEPT_PICKER_OPTIONS = [
     "Stuart School of Business", "Lewis College of Science and Letters",
     "Institute of Design", "Computer Science", "Physics", "Chemistry",
 ]
-
 
 def contact_reply_matches_picker_option(text: str) -> bool:
     """
@@ -306,14 +292,12 @@ def contact_reply_matches_picker_option(text: str) -> bool:
         return any(w == o.lower() for o in CONTACT_DEPT_PICKER_OPTIONS)
     return any(lower == o.lower() for o in CONTACT_DEPT_PICKER_OPTIONS)
 
-
 def _mentions_dept_picker_option(q_lower: str) -> bool:
     """Substring match for multi-word options (e.g. Chicago-Kent College of Law)."""
     for opt in CONTACT_DEPT_PICKER_OPTIONS:
         if opt.lower() in q_lower:
             return True
     return False
-
 
 # ── Calendar ──────────────────────────────────────────────────────────────────
 
@@ -365,26 +349,29 @@ def calendar_query_validation(query: str) -> Dict[str, Any]:
         term_opts,
     )
 
-
 # ── Contacts ──────────────────────────────────────────────────────────────────
 
 def contacts_query_validation(query: str) -> Dict[str, Any]:
     
     q = (query or "").lower()
+    words = q.split()
 
     # Show a curated list of common offices rather than ES department.keyword
     # values (which are individual job titles, not useful to a student).
     dept_opts = CONTACT_DEPT_PICKER_OPTIONS
 
     # One-word answers that match the clarification picker (e.g. "Physics") are enough to search.
-    words = q.split()
+    result = None
+    reason = ""
     if len(words) == 1:
         w0 = words[0].strip(string.punctuation).lower()
         if any(opt.lower() == w0 for opt in dept_opts):
-            return {"needs_clarification": False, "options": []}
+            result = {"needs_clarification": False, "options": []}
+            reason = "single_word_picker_option"
 
-    if len(q.split()) <= 1:
-        return _clarify("Which department or office are you looking for?", dept_opts)
+    if result is None and len(words) <= 1:
+        result = _clarify("Which department or office are you looking for?", dept_opts)
+        reason = "too_short"
 
     # Previous broad pass-through kept for easy rollback:
     # # 3+ word queries: the semantic router already picked CONTACTS — trust it
@@ -396,27 +383,35 @@ def contacts_query_validation(query: str) -> Dict[str, Any]:
     has_location_slot = bool(_LOCATION_SLOTS.search(q))
     has_generic_unit = bool(_GENERIC_UNIT.search(q))
 
-    if has_strong_unit:
-        return {"needs_clarification": False, "options": []}
+    if result is None and has_strong_unit:
+        result = {"needs_clarification": False, "options": []}
+        reason = "has_strong_unit"
 
     # Broad support asks ("who should I contact about X?") are still answerable.
-    if has_contact_slot and not has_generic_unit:
-        return {"needs_clarification": False, "options": []}
+    if result is None and has_contact_slot and not has_generic_unit:
+        result = {"needs_clarification": False, "options": []}
+        reason = "has_contact_slot_without_generic_unit"
 
     # Location questions for a concrete unit can proceed.
-    if has_location_slot and has_generic_unit and len(q.split()) >= 4:
-        return {"needs_clarification": False, "options": []}
+    if result is None and has_location_slot and has_generic_unit and len(words) >= 4:
+        result = {"needs_clarification": False, "options": []}
+        reason = "location_plus_unit"
 
     # Reformulated follow-ups often name the department but omit "phone/email/contact"
     # (e.g. "What is the Physics department?") — still a concrete directory ask.
     # Also catches clarification answers like "I need to speak with Computer Science".
-    if _mentions_dept_picker_option(q):
-        return {"needs_clarification": False, "options": []}
+    if result is None and _mentions_dept_picker_option(q):
+        result = {"needs_clarification": False, "options": []}
+        reason = "mentions_picker_option"
 
-    return _clarify(
-        "Could you specify which department or office and what kind of information you need?",
-        dept_opts,
-    )
+    if result is None:
+        result = _clarify(
+            "Could you specify which department or office and what kind of information you need?",
+            dept_opts,
+        )
+        reason = "default_clarify"
+
+    return result
 
 # ── Tuition ───────────────────────────────────────────────────────────────────
 
@@ -435,12 +430,18 @@ _TUITION_SCHOOL_ALIASES = re.compile(
 def tuition_query_validation(query: str) -> Dict[str, Any]:
     q = (query or "").lower()
     school_opts = _options(options_cache.tuition_schools if _OPTIONS_AVAILABLE else [])
+    words = q.split()
+    decision = None
+    reason = ""
 
-    if len(q.split()) <= 1:
+    if len(words) <= 1:
         w = q.strip(string.punctuation)
         if school_opts and any(w == opt.lower() for opt in school_opts):
-            return {"needs_clarification": False, "options": []}
-        return _clarify("Which school or program are you asking about?", school_opts)
+            decision = {"needs_clarification": False, "options": []}
+            reason = "single_word_school_option"
+        else:
+            decision = _clarify("Which school or program are you asking about?", school_opts)
+            reason = "too_short"
 
     # Previous broad pass-through kept for easy rollback:
     # # 3+ word queries: the semantic router already picked TUITION — trust it
@@ -456,32 +457,39 @@ def tuition_query_validation(query: str) -> Dict[str, Any]:
 
     # If routed here due overlap terms like "full-time/part-time" but no real tuition intent,
     # avoid forcing a tuition clarification and let downstream retrieval answer.
-    if has_anchor and not has_pricing_intent:
-        return {"needs_clarification": False, "options": []}
+    if decision is None and has_anchor and not has_pricing_intent:
+        decision = {"needs_clarification": False, "options": []}
+        reason = "anchor_without_pricing_intent"
 
-    if has_specific:
-        return {"needs_clarification": False, "options": []}
+    if decision is None and has_specific:
+        decision = {"needs_clarification": False, "options": []}
+        reason = "has_specific"
 
     # Tuition intent exists, but no school/level/fee/year specificity.
-    if has_anchor and not has_specific:
-        return _clarify(
+    if decision is None and has_anchor and not has_specific:
+        decision = _clarify(
             "Could you specify which school or program level this is for?",
             school_opts,
         )
+        reason = "anchor_without_specific"
 
-    if has_generic_money:
-        return _clarify(
+    if decision is None and has_generic_money:
+        decision = _clarify(
             "Could you specify what you need about tuition and fees? "
             "For example: which school, program level, or a specific fee.",
             school_opts,
         )
+        reason = "generic_money"
 
-    return _clarify(
-        "Could you specify what you need about tuition and fees? "
-        "For example: which school, program level, or a specific fee.",
-        school_opts,
-    )
+    if decision is None:
+        decision = _clarify(
+            "Could you specify what you need about tuition and fees? "
+            "For example: which school, program level, or a specific fee.",
+            school_opts,
+        )
+        reason = "default_clarify"
 
+    return decision
 
 # ── Documents ─────────────────────────────────────────────────────────────────
 

@@ -37,7 +37,6 @@ def documents_lexical_search(query: str, top_k: int):
         logger.error(f"Documents lexical search failed for query '{query}': {e}")
         return []
 
-
 # semantic search
 def documents_semantic_search(query: str, top_k: int):
 
@@ -79,14 +78,26 @@ def documents_rrf_search(query: str, top_k: int = 10):
     if validation.get("needs_clarification"):
         return validation
 
-    expanded_query = expand_query(query, "DOCUMENTS")
+    expanded_query = expand_query(query, "DOCUMENTS", max_expansions=4)
+    # Deterministic query augmentation for common low-recall phrases.
+    # Keep this local and keyword-gated to avoid changing routing across domains.
+    ql = (query or "").lower()
+    extra_phrases = []
+    if any(k in ql for k in ("housing", "residence", "dorm", "dormitory")):
+        extra_phrases.extend(["residence life handbook", "residence halls", "residence life"])
+    if any(k in ql for k in ("visa", "immigration", "international student", "iss")):
+        extra_phrases.extend(["office of global services", "immigration status", "iss"])
+    if extra_phrases:
+        expanded_query = f"{expanded_query.strip()} {' '.join(extra_phrases)}"
     lexical_hits = documents_lexical_search(expanded_query, top_k)
     semantic_hits = documents_semantic_search(query, top_k)
 
     fused = rrf_fuse(lexical_hits, semantic_hits)
 
     # rerank ES hits directly using cross-encoder
-    reranked_hits = rerank_chunks(query, fused, top_k=5)
+    # Use the expanded query for reranking so the cross-encoder can align on
+    # the same key entities we boosted in lexical retrieval.
+    reranked_hits = rerank_chunks(expanded_query, fused, top_k=5)
 
     # final top results
     return reranked_hits

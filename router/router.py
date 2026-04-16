@@ -50,7 +50,6 @@ ALLOWED_DOMAINS = [
     DOMAIN_TUITION
 ]
 
-
 # PROTOTYPE QUESTIONS (OOD included for routing, not for search)
 PROTOTYPES = {
     DOMAIN_CALENDAR: CALENDAR_PROTOTYPES,
@@ -165,6 +164,8 @@ def get_routing_intent(query: str) -> Dict[str, List[str]]:
             "needs_clarification": False,
             "sub_queries": {domain: query for domain in domains},
         }
+        
+        
 
     except Exception as e:
 

@@ -8,3 +8,4 @@ nohup.out
 ui/feedback/
 data/unused_data/
 images/
+.cursor/

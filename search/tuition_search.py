@@ -1,5 +1,6 @@
 import re
 import logging
+import json
 
 from common.es_client import es
 from common.embedding_model import model_large
@@ -42,20 +43,18 @@ _LEVEL_MAP = {
 
 _YEAR_RE = re.compile(r"\b(20\d{2}-20\d{2}|20\d{2})\b")
 
-
 def _extract_tuition_filters(query: str) -> dict:
-    """
-    Extract school, level, and academic_year from query for ES keyword filters.
-    Returns only keys that were detected — no defaults.
-    """
+
     q = query.lower()
     filters = {}
 
-    # School — check longest alias first to avoid partial matches
+    # School — if multiple schools are mentioned (compare/vs), don't hard-filter to one.
+    matched_schools = []
     for alias, school in sorted(_SCHOOL_MAP.items(), key=lambda x: -len(x[0])):
-        if alias in q:
-            filters["school"] = school
-            break
+        if alias in q and school not in matched_schools:
+            matched_schools.append(school)
+    if len(matched_schools) == 1:
+        filters["school"] = matched_schools[0]
 
     # Level
     for alias, level in _LEVEL_MAP.items():
@@ -73,7 +72,6 @@ def _extract_tuition_filters(query: str) -> dict:
 
     return filters
 
-
 def _build_filter_clause(filters: dict) -> list:
     """Convert extracted slot values to ES term filter clauses."""
     clauses = []
@@ -85,10 +83,8 @@ def _build_filter_clause(filters: dict) -> list:
         clauses.append({"term": {"academic_year": filters["academic_year"]}})
     return clauses
 
-
 def _filters_without_level(filters: dict) -> dict:
     return {k: v for k, v in filters.items() if k != "level"}
-
 
 # ── Lexical search ────────────────────────────────────────────────────────────
 
@@ -134,7 +130,6 @@ def tuition_lexical_search(query: str, top_k: int, filter_clauses: list = None):
         logger.error(f"Tuition lexical search failed for query '%s': %s", query, e)
         return []
 
-
 # ── Semantic search ───────────────────────────────────────────────────────────
 
 def tuition_semantic_search(query: str, top_k: int, filter_clauses: list = None):
@@ -170,7 +165,6 @@ def tuition_semantic_search(query: str, top_k: int, filter_clauses: list = None)
     except Exception as e:
         logger.error(f"Tuition semantic search failed for query '%s': %s", query, e)
         return []
-
 
 # ── RRF search + reranker ─────────────────────────────────────────────────────
 
