@@ -621,7 +621,7 @@ def _off_topic_short_reply(query: str) -> str | None:
         r"calculate|solve for|translate (this|to|into)|"
         r"weather (today|tomorrow|forecast)|who (won|is winning)|super bowl|world cup|"
         r"stock price|bitcoin|recipe for|how to cook|recommend (a |me a )?(restaurant|movie|song|book)|"
-        r"capital of [a-z]+|president of (the )?(us|usa|united states|[a-z]+\s[a-z]+))\b",
+        r"capital of [a-z]+|president of (the )?(us|usa|united states))\b",
         re.IGNORECASE,
     )
     if _OOD_HARD.search(query):

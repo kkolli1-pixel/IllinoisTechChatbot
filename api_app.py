@@ -350,6 +350,7 @@ def ask(req: AskRequest):
         _is_proper_name = (
             len(_prompt_words) in (2, 3)
             and all(re.fullmatch(r"[A-Za-z][A-Za-z'-]*", w) for w in _prompt_words if w)
+            and any(w[0].isupper() for w in _prompt_words if w)
             and not any(c in prompt for c in ("?", "!", "@", ","))
             and not any(w.lower() in _NON_NAME_WORDS for w in _prompt_words)
             and not _has_non_contact_anchor
